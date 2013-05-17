@@ -1,2 +1,11 @@
-<div id="content">
+<div id="calendario_sessoes" ng-controller="CalendarioSessaoCtrl">
+  <table ng-repeat="month in months" >
+    <th colspan="7" >{{month.name}}</th>
+    <tr>
+      <th ng-repeat="day in weekdaysHeader">{{day}}</th>
+    </tr>
+    <tr ng-repeat="row in calendarFor(month.index).getRows()" >
+      <td ng-repeat="col in row" >{{col}}</td>
+    </tr>
+  </table>
 </div>

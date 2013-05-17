@@ -16,6 +16,10 @@ function Matrix(rows, columns, initialValue) {
   }());
 }
 
+Matrix.prototype.getRows = function () {
+  return this.data;
+}
+
 Matrix.prototype.set = function (x, y, value) {
   this.data[x][y] = value;
 }

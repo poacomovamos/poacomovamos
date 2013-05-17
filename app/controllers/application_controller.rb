@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
       :year => 2013,
       :months => [
         { 
-          :month => 0,
+          :month => 1,
           :frequency => [
             {
               :day => 2,
@@ -19,7 +19,7 @@ class ApplicationController < ActionController::Base
           ]
         },
         {
-          :month => 1,
+          :month => 7,
           :frequency => [
             {
               :day => 8,
