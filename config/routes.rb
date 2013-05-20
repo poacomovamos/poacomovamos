@@ -58,4 +58,6 @@ Poacomovamos::Application.routes.draw do
 
   match '/sessoes' => 'application#sessoes'
 
+  mount JasmineRails::Engine => "/specs" if defined?(JasmineRails)
+
 end
