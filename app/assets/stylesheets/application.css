@@ -11,3 +11,22 @@
  *= require_self
  *= require_tree .
  */
+
+.blue_background {
+  background-color: #4761A2;
+  color: white;
+}
+
+.white_background {
+  background-color: white;
+  color: black;
+}
+
+html * {
+  border: 0px;
+  padding: 0px;
+}
+
+body {
+  font-family: Helvetica;
+}
