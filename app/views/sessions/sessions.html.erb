@@ -17,7 +17,7 @@
       <% session_calendar.monthly_calendar.weeks.each do |weekdays| %>
         <tr>
         <% weekdays.each do |day| %>
-          <td class="<%= class_for_day(session_calendar.monthly_calendar, day) %> <%= "presence_color_#{assemblyman_presence(day)}" %>">
+          <td class="<%= class_for_day(session_calendar.monthly_calendar, day) %>" >
             <%= day.number %>
           </td>
         <% end %>
