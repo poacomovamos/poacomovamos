@@ -1,5 +1,6 @@
 class SessionCalendar
-  attr_reader :month_name
+  attr_reader :month_name, :monthly_calendar
+
   def initialize month_name, monthly_calendar
     @month_name, @monthly_calendar = month_name, monthly_calendar
   end

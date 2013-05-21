@@ -1,15 +1,27 @@
-<% @sessions_calendar.each do |month| %>
+<% @sessions_calendar.each do |session_calendar| %>
+
   <table class="sessions_calendar" >
+
     <tr>
-      <th colspan="7" >Janeiro</th>
+      <th colspan="7" ><%= session_calendar.month_name %></th>
     </tr>
-    <% month.weeks.each do |weekdays| %>
+
+    <tr>
+      <% weekdays_initials.each do |day_initial| %>
+        <td><%= day_initial %></td>
+      <% end %>
+    </tr>
+
+    <% session_calendar.monthly_calendar.weeks.each do |weekdays| %>
       <tr>
         <% weekdays.each do |day| %>
-          <td class="<%= class_for_day(month, day) %>"><%= day.number %></td>
+          <td class="<%= class_for_day(session_calendar.monthly_calendar, day) %> <%= "presence_color_#{assemblyman_presence(day)}" %>">
+            <%= day.number %>
+          </td>
         <% end %>
       </tr>
     <% end %>
+
   </table>
 <% end %>
 
