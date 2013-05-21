@@ -1,4 +1,4 @@
 *.swp
-db/development.sqlite3
-log/development.log
+db/*
+log/*
 tmp/
