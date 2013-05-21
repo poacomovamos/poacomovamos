@@ -1,0 +1,25 @@
+// Place all the styles related to the sessions controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.sessions_calendar {
+  display: inline-block;
+  border-collapse: collapse;
+  border-spacing: 0px;
+
+  td {
+    border: black solid 1px;
+  }
+
+  th {
+    border: black solid 1px;
+  }
+
+  tr {
+    border: black solid 1px;
+  }
+}
+
+.out_of_month {
+  color: gray;
+}

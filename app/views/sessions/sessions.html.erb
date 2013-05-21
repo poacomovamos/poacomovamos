@@ -1,0 +1,15 @@
+<% @sessions_calendar.each do |month| %>
+  <table class="sessions_calendar" >
+    <tr>
+      <th colspan="7" >Janeiro</th>
+    </tr>
+    <% month.weeks.each do |weekdays| %>
+      <tr>
+        <% weekdays.each do |day| %>
+          <td class="<%= class_for_day(month, day) %>"><%= day.number %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </table>
+<% end %>
+
