@@ -8,5 +8,12 @@ describe SessionsCalendar do
       calendario_sessao.first.month.number.should == 1
       calendario_sessao.last.month.number.should == 12
     end
+
+    it "also has the portguese names for the months" do
+      calendario_sessao = SessionsCalendar.for_year 2013
+      calendario_sessao.first.month_name.should == "Janeiro"
+      calendario_sessao.last.month_name.should == "Dezembro"
+    end
+
   end
 end
