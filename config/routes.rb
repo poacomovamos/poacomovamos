@@ -56,5 +56,12 @@ Poacomovamos::Application.routes.draw do
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id))(.:format)'
 
+<<<<<<< HEAD
   match "/assiduidade" => "sessions#sessions"
+=======
+  match '/sessoes' => 'application#sessoes'
+
+  mount JasmineRails::Engine => "/specs" if defined?(JasmineRails)
+
+>>>>>>> c05a1d3b65a475750f18e9712f1a3502ce35dfb9
 end

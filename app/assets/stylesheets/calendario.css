@@ -1,0 +1,28 @@
+.calendario {
+  display: inline-block;
+  margin: 0px 10px 0px 10px;
+  text-align: top;
+}
+
+.calendario table {
+  border-spacing: 0px;
+  border-collapse: collapse;
+  border: black solid 1px;
+  font-size: 10px;
+}
+
+.calendario th {
+  border: black solid 1px;
+}
+
+.calendario tr {
+  border: black solid 1px;
+}
+
+.calendario td {
+  border: black solid 1px;
+}
+
+.no_border {
+  border: 0px;
+}
