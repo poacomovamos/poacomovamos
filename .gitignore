@@ -1,5 +1,26 @@
+*.gem
+*.rbc
+.bundle
+.config
+coverage
+InstalledFiles
+lib/bundler/man
+pkg
+rdoc
+spec/reports
+test/tmp
+test/version_tmp
+tmp
+log
+*.sqlite3
+
+# YARD artifacts
+.yardoc
+_yardoc
+doc/
+
+# Mac crap
 *DS_Store
+
+# Vim crap
 *.swp
-db/*
-log/*
-tmp/
