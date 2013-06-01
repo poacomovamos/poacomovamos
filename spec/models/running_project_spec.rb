@@ -40,4 +40,9 @@ describe RunningProject do
   it "is valid even without a veto" do
     build(:running_project, veto:nil).should be_valid
   end
+
+  it "does not allow duplicate project number" do
+    create(:running_project, number: 42)
+    build(:running_project, number: 42).should_not be_valid
+  end
 end
