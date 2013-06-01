@@ -57,4 +57,5 @@ Poacomovamos::Application.routes.draw do
   # match ':controller(/:action(/:id))(.:format)'
 
   match "/assiduidade" => "sessions#sessions"
+  post "/projetos" => "running_project#create"
 end

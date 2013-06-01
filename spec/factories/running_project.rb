@@ -1,3 +1,5 @@
+require 'factory_girl'
+
 FactoryGirl.define do
   factory :running_project do
     number 899
