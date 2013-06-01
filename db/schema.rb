@@ -17,11 +17,12 @@ ActiveRecord::Schema.define(:version => 20130601160054) do
     t.integer  "number"
     t.integer  "year"
     t.string   "type"
-    t.string   "materia"
+    t.integer  "materia"
     t.string   "ementa"
     t.datetime "processing_date"
     t.string   "sector"
     t.string   "authors"
+    t.string   "status"
     t.string   "veto"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
