@@ -10,6 +10,7 @@ gem 'sidekiq'
 gem 'cal'
 gem 'rspec-rails'
 gem 'nokogiri'
+gem 'factory_girl'
 
 # Gems used only for assets and not required
 # in production environments by default.
