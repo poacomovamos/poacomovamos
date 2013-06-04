@@ -16,6 +16,8 @@ describe RunningProjectController do
       }.to change {
         RunningProject.count
       }.by(1)
+
+      response.status.should == 201
     end
   end
 
@@ -29,9 +31,10 @@ describe RunningProjectController do
           :processing_date, :sector, :authors, :status, :veto]
       )
 
-      expect {
-        post :create, running_project: json
-      }.to raise_error(ActiveRecord::RecordInvalid)
+      post :create, running_project: json
+
+      response.status.should == 422
+      response.body.should == "{\"number\":[\"can't be blank\"]}"
     end
 
   end

@@ -34,6 +34,7 @@ GEM
       activesupport (>= 2)
     celluloid (0.14.0)
       timers (>= 1.0.0)
+    coderay (1.0.9)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
       railties (~> 3.2.0)
@@ -65,10 +66,15 @@ GEM
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    method_source (0.8.1)
     mime-types (1.23)
     multi_json (1.7.3)
     nokogiri (1.5.9)
     polyglot (0.3.3)
+    pry (0.9.12.2)
+      coderay (~> 1.0.5)
+      method_source (~> 0.8)
+      slop (~> 3.4)
     rack (1.4.5)
     rack-cache (1.2)
       rack (>= 0.4)
@@ -119,6 +125,7 @@ GEM
       json
       redis (>= 3.0)
       redis-namespace
+    slop (3.4.5)
     sprockets (2.2.2)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -146,6 +153,7 @@ DEPENDENCIES
   factory_girl
   jquery-rails
   nokogiri
+  pry
   rails (= 3.2.13)
   rspec-rails
   sass-rails (~> 3.2.3)
