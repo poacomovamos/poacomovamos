@@ -1,7 +1,7 @@
 require 'spec_helper'
 require 'open-uri'
 
-describe ProjectsInCourseScraper do
+describe RunningProjectScraper do
 
   describe '#process' do
     it "extracts project's information from HTML as a Ruby hash" do

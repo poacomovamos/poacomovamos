@@ -1,7 +1,7 @@
 require 'nokogiri'
 require 'open-uri'
 
-class ProjectsInCourseScraper
+class RunningProjectScraper
 
   #projects_in_course_url = lambda { |page_number| "http://projetos.camarapoa.rs.gov.br/consultas/em_tramitacao?page=#{page_number}" }
 
