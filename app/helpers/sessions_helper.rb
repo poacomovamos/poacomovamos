@@ -8,8 +8,8 @@ module SessionsHelper
   end
 
   private
+
   def assemblyman_presence day
     AssemblymanSessions.get_presence_for day.date
   end
-
 end
