@@ -9,6 +9,8 @@ gem 'rspec-rails'
 gem 'nokogiri'
 gem 'factory_girl'
 gem 'pry'
+gem 'guard-rspec'
+gem 'terminal-notifier-guard'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
