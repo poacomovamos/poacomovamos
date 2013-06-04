@@ -1,5 +1,5 @@
 module SessionsHelper
-  def class_for_day month, day
+  def class_for_day(month, day)
     day.date.month != month.month.number ? "out_of_month" : "presence_color_#{assemblyman_presence(day)}"
   end
 
@@ -9,7 +9,7 @@ module SessionsHelper
 
   private
 
-  def assemblyman_presence day
-    AssemblymanSessions.get_presence_for day.date
+  def assemblyman_presence(day)
+    AssemblymanSessions.get_presence_for(day.date)
   end
 end
