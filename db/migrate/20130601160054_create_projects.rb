@@ -4,7 +4,7 @@ class CreateProjects < ActiveRecord::Migration
       t.integer :process_number
       t.integer :year
       t.string :type
-      t.integer :materia
+      t.integer :number
       t.string :ementa
       t.datetime :processing_date
       t.string :sector

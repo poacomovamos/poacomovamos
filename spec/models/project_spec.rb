@@ -17,8 +17,8 @@ describe Project do
     build(:project, type: nil).should_not be_valid
   end
 
-  it "is invalid without a materia" do
-    build(:project, materia: nil).should_not be_valid
+  it "is invalid without a number" do
+    build(:project, number: nil).should_not be_valid
   end
 
   it "is invalid without an ementa" do
