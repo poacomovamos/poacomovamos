@@ -14,7 +14,7 @@
 ActiveRecord::Schema.define(:version => 20130601160054) do
 
   create_table "projects", :force => true do |t|
-    t.integer  "number"
+    t.integer  "process_number"
     t.integer  "year"
     t.string   "type"
     t.integer  "materia"
@@ -26,6 +26,16 @@ ActiveRecord::Schema.define(:version => 20130601160054) do
     t.string   "veto"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
+  end
+
+  create_table "sessaos", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "sessions", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
 end

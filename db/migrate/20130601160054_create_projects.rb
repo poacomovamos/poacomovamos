@@ -1,7 +1,7 @@
 class CreateProjects < ActiveRecord::Migration
   def change
     create_table :projects do |t|
-      t.integer :number
+      t.integer :process_number
       t.integer :year
       t.string :type
       t.integer :materia

@@ -5,8 +5,8 @@ describe Project do
     create(:project).should be_valid
   end
 
-  it "is invalid without a number" do
-    build(:project, number: nil).should_not be_valid
+  it "is invalid without a project number" do
+    build(:project, process_number: nil).should_not be_valid
   end
 
   it "is invalid without a year" do
@@ -42,7 +42,7 @@ describe Project do
   end
 
   it "does not allow duplicate project number" do
-    create(:project, number: 42)
-    build(:project, number: 42).should_not be_valid
+    create(:project, process_number: 42)
+    build(:project, process_number: 42).should_not be_valid
   end
 end

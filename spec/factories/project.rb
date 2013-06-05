@@ -2,7 +2,7 @@ require 'factory_girl'
 
 FactoryGirl.define do
   factory :project do
-    number 899
+    process_number 899
     year 2013
     type "PLL"
     materia 73
