@@ -13,7 +13,7 @@
 
 ActiveRecord::Schema.define(:version => 20130601160054) do
 
-  create_table "running_projects", :force => true do |t|
+  create_table "projects", :force => true do |t|
     t.integer  "number"
     t.integer  "year"
     t.string   "type"

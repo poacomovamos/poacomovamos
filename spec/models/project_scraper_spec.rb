@@ -1,11 +1,29 @@
 require 'spec_helper'
 require 'open-uri'
 
-describe RunningProjectScraper do
+describe ProjectScraper do
+  describe '#fetch' do
+    it "fetchs Running Projects' page HTML" do
+      url = "http://projetos.camarapoa.rs.gov.br/consultas/em_tramitacao?page=1"
+      html = File.open('spec/models/projects_in_course_page.html')
+      #Kernel.should_receive(:open).and_return(html)
+
+      #result = subject.fetch(uri)
+
+      #result.should_not be_eq(html)
+    end
+  end
+
+
+  class Foo 
+    def initialize()
+
+    end
+  end
 
   describe '#process' do
     it "extracts project's information from HTML as a Ruby hash" do
-      html = open('spec/models/projects_in_course_page.html')
+      html = File.open('spec/models/projects_in_course_page.html')
       projects = subject.process html
 
       projects.size.should eq 2

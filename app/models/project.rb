@@ -1,4 +1,4 @@
-class RunningProject < ActiveRecord::Base
+class Project < ActiveRecord::Base
   attr_accessible :number, :year, :type, :materia, :ementa,
     :processing_date, :sector, :authors, :status, :veto
 

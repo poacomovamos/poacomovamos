@@ -1,7 +1,7 @@
 require 'factory_girl'
 
 FactoryGirl.define do
-  factory :running_project do
+  factory :project do
     number 899
     year 2013
     type "PLL"

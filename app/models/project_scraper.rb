@@ -1,9 +1,13 @@
 require 'nokogiri'
 require 'open-uri'
 
-class RunningProjectScraper
+class ProjectScraper
 
   #projects_in_course_url = lambda { |page_number| "http://projetos.camarapoa.rs.gov.br/consultas/em_tramitacao?page=#{page_number}" }
+
+  def fetch(url)
+    OpenURI::OpenRead.open(url)
+  end
 
   def process(html)
     doc = Nokogiri::HTML(html)
