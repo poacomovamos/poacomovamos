@@ -21,8 +21,8 @@ describe Project do
     build(:project, number: nil).should_not be_valid
   end
 
-  it "is invalid without an ementa" do
-    build(:project, ementa: nil).should_not be_valid
+  it "is invalid without a description" do
+    build(:project, description: nil).should_not be_valid
   end
 
   it "is invalid without a processing_date" do
