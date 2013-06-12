@@ -9,6 +9,7 @@ gem 'rspec-rails'
 gem 'nokogiri'
 gem 'factory_girl'
 gem 'pry'
+gem 'pry-nav'
 gem 'guard-rspec'
 gem 'terminal-notifier-guard'
 
