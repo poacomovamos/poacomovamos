@@ -1,4 +1,4 @@
-RSpec::Matchers.define :match_project_in_course do |expected|
+RSpec::Matchers.define :match_project do |expected|
   match do |actual|
       actual[:number].should eq(expected[:number])
       actual[:year].should eq(expected[:year])

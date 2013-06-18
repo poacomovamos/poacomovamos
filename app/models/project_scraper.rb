@@ -12,17 +12,18 @@ class ProjectScraper
   def process(html)
     doc = Nokogiri::HTML(html)
     doc.css('.even, .odd').map do |node|
+      project_data = node.css('td')
       {
-        number: node.css('td')[0].text.strip,
-        year: node.css('td')[1].text.strip,
-        type: node.css('td')[2].text.strip,
-        materia: node.css('td')[3].text.strip,
-        ementa: node.css('td')[4].text.strip,
-        processingDate: node.css('td')[5].text.strip,
-        sector: node.css('td')[6].text.strip,
-        authors: node.css('td')[7].text.strip,
-        status: node.css('td')[8].text.strip,
-        veto: node.css('td')[9].text.strip
+        number: project_data[0].text.strip,
+        year: project_data[1].text.strip,
+        type: project_data[2].text.strip,
+        materia: project_data[3].text.strip,
+        ementa: project_data[4].text.strip,
+        processingDate: project_data[5].text.strip,
+        sector: project_data[6].text.strip,
+        authors: project_data[7].text.strip,
+        status: project_data[8].text.strip,
+        veto: project_data[9].text.strip
       }
     end
   end

@@ -5,30 +5,19 @@ describe ProjectScraper do
   describe '#fetch' do
     it "fetchs Running Projects' page HTML" do
       url = "http://projetos.camarapoa.rs.gov.br/consultas/em_tramitacao?page=1"
-      html = File.open('spec/models/projects_in_course_page.html')
-      #Kernel.should_receive(:open).and_return(html)
-
-      #result = subject.fetch(uri)
-
-      #result.should_not be_eq(html)
-    end
-  end
-
-
-  class Foo 
-    def initialize()
-
+      html = File.open('spec/fixtures/projects_in_course_page.html')
     end
   end
 
   describe '#process' do
     it "extracts project's information from HTML as a Ruby hash" do
-      html = File.open('spec/models/projects_in_course_page.html')
+      html = File.open('spec/fixtures/projects_in_course_page.html')
+
       projects = subject.process html
 
       projects.size.should eq 2
 
-      projects[0].should match_project_in_course({
+      projects[0].should match_project({
           number: "04078", 
           year: "2011", 
           type: "PLL", 
@@ -41,7 +30,7 @@ describe ProjectScraper do
           veto: ""
       })
 
-      projects[1].should match_project_in_course({
+      projects[1].should match_project({
           number: "01634", 
           year: "2012", 
           type: "PLE", 
