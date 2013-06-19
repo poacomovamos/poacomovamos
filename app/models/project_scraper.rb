@@ -3,10 +3,11 @@ require 'open-uri'
 
 class ProjectScraper
 
-  #projects_in_course_url = lambda { |page_number| "http://projetos.camarapoa.rs.gov.br/consultas/em_tramitacao?page=#{page_number}" }
+  def fetch(page_number)
+    projects_page = "http://projetos.camarapoa.rs.gov.br/consultas/em_tramitacao?page=#{page_number}"
+    page_html = open(projects_page)
 
-  def fetch(url)
-    OpenURI::OpenRead.open(url)
+    process(page_html)
   end
 
   def process(html)

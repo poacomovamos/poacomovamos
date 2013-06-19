@@ -3,15 +3,22 @@ require 'open-uri'
 
 describe ProjectScraper do
   describe '#fetch' do
-    it "fetchs Running Projects' page HTML" do
-      url = "http://projetos.camarapoa.rs.gov.br/consultas/em_tramitacao?page=1"
-      html = File.open('spec/fixtures/projects_in_course_page.html')
+    projects_page = "http://projetos.camarapoa.rs.gov.br/consultas/em_tramitacao?page=1"
+
+    it "fetches HTML of specific 'Running Projects' page" do
+      page_number = 1
+      projects_page_html = '<html></html>'
+
+      subject.stub!(:open).with(projects_page).and_return(projects_page_html)
+      subject.should_receive(:process).with(projects_page_html)
+
+      subject.fetch(page_number)
     end
   end
 
   describe '#process' do
     it "extracts project's information from HTML as a Ruby hash" do
-      html = File.open('spec/fixtures/projects_in_course_page.html')
+      html = File.open('spec/fixtures/projects_in_course_page.html').read
 
       projects = subject.process html
 
