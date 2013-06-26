@@ -10,8 +10,8 @@ describe Session do
       build(:session, number: nil).should_not be_valid
     end
     
-    it "is invalid without a type" do
-      build(:session, type: nil).should_not be_valid
+    it "is invalid without a session type" do
+      build(:session, session_type: nil).should_not be_valid
     end
     
     it "is invalid without a date" do

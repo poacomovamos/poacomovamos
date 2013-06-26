@@ -13,7 +13,7 @@ describe SessionScraperHelper do
     end
 
     it "parses the session type" do
-      SessionScraperHelper.parse(link)[:type].should == "O"
+      SessionScraperHelper.parse(link)[:session_type].should == "O"
     end
   end
 end

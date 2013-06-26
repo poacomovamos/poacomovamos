@@ -6,7 +6,7 @@ require_relative '../../app/models/session'
 
 
 desc 'scrapes sessions from the votacoes.camarapoa.rs.gov.br website'
-task :scrape_sessions do
+task :scrape_sessions => :environment do
   (1...17).each do |page|
     begin
       doc = Nokogiri::HTML(open("http://votacoes.camarapoa.rs.gov.br/?page=#{page}"))

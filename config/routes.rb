@@ -1,6 +1,6 @@
 Poacomovamos::Application.routes.draw do
-  resources :assiduities, :only => :index
+  resources :sessions, :only => :index
 
-  match "/assiduidade" => "sessions#sessions"
+  match "/sessoes" => "sessions#sessions"
   post "/projetos" => "running_project#create"
 end

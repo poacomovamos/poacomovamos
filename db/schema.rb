@@ -29,8 +29,11 @@ ActiveRecord::Schema.define(:version => 20130601160054) do
   end
 
   create_table "sessions", :force => true do |t|
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.integer  "number"
+    t.string   "session_type"
+    t.datetime "date"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
   end
 
 end

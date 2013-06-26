@@ -2,7 +2,7 @@ module SessionScraperHelper
   def self.parse(link)
     {
       date: parse_date(link),
-      type: parse_type(link),
+      session_type: parse_session_type(link),
       number: parse_number(link)
     }
   end
@@ -13,7 +13,7 @@ module SessionScraperHelper
     Date.strptime(/data=\d+\/\d+\/\d+/.match(link)[0], 'data=%d/%m/%Y')
   end
 
-  def self.parse_type(link)
+  def self.parse_session_type(link)
     /tiposessao=(.*)$/.match(link)[1]
   end
 
