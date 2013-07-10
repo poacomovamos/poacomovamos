@@ -75,4 +75,4 @@ Feature: Ontem na Camara
   Scenario: Incluir coleta de feedback
 
     # Vereador morreu
-    # não foi feito o uploade ou atualização dos dados de presença dos vereadores no horário estipulado
+    # não foi feito o upload ou atualização dos dados de presença dos vereadores no horário estipulado
