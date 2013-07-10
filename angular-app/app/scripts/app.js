@@ -1,11 +1,11 @@
 'use strict';
 
-angular.module('uiApp', [])
+angular.module('PoaComoVamos', [])
   .config(['$routeProvider', function ($routeProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
+        templateUrl: 'views/vereadores.html',
+        controller: 'VereadoresCtrl'
       })
       .otherwise({
         redirectTo: '/'

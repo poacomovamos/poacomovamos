@@ -4,9 +4,14 @@ body {
     color: #333;
 }
 
+img.vereador {
+  width: 100px;
+  height: 100px;
+}
+
 .hero-unit {
     margin: 50px auto 0 auto;
-    width: 300px;
+    width: 500px;
     font-size: 18px;
     font-weight: 200;
     line-height: 30px;
