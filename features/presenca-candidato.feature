@@ -2,10 +2,10 @@
 Feature: Ontem na Camara 
 
   @pending
-  Scenario: Listar todos os vereadores na página 
+  Scenario: Listar todos os vereadores na página de forma randômica
     Dado que existem os vereadores "Gabriela Guerra", "Camilo Ribeiro" e "Guilherme Froes"
     Quando eu acesso a página principal
-    Então eu devo ver todos os vereadores listados
+    Então eu devo ver todos os vereadores listados de forma randômica
 
   @pending
   Scenario: Criar mecanismo para buscar relatório de presença
