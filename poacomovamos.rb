@@ -1,5 +1,5 @@
 require 'sinatra'
 
 get '/' do
-    'Poa como vamos: Funciona!'
+  erb :"index"
 end
