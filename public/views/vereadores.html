@@ -1,7 +1,7 @@
 <div class="hero-unit">
   <div class="vereador" ng-repeat="vereador in vereadores">
     <ul class="inline">
-      <li><img src="{{vereador.foto}}" class="vereador img-circle"></li>
+      <li><img ng-src="{{vereador.foto}}" class="vereador img-circle"></li>
       <li>
       <dl>
         <dt>{{vereador.nome}} ({{vereador.partido}}) <i ng-class="{ true: 'icon-ok', false: 'icon-remove' }[vereador.presencaUltimaSessao]"></i></dt>
