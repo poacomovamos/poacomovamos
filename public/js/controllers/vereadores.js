@@ -1,7 +1,6 @@
 'use strict';
 
-angular.module('PoaComoVamos')
-  .controller('VereadoresCtrl', function ($scope) {
+poaCvApp.controller('VereadoresCtrl', function ($scope) {
 
     $scope.percentualPresenca = function (presencasDuranteMandato) {
       var numeroSecoesDuranteMandato = 10;
