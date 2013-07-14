@@ -8,5 +8,5 @@ end
 
 desc "Test the Javascript using mocha-phantomjs"
 task :jstest do
-   sh 'mocha test/ -R nyan --recursive'
+   sh 'mocha test/ -R spec --recursive'
 end
