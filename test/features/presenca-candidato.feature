@@ -1,7 +1,7 @@
 # Language: pt-br
 Feature: Ontem na Camara 
 
-  @pending
+  
   Scenario: Listar todos os vereadores na página de forma randômica
     Dado que existem os vereadores "Gabriela Guerra", "Camilo Ribeiro" e "Guilherme Froes"
     Quando eu acesso a página principal
