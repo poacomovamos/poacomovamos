@@ -1,5 +1,5 @@
 before_script:
-  - npm install karma
+  - npm install karma@~0.9
   - npm install karma-jasmine
 language: ruby
 rvm:
