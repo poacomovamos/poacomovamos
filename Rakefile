@@ -13,5 +13,5 @@ end
 desc "Roda os testes de javascript"
 task :jstest do
   puts "===== Testes de Javascript ====="
-  sh 'mocha test/ -R spec --recursive'
+  sh 'karma start'
 end
