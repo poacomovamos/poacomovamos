@@ -1,9 +1,10 @@
+language: node_js
+node_js:
+  - 0.8
+
 language: ruby
 rvm:
   - "1.9.3"
 
-language: node_js
-node_js:
-  - 0.8
   # uncomment this line if your project needs to run something other than `rake`:
 script: rake test 
