@@ -4,6 +4,7 @@ gem 'cucumber'
 gem 'rake'
 gem 'rspec'
 gem 'webrat'
+gem 'json'
 
 group :development do
   gem "shotgun"
