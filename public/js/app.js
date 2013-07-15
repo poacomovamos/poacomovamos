@@ -8,8 +8,11 @@ angular.module('poaComoVamos', ['poaComoVamos.servicos'])
         controller: 'VereadoresCtrl',
         resolve: {
           vereadores: function(Vereadores) {
-            return Vereadores();
-          }
+            return Vereadores.query()
+            }
+//          vereadores: function(Vereadores) {
+//          //          return Vereadores();
+//          }
         }
       })
       .otherwise({

@@ -6,7 +6,7 @@ get '/' do
   erb :"index"
 end
 
-get '/api/vereador/' do
+get '/api/vereador' do
   content_type :json
   [
     { :nome => 'Airto Ferronato', :email => 'ferronato@camarapoa.rs.gov.br', :partido => 'PAB', :foto => 'http://www.camarapoa.rs.gov.br/frames/veread/fotos/airtoferronato2.jpg', :presencaUltimaSessao => true,  :presencasDuranteMandato => 5 },
