@@ -1,16 +1,16 @@
 'use strict';
 
-var poaCvApp = angular.module('poaComoVamos', []);
-
-poaCvApp.config(['$routeProvider', function ($routeProvider) {
+angular.module('poaComoVamos', ['poaComoVamos.servicos'])
+  .config(['$routeProvider', function ($routeProvider) {
     $routeProvider
       .when('/', {
         templateUrl: '../views/vereadores.html',
         controller: 'VereadoresCtrl',
         resolve: {
-          vereadores: ['ver1', 'ver2', 'ver3']
+          vereadores: function(Vereadores) {
+            return Vereadores();
+          }
         }
-
       })
       .otherwise({
         redirectTo: '/'
