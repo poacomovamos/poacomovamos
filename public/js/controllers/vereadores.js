@@ -6,11 +6,11 @@ angular.module('poaComoVamos').controller('VereadoresCtrl', ['$scope', 'vereador
       var numeroSecoesDuranteMandato = 10;
       return (presencasDuranteMandato / numeroSecoesDuranteMandato) * 100;
     };
-    
+
     var shuffle = function(array) {
       var newArray = array.slice();
       var i = newArray.length, j, temp;
-    
+
       while ( --i )
       {
         j = Math.floor( Math.random() * (i - 1) );
@@ -20,6 +20,5 @@ angular.module('poaComoVamos').controller('VereadoresCtrl', ['$scope', 'vereador
       }
       return newArray;
     };
-
     $scope.vereadores = shuffle(vereadores);
 }]);
