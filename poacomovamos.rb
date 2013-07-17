@@ -1,6 +1,13 @@
 require 'rubygems'
 require 'sinatra'
+require 'sinatra/activerecord'
 require 'json'
+
+set :database, ENV["DATABASE_URL"] || "sqlite3:///pcv.db"
+
+class Bla < ActiveRecord::Base
+end
+
 
 get '/' do
   erb :"index"
