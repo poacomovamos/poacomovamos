@@ -7,7 +7,7 @@ task :test => [:features, :jstest]
 
 Cucumber::Rake::Task.new(:features) do |t|
   puts "===== Testes de Pepino ====="
-    t.cucumber_opts = "test/features --format pretty --tag ~@pending"
+    t.cucumber_opts = "features --format pretty --tag ~@pending"
 end
 
 desc "Roda os testes de javascript"
