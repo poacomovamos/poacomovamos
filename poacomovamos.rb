@@ -1,20 +1,24 @@
 require 'rubygems'
 require 'sinatra'
-require 'sinatra/activerecord'
+require 'mongo_mapper'
 require 'json'
+require 'rufus-scheduler'
 
-set :database, ENV["DATABASE_URL"] || "sqlite3:///pcv.db"
 
-class Bla < ActiveRecord::Base
+scheduler = Rufus::Scheduler.new
+scheduler.cron '5 0 * * *' do
+  # todo dia, cinco minutos depois da meia noite
+  LeitorSessoes.puxar_sessoes
 end
 
 
 get '/' do
-  erb :"index"
+  erb :index
 end
 
 get '/api/vereador' do
   content_type :json
+
   [
     { :nome => 'Airto Ferronato', :email => 'ferronato@camarapoa.rs.gov.br', :partido => 'PAB', :foto => 'http://www.camarapoa.rs.gov.br/frames/veread/fotos/airtoferronato2.jpg', :presencaUltimaSessao => true,  :presencasDuranteMandato => 5 },
     { :nome => 'Jose Sarney', :email => 'brasinha@camarapoa.rs.gov.br',  :partido => 'PTB', :foto => 'http://www.camarapoa.rs.gov.br/frames/veread/fotos/brasinha.jpg',        :presencaUltimaSessao => false, :presencasDuranteMandato => 2 },
@@ -23,4 +27,10 @@ get '/api/vereador' do
     { :nome => 'Alceu Brasinha', :email => 'brasinha@camarapoa.rs.gov.br',  :partido => 'PTB', :foto => 'http://www.camarapoa.rs.gov.br/frames/veread/fotos/brasinha.jpg',        :presencaUltimaSessao => false, :presencasDuranteMandato => 2 },
     { :nome => 'Bernardino Vendruscolo', :email => '', :partido => 'PSD', :foto => 'http://www.camarapoa.rs.gov.br/frames/veread/fotos/bernardino.jpg', :presencaUltimaSessao => true, :presencasDuranteMandato => 8 }
   ].to_json
+
+end
+
+get '/api/sessoes' do
+  content_type :json
+  Sessao.all.to_json
 end
