@@ -18,13 +18,14 @@ Em 2012 o movimento criou seu primeiro grande projetos na internet com o site "V
 	* [Karma.js](http://karma-runner.github.io/0.8/index.html): Test runner utilizado para rodar os testes do javascript.
 	A versão canary deve ser instalada ```npm install -g karma@canary```
 
-* **[Sinatra](http://www.sinatrarb.com/)**: Nosso amado framework web que atende a api.
-Pode ser instalado pelo gem ```gem install sinatra```
+* **[MongoDB](http://www.mongodb.org/)**: Mongo database ```brew install mongo```
 
-##### Running Tests
+##### Rodando Testes
 
 Digite ```rake test``` para rodar todos os testes ou ```rake jstest``` para rodar somente os de javascript
 
-##### Running The App
+##### Rodando de App
 
-Digite e Divirta-se ``` ruby poacomovamos.rb``` =)
+Certifique-se de que o mongo esta rodando: ```mongod```
+
+Digite e Divirta-se ```shotgun``` =)
