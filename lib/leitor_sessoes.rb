@@ -5,7 +5,7 @@ require 'nokogiri'
 class LeitorSessoes
 
   def self.puxar_sessoes
-    (1...2).each do |pagina|
+    (1...17).each do |pagina|
       
       begin
         doc = Nokogiri::HTML(open("http://votacoes.camarapoa.rs.gov.br/?page=#{pagina}"))
