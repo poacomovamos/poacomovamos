@@ -1,4 +1,4 @@
-# Language: pt-br
+# language: pt
 Funcionalidade: Ontem na Camara 
 
   @pending

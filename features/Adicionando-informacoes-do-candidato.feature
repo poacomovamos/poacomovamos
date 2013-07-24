@@ -1,4 +1,4 @@
-# language: pt-br
+# language: pt
 Funcionalidade: Adicionando Informações do Candidato
 
 @pending
