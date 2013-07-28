@@ -27,7 +27,7 @@ end
 desc "Importa dados da planilha (db/vereadores.csv)"
 task :importar_vereadores do
   puts "Deletando vereadores..."
-  sh 'mongo pcv --eval "db.vereadores.drop()"'
+  sh 'mongo pcv --eval "db.vereadors.drop()"'
   puts "Importando planilha"
-  sh 'mongoimport -d pcv -c vereadores --type csv --file db/vereadores.csv --headerline'
+  sh 'mongoimport -d pcv -c vereadors --type csv --file db/vereadores.csv --headerline'
 end
