@@ -23,3 +23,11 @@ desc "Puxa os dados de sessão"
 task :puxar_sessoes => :environment do
   LeitorSessoes.puxar_sessoes
 end
+
+desc "Importa dados da planilha (db/vereadores.csv)"
+task :importar_vereadores do
+  puts "Deletando vereadores..."
+  sh 'mongo pcv --eval "db.vereadores.drop()"'
+  puts "Importando planilha"
+  sh 'mongoimport -d pcv -c vereadores --type csv --file db/vereadores.csv --headerline'
+end
