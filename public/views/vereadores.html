@@ -1,5 +1,6 @@
 <div class="hero-unit">
-  <div class="vereador" ng-repeat="vereador in vereadores">
+  {{vereadoress | json}}
+  <div class="vereador" ng-repeat="vereador in vereadores | embaralhar">
     <ul class="inline">
       <li><img ng-src="{{vereador.foto}}" class="vereador img-circle"></li>
       <li>

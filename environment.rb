@@ -1,4 +1,7 @@
 require 'mongo_mapper'
+require 'bundler'
+Bundler.setup
+
 
 MongoMapper.setup( { 'mongo' => { 'uri' => ENV['MONGODB_URI'] || 'mongodb://localhost/pcv' } }, 'mongo')
 
