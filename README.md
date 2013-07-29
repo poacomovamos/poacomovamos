@@ -28,6 +28,6 @@ Digite ```rake test``` para rodar todos os testes ou ```rake jstest``` para roda
 
 Certifique-se de que o mongo esta rodando: ```mongod```
 
-Com o mongo esta rodando, importe os dados da planilha de vereadores: ```rake importar_vereadores```
+Com o mongo rodando, importe os dados da planilha de vereadores: ```rake importar_vereadores```
 
 Digite e Divirta-se ```shotgun``` =)
