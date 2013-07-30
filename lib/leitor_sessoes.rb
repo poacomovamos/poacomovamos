@@ -26,6 +26,7 @@ class LeitorSessoes
       link = URI::unescape(html_sessao.attribute('href').value)
       
       s = Sessao.new(
+        :numero => /numero=(.*)&/.match(link)[1],
         :tipo => /tiposessao=(.*)$/.match(link)[1],
         :data => Date.strptime(/data=\d+\/\d+\/\d+/.match(link)[0], 'data=%d/%m/%Y')
       )
