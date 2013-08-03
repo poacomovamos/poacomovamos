@@ -2,14 +2,16 @@
   {{vereadoress | json}}
   <div class="vereador" ng-repeat="vereador in vereadores | embaralhar">
     <ul class="inline">
-      <li><img ng-src="../img/vereadores/{{vereador.foto}}" class="vereador img-circle"></li>
-      <li>
-      <dl>
+      <li class="picture"><img ng-src="../img/vereadores/{{vereador.foto}}" class="vereador"></li>
+      <li class="description">
+      <dl >
         <dt>{{vereador.nome}} ({{vereador.partido}}) <i ng-class="{ true: 'icon-ok', false: 'icon-remove' }[vereador.presencaUltimaSessao]"></i></dt>
-        <dd><a href="mailto:#">{{vereador.email}}</a></dd>
+        <dd class="email"><a href="mailto:#">{{vereador.email}}</a></dd>
+      </dl>
+      </li>
+      <li class="social">
         <a href="http://twitter.com/{{vereador.twitter}}"><img ng-src="../img/twitter-bird-light-bgs.png" class="twitter-icon"></a>
         <a href="{{vereador.facebook}}"><img ng-src="../img/FB-f-Logo__blue_50.png" class="twitter-icon"></a>
-      </dl>
       </li>
     </ul>
   </div>
