@@ -11,9 +11,11 @@ puts uri
 desc "Roda todos os testes (javascript e cucumber)"
 task :test => [:features, :jstest]
 
-Cucumber::Rake::Task.new(:features) do |t|
-  puts "===== Testes de Pepino ====="
-  t.cucumber_opts = "features --format pretty --tag ~@pending"
+desc "Roda os testes de pepino"
+task :features do
+  Cucumber::Rake::Task.new(:features) do |t|
+    t.cucumber_opts = "features --format pretty --tag ~@pending"
+  end
 end
 
 desc "Roda os testes de javascript"
