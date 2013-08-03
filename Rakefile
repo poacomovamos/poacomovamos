@@ -4,10 +4,6 @@ require 'mongo'
 require 'csv'
 include Mongo
 
-#MongoMapper.setup( { 'mongo' => { 'uri' => ENV['MONGOLAB_URI'] || 'mongodb://localhost/pcv' } }, 'mongo')
-uri = ENV['MONGOLAB_URI'] || 'mongodb://localhost/pcv'
-puts uri
-
 desc "Roda todos os testes (javascript e cucumber)"
 task :test => [:features, :jstest]
 
@@ -33,9 +29,15 @@ task :puxar_sessoes => :environment do
   LeitorSessoes.puxar_sessoes
 end
 
+desc "Puxa os dados de votacao"
+task :puxar_resultado_votacao => :environment do
+  LeitorResultadoVotacao.puxar_resultado("10%2F07%2F2013+00%3A00%3A00", 64, 'O', 'P124', 'P')
+end
+
 desc "Importa dados da planilha (db/vereadores.csv)"
 task :importar_vereadores do
-  puts "Deletando vereadores..."
+  puts "
+  Deletando vereadores..."
   uri = ENV['MONGOLAB_URI'] || 'mongodb://localhost/pcv'
   db_name = uri[%r{/([^/\?]+)(\?|$)}, 1]
   client = MongoClient.from_uri(uri)
