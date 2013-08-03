@@ -1,4 +1,4 @@
-[<img src="https://travis-ci.org/poacomovamos/poacomovamos.png?branch=master" alt="Build Status" />](https://travis-ci.org/poacomovamos/poacomovamos)
+lce[<img src="https://travis-ci.org/poacomovamos/poacomovamos.png?branch=master" alt="Build Status" />](https://travis-ci.org/poacomovamos/poacomovamos)
 
 ## Bem indo ao Porto Alegre Como Vamos
 
@@ -19,6 +19,9 @@ Em 2012 o movimento criou seu primeiro grande projetos na internet com o site "V
 	A versão canary deve ser instalada ```npm install -g karma@canary```
 
 * **[MongoDB](http://www.mongodb.org/)**: Mongo database ```brew install mongo```
+
+* Bundler: Usado para gerenciar os pacotes ```gem install bundler```.
+  - Instalando as dependencias linstadas no Gemfile: ```bundle install```
 
 ##### Rodando Testes
 
