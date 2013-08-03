@@ -4,25 +4,110 @@ body {
     color: #333;
 }
 
-img.vereador {
-  width: 100px;
-  height: 100px;
+.header_logo {
+  width: 100%;
+  height: 100%;
+  background-image: url('../img/header_bg.jpg');
+  position: fixed;
+  top: 0;
+  z-index: -1;
 }
 
-img.twitter-icon {
-  width: 40px;
+.content {
+  margin: 0 auto;
+  width: 940px;
+  text-align: center;
+  z-index: 0;
+}
+
+.blue {
+  background-color: #2E81B7;
+}
+
+.content header {
   height: 40px;
 }
 
+.content section.transparency {
+  background-color: white;
+  opacity: 0.6;
+  height: 260px;
+}
+.content section.poa_logo {
+  top: 200px;
+  width: inherit;
+  margin: 0 auto;
+  position: absolute;
+}
+
+.content section.poa_dialog {
+  top: 100px;
+  width: inherit;
+  margin: 0 auto;
+  position: absolute;
+}
+
+li.option a {
+  height: 30px;
+  display: block;
+  color: white;
+  padding: 4px 12px;
+  font-size: 14px;
+  line-height: 30px;
+  text-align: center;
+  vertical-align: middle;
+  text-shadow: none;
+}
+
+li.option a:hover {
+
+}
+
+div.vereador {
+  width: 45%;
+  height: 130px;
+  float: left;
+  margin: 10px;
+  font-size: 0.8em;
+}
+
+img.vereador {
+  height: 120px;
+  width: 100%;
+}
+
+.vereador ul li {
+  margin: 0px;
+  float: left;
+}
+
+.vereador ul li.picture {
+  width: 23%;
+}
+.vereador ul li.description {
+  width: 60%;
+  height: 120px;
+  background-color: white;
+}
+
+.vereador ul li.social {
+  width: 7%;
+}
+
+dd.email {
+  font-size: 0.8em;
+}
+
 .hero-unit {
-    margin: 50px auto 0 auto;
-    width: 500px;
+    margin: 0 auto;
+    width: 900px;
     font-size: 18px;
     font-weight: 200;
     line-height: 30px;
-    background-color: #eee;
+    background-color: #2D3E4F;
     border-radius: 6px;
-    padding: 60px;
+    padding: 20px;
+    float: left;
 }
 
 .hero-unit h1 {
