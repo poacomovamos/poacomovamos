@@ -1,4 +1,4 @@
-lce[<img src="https://travis-ci.org/poacomovamos/poacomovamos.png?branch=master" alt="Build Status" />](https://travis-ci.org/poacomovamos/poacomovamos)
+[<img src="https://travis-ci.org/poacomovamos/poacomovamos.png?branch=master" alt="Build Status" />](https://travis-ci.org/poacomovamos/poacomovamos)
 
 ## Bem indo ao Porto Alegre Como Vamos
 
