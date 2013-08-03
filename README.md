@@ -1,6 +1,6 @@
 [<img src="https://travis-ci.org/poacomovamos/poacomovamos.png?branch=master" alt="Build Status" />](https://travis-ci.org/poacomovamos/poacomovamos)
 
-## Bem indo ao Porto Alegre Como Vamos
+## Bem Vindo ao Porto Alegre Como Vamos
 
 
 O Porto Alegre Como Vamos é um movimento da sociedade civil, apartidário, sem fins lucrativos, que pretende trazer o cidadão a participar dos processos que acontecem na cidade, incidindo em políticas públicas e promovendo espaços de interação abertos para a melhoria da cidade. Temos como objetivo contribuir para fortalecimento da democracia e de qualidade de vida, mantendo um compromisso com o desenvolvimento sustentável e com a justiça social. Somos um organismo aberto, com o dever de acolher qualquer pessoa que com ele resolver interagir.
@@ -19,6 +19,9 @@ Em 2012 o movimento criou seu primeiro grande projetos na internet com o site "V
 	A versão canary deve ser instalada ```npm install -g karma@canary```
 
 * **[MongoDB](http://www.mongodb.org/)**: Mongo database ```brew install mongo```
+
+* Bundler: Usado para gerenciar os pacotes ```gem install bundler```.
+  - Instalando as dependencias linstadas no Gemfile: ```bundle install```
 
 ##### Rodando Testes
 
