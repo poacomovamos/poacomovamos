@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 require 'cucumber'
 require 'cucumber/rake/task'
 
