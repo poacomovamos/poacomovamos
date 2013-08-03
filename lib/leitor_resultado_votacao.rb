@@ -25,11 +25,11 @@ class LeitorResultadoVotacao
     doc = Nokogiri::HTML(open(url))
     presencas = doc.css('.list tr:not(:first-of-type)')
 
+    puts "Salvando sessao: #{sessao}, votacao: #{votacao}"
     presencas.each do |presenca|
       informacao_presenca = presenca.css('td')
       nome_parlamentar = informacao_presenca[0].text
       presente = informacao_presenca[2].text != 'Ausente'
-      puts "Salvando sessao: #{sessao}, votacao: #{votacao}, vereador(a): #{nome_parlamentar}"
       Presenca.create({
         sessao: sessao,
         votacao: votacao,
