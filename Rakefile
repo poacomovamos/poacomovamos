@@ -30,8 +30,8 @@ task :puxar_sessoes => :environment do
 end
 
 desc "Puxa os dados de votacao"
-task :puxar_resultado_votacao => :environment do
-  LeitorResultadoVotacao.puxar_presencas
+task :puxar_presencas => :environment do
+  LeitorPresencaEmSessao.puxar_presencas
 end
 
 desc "Importa dados da planilha (db/vereadores.csv)"
