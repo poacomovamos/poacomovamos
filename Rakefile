@@ -1,8 +1,7 @@
-# encoding: utf-8
-
 require 'cucumber'
 require 'cucumber/rake/task'
 require 'mongo'
+require 'csv'
 include Mongo
 
 #MongoMapper.setup( { 'mongo' => { 'uri' => ENV['MONGOLAB_URI'] || 'mongodb://localhost/pcv' } }, 'mongo')
@@ -42,5 +41,12 @@ task :importar_vereadores do
   puts db_name
   db.drop_collection('vereadors')
   puts "Importando planilha"
+  data = CSV.read("db/vereadores.csv", :headers => true)
+
+  col  = db.collection('vereadors')
+  data.each do |row|
+    h = row.to_hash
+    col.save(h)
+  end
   #sh 'mongoimport -d pcv -c vereadors --type csv --file db/vereadores.csv --headerline'
 end
