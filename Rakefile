@@ -1,5 +1,11 @@
 require 'cucumber'
 require 'cucumber/rake/task'
+require 'mongo'
+include Mongo
+
+#MongoMapper.setup( { 'mongo' => { 'uri' => ENV['MONGOLAB_URI'] || 'mongodb://localhost/pcv' } }, 'mongo')
+uri = ENV['MONGOLAB_URI'] || 'mongodb://localhost/pcv'
+puts uri
 
 desc "Roda todos os testes (javascript e cucumber)"
 task :test => [:features, :jstest]
@@ -27,7 +33,12 @@ end
 desc "Importa dados da planilha (db/vereadores.csv)"
 task :importar_vereadores do
   puts "Deletando vereadores..."
-  sh 'mongo pcv --eval "db.vereadors.drop()"'
+  uri = ENV['MONGOLAB_URI'] || 'mongodb://localhost/pcv'
+  db_name = uri[%r{/([^/\?]+)(\?|$)}, 1]
+  client = MongoClient.from_uri(uri)
+  db = client.db(db_name)
+  puts db_name
+  db.drop_collection('vereadors')
   puts "Importando planilha"
-  sh 'mongoimport -d pcv -c vereadors --type csv --file db/vereadores.csv --headerline'
+  #sh 'mongoimport -d pcv -c vereadors --type csv --file db/vereadores.csv --headerline'
 end
