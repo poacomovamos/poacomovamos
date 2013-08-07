@@ -3,6 +3,7 @@
 require 'open-uri'
 require 'formatador'
 require 'nokogiri'
+require 'leitor_presenca_sessao'
 
 class LeitorSessoes
   @sessoes = []
@@ -51,6 +52,7 @@ class LeitorSessoes
     @sessoes.reverse_each do |sessao|
       begin
         sessao.save!
+        LeitorPresencaEmSessao.puxar_presencas sessao
         Formatador.display_line "salvou sessão #{sessao.inspect}"
       rescue => exception
         Formatador.display_line "[red][bold]problema salvando sessão #{sessao.inspect}: #{exception}[/]"
