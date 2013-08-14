@@ -29,15 +29,9 @@ task :puxar_sessoes => :environment do
   LeitorSessoes.puxar_sessoes
 end
 
-desc "Puxa os dados de votacao"
-task :puxar_presencas => :environment do
-  LeitorPresencaEmSessao.puxar_presencas
-end
-
 desc "Importa dados da planilha (db/vereadores.csv)"
 task :importar_vereadores do
-  puts "
-  Deletando vereadores..."
+  puts "Deletando vereadores..."
   uri = ENV['MONGOLAB_URI'] || 'mongodb://localhost/pcv'
   db_name = uri[%r{/([^/\?]+)(\?|$)}, 1]
   client = MongoClient.from_uri(uri)
@@ -47,7 +41,7 @@ task :importar_vereadores do
   puts "Importando planilha"
   data = CSV.read("db/vereadores.csv", :headers => true)
 
-  col  = db.collection('vereadors')
+  col = db.collection('vereadors')
   data.each do |row|
     h = row.to_hash
     col.save(h)
