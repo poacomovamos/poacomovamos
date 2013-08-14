@@ -1,5 +1,3 @@
-# encoding: utf-8
-
 require 'open-uri'
 require 'formatador'
 require 'nokogiri'
