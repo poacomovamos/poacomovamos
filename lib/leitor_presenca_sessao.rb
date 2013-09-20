@@ -22,7 +22,6 @@ class LeitorPresencaEmSessao
 
     doc = Nokogiri::HTML(open(url))
     presencas = doc.css('.list tbody tr')
-    puts "Presenca: #{presencas}"
 
     presencas.each do |presenca|
       informacao_presenca = presenca.css('td')
