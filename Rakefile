@@ -5,7 +5,7 @@ require 'csv'
 include Mongo
 
 desc "Roda todos os testes (javascript e cucumber)"
-task :test => [:features, :jstest]
+task :test => [:spec, :features, :jstest]
 
 desc "Roda os testes de pepino"
 task :features do
@@ -18,6 +18,12 @@ desc "Roda os testes de javascript"
 task :jstest do
   puts "===== Testes de Javascript ====="
   sh 'karma start'
+end
+
+desc "Roda os testes de unidade"
+task :spec do
+  puts "===== Testes de Unidade ====="
+  sh 'bundle exec rspec test/ruby/lib/*'
 end
 
 task :environment do
@@ -46,5 +52,4 @@ task :importar_vereadores do
     h = row.to_hash
     col.save(h)
   end
-  #sh 'mongoimport -d pcv -c vereadors --type csv --file db/vereadores.csv --headerline'
 end
