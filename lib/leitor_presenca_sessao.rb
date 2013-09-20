@@ -19,14 +19,16 @@ class LeitorPresencaEmSessao
 
   def self.puxar_presenca_votacao(data, sessao, tipo_sessao, votacao, tipo_votacao)
     url = URI(URI::encode("http://votacoes.camarapoa.rs.gov.br/parlamentares_nome?data=#{data.strftime("%d/%m/%Y %H:%M:%S")}&sessao=#{sessao}&tiposessao=#{tipo_sessao}&tipovotacao=#{tipo_votacao}&votacao=#{votacao}"))
-    
+
     doc = Nokogiri::HTML(open(url))
-    presencas = doc.css('.list tr:not(:first-of-type)')
+    presencas = doc.css('.list tbody tr')
+    puts "Presenca: #{presencas}"
+
     presencas.each do |presenca|
       informacao_presenca = presenca.css('td')
       nome_parlamentar = informacao_presenca[0].text
       presente = informacao_presenca[2].text != 'Ausente'
-      
+
       p = Presenca.new({
         sessao: sessao,
         votacao: votacao,
@@ -34,7 +36,8 @@ class LeitorPresencaEmSessao
         presenca: presente
       })
       p.save
-      Formatador.display_line "[blue]salvou presença #{p.inspect}[/]"
+
+      puts "Salvando presenca - Sessao: #{sessao}, Votacao: #{votacao}, Parlamentar: #{nome_parlamentar}, presenca: #{presente}"
     end
   end
 
