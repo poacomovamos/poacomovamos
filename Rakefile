@@ -2,6 +2,8 @@ require 'cucumber'
 require 'cucumber/rake/task'
 require 'mongo'
 require 'csv'
+base = File.dirname(__FILE__)
+Dir.glob(base + '/lib/*.rb').each { |f| require f }
 include Mongo
 
 desc "Roda todos os testes (javascript e cucumber)"
