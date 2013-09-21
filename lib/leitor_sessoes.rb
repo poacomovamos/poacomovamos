@@ -1,7 +1,6 @@
 require 'open-uri'
 require 'formatador'
 require 'nokogiri'
-require 'leitor_presenca_sessao'
 
 class LeitorSessoes
   @sessoes = []
