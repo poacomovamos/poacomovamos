@@ -25,7 +25,7 @@ end
 desc "Roda os testes de unidade"
 task :spec do
   puts "===== Testes de Unidade ====="
-  sh 'bundle exec rspec test/ruby/lib/*'
+  sh 'bundle exec rspec test/ruby/lib/*_spec.rb'
 end
 
 task :environment do
