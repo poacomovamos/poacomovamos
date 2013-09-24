@@ -18,8 +18,6 @@ end
 
 get '/api/vereador' do
   content_type :json
-  require('pry'); binding.pry
-  Vereador.last
   Vereador.all.to_json
 end
 
