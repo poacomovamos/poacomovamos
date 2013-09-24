@@ -7,4 +7,5 @@ class Vereador
   key :twitter, String
   key :facebook, String
   key :foto, String
+  key :presente_ultima_sessao, Boolean
 end

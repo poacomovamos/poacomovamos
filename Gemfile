@@ -18,4 +18,5 @@ group :test, :development do
   gem 'rspec'
   gem 'webrat'
   gem 'rake'
+  gem 'racksh'
 end
