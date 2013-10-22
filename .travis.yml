@@ -1,3 +1,5 @@
+services: mongodb
+
 before_script:
   - npm install karma@canary
   - npm install karma-jasmine
@@ -5,4 +7,4 @@ language: ruby
 rvm:
   - "2.0.0"
 
-script: rake test 
+script: rake test
