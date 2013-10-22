@@ -1,0 +1,40 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+VAGRANTFILE_API_VERSION = '2'
+
+Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+  config.vm.box = 'precise32'
+  config.vm.box_url = 'http://files.vagrantup.com/precise32.box'
+  config.vm.network :forwarded_port, guest: 9393, host: 9393
+  config.vm.synced_folder '../', '/poacomovamos'
+
+  config.vm.provision :chef_solo do |chef|
+    chef.add_recipe 'apt'
+    chef.add_recipe 'build-essential'
+    chef.add_recipe 'nodejs'
+    chef.add_recipe 'ruby_build'
+    chef.add_recipe 'rbenv::user'
+    chef.add_recipe 'mongodb::10gen_repo'
+    chef.add_recipe 'mongodb::default'
+    
+    chef.json = {
+      'rbenv' => {
+        'user_installs' => [
+          {
+            'user'    => 'vagrant',
+            'rubies'  => ['2.0.0-p195'],
+            'global'  => '2.0.0-p195',
+            'gems'    => {
+              '2.0.0-p195' => [
+                { 'name'    => 'bundler' }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  end
+
+  config.vm.provision "shell", path: "npm_install_packages.sh"
+end
