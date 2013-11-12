@@ -1,0 +1,18 @@
+[submodule "vagrant-box/cookbooks/apt"]
+	path = vagrant-box/cookbooks/apt
+	url = https://github.com/opscode-cookbooks/apt.git
+[submodule "vagrant-box/cookbooks/nodejs"]
+	path = vagrant-box/cookbooks/nodejs
+	url = https://github.com/mdxp/nodejs-cookbook.git
+[submodule "vagrant-box/cookbooks/ruby_build"]
+	path = vagrant-box/cookbooks/ruby_build
+	url = https://github.com/fnichol/chef-ruby_build.git
+[submodule "vagrant-box/cookbooks/mongodb"]
+	path = vagrant-box/cookbooks/mongodb
+	url = https://github.com/edelight/chef-mongodb.git
+[submodule "vagrant-box/cookbooks/build-essential"]
+	path = vagrant-box/cookbooks/build-essential
+	url = https://github.com/opscode-cookbooks/build-essential.git
+[submodule "vagrant-box/cookbooks/rbenv"]
+	path = vagrant-box/cookbooks/rbenv
+	url = https://github.com/fnichol/chef-rbenv.git
