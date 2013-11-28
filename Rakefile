@@ -11,6 +11,9 @@ include Mongo
 desc "Roda todos os testes (javascript e cucumber)"
 task :test => [:spec, :features, :jstest]
 
+desc "Roda os testes em CI (excluindo JS por enquanto)"
+task :ci => [:spec, :features]
+
 desc "Roda os testes de pepino"
 task :features do
   Cucumber::Rake::Task.new(:features) do |t|
