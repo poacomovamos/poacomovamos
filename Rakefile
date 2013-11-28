@@ -1,7 +1,11 @@
+#encoding: utf-8
+
 require 'cucumber'
+require 'json'
 require 'cucumber/rake/task'
 require 'mongo'
 require 'csv'
+
 base = File.dirname(__FILE__)
 Dir.glob(base + '/lib/*.rb').each { |f| require f }
 include Mongo
@@ -47,7 +51,7 @@ task :importar_vereadores do
   puts db_name
   db.drop_collection('vereadors')
   puts "Importando planilha"
-  data = CSV.read("db/vereadores.csv", :headers => true)
+  data = CSV.read("db/vereadores.csv", :headers => true, :encoding => "UTF-8")
 
   col = db.collection('vereadors')
   data.each do |row|
