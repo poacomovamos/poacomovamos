@@ -23,7 +23,7 @@ end
 desc "Roda os testes de javascript"
 task :jstest do
   puts "===== Testes de Javascript ====="
-  sh './node_modules/.bin/karma start'
+  sh 'karma start'
 end
 
 desc "Roda os testes de unidade"
