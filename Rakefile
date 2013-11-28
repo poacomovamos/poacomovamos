@@ -1,5 +1,3 @@
-#encoding: utf-8
-
 require 'cucumber'
 require 'json'
 require 'cucumber/rake/task'
@@ -23,7 +21,7 @@ end
 desc "Roda os testes de javascript"
 task :jstest do
   puts "===== Testes de Javascript ====="
-  sh '/home/travis/.nvm/v0.10.22/lib/node_modules/karma start'
+  sh 'karma start'
 end
 
 desc "Roda os testes de unidade"
