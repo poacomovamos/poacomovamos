@@ -17,6 +17,7 @@ describe('Controller: vereadores', function() {
 
   it('deve colocar os vereadores no escopo', function() {
     expect($scope.vereadores).toBeDefined();
+    expect($scope.vereadores.length).toBe(5);
   });
 
 });
