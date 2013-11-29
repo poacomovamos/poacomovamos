@@ -11,6 +11,7 @@ gem 'rufus-scheduler'
 gem 'cucumber'
 
 group :test, :development do
+	gem 'cucumber'
   gem 'shotgun'
   gem 'tux'
   gem 'pry'
