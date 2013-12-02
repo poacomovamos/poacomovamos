@@ -9,10 +9,10 @@ Dir.glob(base + '/lib/*.rb').each { |f| require f }
 include Mongo
 
 desc "Roda todos os testes (javascript e cucumber)"
-task :test => [:spec, :features, :jstest]
+task :test => [:spec, :jstest]#:features, :jstest]
 
 desc "Roda os testes em CI (excluindo JS por enquanto)"
-task :ci => [:spec, :features]
+task :ci => [:spec] #:features]
 
 #desc "Roda os testes de pepino"
 #task :features do
