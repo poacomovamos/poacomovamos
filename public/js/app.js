@@ -16,7 +16,7 @@ angular.module('poaComoVamos', ['poaComoVamos.servicos', 'poaComoVamos.filters',
       })
       .when('/perfil', {
         templateUrl: '../views/perfil.html',
-        controller: 'PerfilCtrl'
+        controller: 'PerfilCtrl',
         resolve: {
           //$resource.query não retorna uma promise, retorna um object ou array que sera populado quando devido
           perfil: function(Vereadores) { return Vereadores.query() }
