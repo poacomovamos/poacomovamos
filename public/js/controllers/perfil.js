@@ -11,6 +11,6 @@ angular.module('poaComoVamos').
 
 
       //Projetos aqui embaixo
-      $scope.voto = voto;
+      $scope.vereadores.voto = vereadores.voto;
 
 }]);
