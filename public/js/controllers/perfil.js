@@ -1,6 +1,7 @@
 'use strict';
 
 angular.module('poaComoVamos').
+
   controller('PerfilCtrl', ['$scope', 'vereadores', '$routeParams', function ($scope, vereadores, $routeParams) {
 
       //Perfil aqui embaixo
@@ -10,5 +11,6 @@ angular.module('poaComoVamos').
 
 
       //Projetos aqui embaixo
+      $scope.voto = voto;
 
 }]);

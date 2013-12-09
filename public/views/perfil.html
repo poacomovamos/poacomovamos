@@ -1,5 +1,5 @@
 <!-- perfil do vereador aqui sem os projetos -->
-<div>
+<div ng-controller="PerfilCtrl">
 
   <h1>Perfil</h1>
 
@@ -25,8 +25,42 @@
 </div>
 
 <!-- projetos dos vereadores aqui -->
-<div>
+<div class="hero-unit projetos">
 
   <h1>Projetos</h1>
+
+  <div style="border: solid 1px black; margin-top: 20px;">
+    Grafico
+    <p>Voto: {{voto}}</p>
+    <p>Absteve-se: {{absteve}}</p>
+    <p>Representação Externa: {{repExterna}}</p>
+    <p>Ausente: {{ausente}}</p>
+  </div>
+
+
+  <div style="border: solid 1px black; margin-top: 20px;">
+    <p>Total de votos: 140</p>
+    <div class="left">
+      <p>Voto</p>
+      <p>35</p>
+    </div>
+
+    <div class="left">
+      <p>Absteve-se</p>
+      <p>35</p>
+    </div>
+
+    <div class="left">
+      <p>Representação Externa</p>
+      <p>35</p>
+    </div>
+
+    <div class="left">
+      <p>Ausente</p>
+      <p>35</p>
+    </div>
+
+    <div class="clear"></div>
+  </div>
 
 </div>

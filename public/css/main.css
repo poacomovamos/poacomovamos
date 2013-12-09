@@ -115,3 +115,15 @@ dd.email {
     line-height: 1;
     letter-spacing: -1px;
 }
+
+.projetos {
+  color: white;
+}
+
+.left {
+  float: left;
+}
+
+.clear {
+  clear: both;
+}
