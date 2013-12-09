@@ -14,12 +14,12 @@ angular.module('poaComoVamos', ['poaComoVamos.servicos', 'poaComoVamos.filters',
           vereadores: function(Vereadores) { return Vereadores.query() }
         }
       })
-      .when('/perfil', {
+      .when('/perfil/:email', {
         templateUrl: '../views/perfil.html',
         controller: 'PerfilCtrl',
         resolve: {
           //$resource.query não retorna uma promise, retorna um object ou array que sera populado quando devido
-          perfil: function(Vereadores) { return Vereadores.query() }
+          vereadores: function(Vereadores) { return Vereadores.query() }
         }
       })
       .otherwise({

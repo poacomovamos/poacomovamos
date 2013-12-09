@@ -3,6 +3,25 @@
 
   <h1>Perfil</h1>
 
+  <div class="hero-unit">
+	  {{vereadoress | json}}
+	  <div class="vereador" ng-repeat="vereador in vereadores">
+	    <ul class="inline">
+	      <li class="picture"><img ng-src="../img/vereadores/{{vereador.foto}}" class="vereador"></li>
+	      <li class="description">
+	      <dl >
+	        <dt>{{vereador.nome}} ({{vereador.partido}}) <i ng-class="{ true: 'icon-ok', false: 'icon-remove' }[vereador.presencaUltimaSessao]"></i></dt>
+	        <dd class="email"><a href="mailto:#">{{vereador.email}}</a></dd>
+	      </dl>
+	      </li>
+	      <li class="social">
+	        <a href="http://twitter.com/{{vereador.twitter}}"><img ng-src="../img/twitter-bird-light-bgs.png" class="twitter-icon"></a>
+	        <a href="{{vereador.facebook}}"><img ng-src="../img/FB-f-Logo__blue_50.png" class="twitter-icon"></a>
+	      </li>
+	    </ul>
+	  </div>
+	</div>
+
 </div>
 
 <!-- projetos dos vereadores aqui -->
@@ -12,10 +31,10 @@
 
   <div style="border: solid 1px black; margin-top: 20px;">
     Grafico
-    <p>Voto: 35</p>
-    <p>Absteve-se: 35</p>
-    <p>Representação Externa: 35</p>
-    <p>Ausente: 35</p>
+    <p>Voto: {{voto}}</p>
+    <p>Absteve-se: {{absteve}}</p>
+    <p>Representação Externa: {{repExterna}}</p>
+    <p>Ausente: {{ausente}}</p>
   </div>
 
 
