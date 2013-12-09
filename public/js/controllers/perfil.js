@@ -7,7 +7,9 @@ angular.module('poaComoVamos').
       //Perfil aqui embaixo
       $scope.vereadores = vereadores;
 
-      console.log($routeParams.email);
+      //$routeParams.email
+
+      //console.log($routeParams.email);
 
 
       //Projetos aqui embaixo
