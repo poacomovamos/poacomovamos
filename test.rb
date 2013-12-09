@@ -19,22 +19,26 @@ class TestMain < Test::Unit::TestCase
 	end
 
 	def testa_link_com_proj
-		@site.abrir_o_link_da_ultima_sessao_com_projeto 
-		assert_equal('PLL 157/13 - PROC. 1587/13',@site.abrir_o_ultimo_projeto_da_ultima_sessao)
+		@site.abrir_o_link_da_ultima_sessao_com_projeto
+		@site.pegar_desc_do_ultimo_projeto_da_ultima_sessao 
+		assert_equal('PLL 157/13 - PROC. 1587/13',@site.pegar_desc_do_ultimo_projeto_da_ultima_sessao)
 	end
 
 	def testa_abrir_o_proj_daquela_sessao
+		@site.abrir_o_link_da_ultima_sessao_com_projeto 
 		@site.pegar_o_ultimo_projeto_da_ultima_sessao
-		assert_equal('http://votacoes.camarapoa.rs.gov.br/parlamentares?data=04%2F12%2F2013+00%3A00%3A00&sessao=119&tiposessao=O&tipovotacao=N&votacao=N194',@site.pegar_o_ultimo_projeto_da_ultima_sessao)
+		assert_equal('/parlamentares?data=04%2F12%2F2013+00%3A00%3A00&sessao=119&tiposessao=O&tipovotacao=N&votacao=N194',@site.pegar_o_ultimo_projeto_da_ultima_sessao)
 	end
 
 	def  testa_pegar_o_link_das_presencas
+		@site.ultima_sessao
+		@site.link_ultima_sessao
 		@site.abrir_o_link_da_ultima_sessao_com_projeto
-		@site.abrir_o_ultimo_projeto_da_ultima_sessao
+		@site.pegar_desc_do_ultimo_projeto_da_ultima_sessao
 		@site.pegar_o_ultimo_projeto_da_ultima_sessao
 		@site.abrir_o_link_do_projeto
-		@site.pegar_o_link_das_presencas_dos_vereadores_naquele_projeto
+		@site.pegar_o_link_que_ordena_por_nome_as_presencas_dos_vereadores_naquele_projeto
 
-		assert_equal('/parlamentares_nome?data=04%2F12%2F2013+00%3A00%3A00&sessao=119&tiposessao=O&tipovotacao=N&votacao=N201', @site.pegar_o_link_das_presencas_dos_vereadores_naquele_projeto.to_s)
+		assert_equal('/parlamentares_nome?data=04%2F12%2F2013+00%3A00%3A00&sessao=119&tiposessao=O&tipovotacao=N&votacao=N194', @site.pegar_o_link_que_ordena_por_nome_as_presencas_dos_vereadores_naquele_projeto.to_s)
 	end
 end
