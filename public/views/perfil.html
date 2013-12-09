@@ -1,5 +1,5 @@
 <!-- perfil do vereador aqui sem os projetos -->
-<div>
+<div ng-controller="PerfilCtrl">
 
   <h1>Perfil</h1>
 
@@ -12,10 +12,10 @@
 
   <div style="border: solid 1px black; margin-top: 20px;">
     Grafico
-    <p>Voto: 35</p>
-    <p>Absteve-se: 35</p>
-    <p>Representação Externa: 35</p>
-    <p>Ausente: 35</p>
+    <p>Voto: {{voto}}</p>
+    <p>Absteve-se: {{absteve}}</p>
+    <p>Representação Externa: {{repExterna}}</p>
+    <p>Ausente: {{ausente}}</p>
   </div>
 
 
