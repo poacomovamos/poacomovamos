@@ -2,7 +2,11 @@
   {{vereadoress | json}}
   <div class="vereador" ng-repeat="vereador in vereadores | embaralhar">
     <ul class="inline">
-      <li class="picture"><img ng-src="../img/vereadores/{{vereador.foto}}" class="vereador"></li>
+      <li class="picture">
+       <a href="#/perfil/{{vereador.email}}">
+         <img ng-src="../img/vereadores/{{vereador.foto}}" class="vereador">
+       </a>
+      </li>
       <li class="description">
       <dl >
         <dt>{{vereador.nome}} ({{vereador.partido}}) <i ng-class="{ true: 'icon-ok', false: 'icon-remove' }[vereador.presencaUltimaSessao]"></i></dt>
