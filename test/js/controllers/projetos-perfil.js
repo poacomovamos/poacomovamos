@@ -24,7 +24,7 @@ describe('Controller: Perfil', function(){
   }));
 
   it('verifica existem votos', function() {
-   // expect($scope.voto).toBeDefined();
+    expect($scope.voto).toBe(10);
   });
 
 
