@@ -37,5 +37,4 @@ class TestMain < Test::Unit::TestCase
 
 		assert_equal('/parlamentares_nome?data=04%2F12%2F2013+00%3A00%3A00&sessao=119&tiposessao=O&tipovotacao=N&votacao=N201', @site.pegar_o_link_das_presencas_dos_vereadores_naquele_projeto.to_s)
 	end
-
 end
