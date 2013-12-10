@@ -22,7 +22,24 @@ get '/api/vereador' do
 end
 
 get '/api/perfil/:email' do
-  params[:email]
+  content_type :json
+  #pegar vereador e projetos do banco, exemplo de estrtura
+  {
+    email: "ferronato@camarapoa.rs.gov.br",
+    facebook: "https://www.facebook.com/airtoferronato",
+    foto: "airtoferronato2.jpg",
+    id: "52a09faf93072f18e5000001",
+    nome: "Airto Ferronato",
+    partido: "PSB",
+    telefone: "4221/4222/4223",
+    twitter: "@AirtoFerronato",
+    projetosVotos: {
+      voto: 10,
+      absteve: 20,
+      repExterna: 30,
+      ausente: 40
+    }
+  }.to_json
 end
 
 get '/api/sessoes' do

@@ -19,7 +19,7 @@ angular.module('poaComoVamos', ['poaComoVamos.servicos', 'poaComoVamos.filters',
         controller: 'PerfilCtrl',
         resolve: {
           //$resource.query não retorna uma promise, retorna um object ou array que sera populado quando devido
-          perfil: function(Perfil) { return Perfil.query( { test :  function(params) { return params.email;}() } )}
+          perfil: function($route, Perfil) { return Perfil.query( { email: $route.current.params.email } ) }
         }
       })
       .otherwise({
