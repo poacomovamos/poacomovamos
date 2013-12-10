@@ -4,13 +4,13 @@ angular.module('poaComoVamos').
 
   controller('PerfilCtrl', ['$scope', 'vereadores', '$routeParams', function ($scope, vereadores, $routeParams) {
 
-      //Perfil aqui embaixo
-      $scope.vereadores = vereadores;
+  //Perfil aqui embaixo
+  $scope.vereadores = vereadores;
 
-      console.log($routeParams.email);
+  console.log($routeParams.email);
 
 
-      //Projetos aqui embaixo
-      $scope.vereadores.voto = vereadores.voto;
+  //Projetos aqui embaixo
+  $scope.projetosVotos = vereadores.projetosVotos;
 
 }]);

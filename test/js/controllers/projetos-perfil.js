@@ -14,18 +14,21 @@ describe('Controller: Perfil', function(){
     ctrl = $controller('PerfilCtrl', {
       $scope: $scope,
       vereadores: {
-        voto: 10,
-        absteve: 10
+        projetosVotos: {
+          voto: 10,
+          absteve: 10,
+          repExterna: 20,
+          ausente: 30
+        }
       }
     });
-
-
   }));
 
   it('verifica existem votos', function() {
-    expect($scope.vereadores.voto).toBe(10);
-    expect($scope.vereadores.absteve).toBe(10);
+    expect($scope.projetosVotos.voto).toBe(10);
+    expect($scope.projetosVotos.absteve).toBe(10);
+    expect($scope.projetosVotos.repExterna).toBe(20);
+    expect($scope.projetosVotos.ausente).toBe(30);
   });
-
 
 });
