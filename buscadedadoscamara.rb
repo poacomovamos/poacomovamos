@@ -43,17 +43,49 @@ class Buscadedados
 	end
 
 	def salva_dados_do_projeto
-		@nome = @html_do_projeto.css('div.box.no-box b').text
-		#@descricao = @html_do_projeto.css()
-		@status = @html_do_projeto.css('div.box.no-box')[10].text
-		#@autor = @html_do_projeto.css()
-		@voto.sim = @html_do_projeto.css()
-		@voto.nao = @html_do_projeto.css()
-		@voto.abistevese = @html_do_projeto.css()
-		@voto.ausente = @html_do_projeto.css()
-		@voto.representante_externo = @html_do_projeto.css()
-	end
 
+		puts @nome = @html_do_projeto.css('div.box.no-box b')[0].text.split(' ')[1..-1].join(' ')
+		#@descricao = @html_do_projeto.css()
+		@status = @html_do_projeto.css('div.box.no-box').text
+		#@autor = @html_do_projeto.css()
+
+		#pegar os dados da tabela e separar pelo tipo de voto do veriador e salvar o id dele		
+
+=begin
+		@tipodevoto = ''
+		for i in 0...35
+
+   		@tipodevoto = @html_da_lista_do_projeto.css('table.list tr td:nth-child(3)')[i].text
+
+   		puts '----------------------------------------------------------------'
+
+   		if "Sim" == @tipodevoto
+   			puts "Sim"
+   			puts @html_da_lista_do_projeto.css('table.list tr td:nth-child(1)')[i].text
+   		end
+
+   		if @tipodevoto.include? "voto"
+   			puts "Nao votou"
+   			puts @html_da_lista_do_projeto.css('table.list tr td:nth-child(1)')[i].text
+   		end
+
+   		if "Ausente" == @tipodevoto
+   			puts "Ausente"
+   			puts @html_da_lista_do_projeto.css('table.list tr td:nth-child(1)')[i].text
+   		end
+
+   		if @tipodevoto.include? "Absten"
+   			puts "Abstencao"
+   			puts @html_da_lista_do_projeto.css('table.list tr td:nth-child(1)')[i].text
+   		end
+
+   		if @tipodevoto.include? "Representa"
+   			puts "Representacao externa"
+   			puts @html_da_lista_do_projeto.css('table.list tr td:nth-child(1)')[i].text
+   		end 
+   	end
+=end   	
+	end
 
 
 
@@ -67,3 +99,6 @@ bd.pegar_desc_do_ultimo_projeto_da_ultima_sessao
 bd.pegar_o_ultimo_projeto_da_ultima_sessao
 bd.abrir_o_link_do_projeto
 bd.pegar_o_link_que_ordena_por_nome_as_presencas_dos_vereadores_naquele_projeto
+
+bd.correr_a_lista_de_presencas_do_projeto
+bd.salva_dados_do_projeto
