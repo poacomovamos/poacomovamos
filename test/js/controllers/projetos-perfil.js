@@ -3,7 +3,7 @@
 describe('Controller: Perfil', function(){
 
   var $scope, ctrl;
-  var vereadores;
+  var perfil;
 
   beforeEach(module('poaComoVamos'));
 
@@ -13,7 +13,7 @@ describe('Controller: Perfil', function(){
 
     ctrl = $controller('PerfilCtrl', {
       $scope: $scope,
-      vereadores: {
+      perfil: {
         projetosVotos: {
           voto: 10,
           absteve: 10,

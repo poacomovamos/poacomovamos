@@ -21,6 +21,10 @@ get '/api/vereador' do
   Vereador.all.to_json
 end
 
+get '/api/perfil/:email' do
+  params[:email]
+end
+
 get '/api/sessoes' do
   content_type :json
   Sessao.all.to_json

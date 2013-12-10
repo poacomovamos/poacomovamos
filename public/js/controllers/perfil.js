@@ -2,15 +2,14 @@
 
 angular.module('poaComoVamos').
 
-  controller('PerfilCtrl', ['$scope', 'vereadores', '$routeParams', function ($scope, vereadores, $routeParams) {
+  controller('PerfilCtrl', ['$scope', 'perfil', '$routeParams', function ($scope, perfil, $routeParams) {
 
   //Perfil aqui embaixo
-  $scope.vereadores = vereadores;
+  $scope.perfil = perfil;
 
-  console.log($routeParams.email);
 
 
   //Projetos aqui embaixo
-  $scope.projetosVotos = vereadores.projetosVotos;
+  $scope.projetosVotos = perfil.projetosVotos;
 
 }]);
