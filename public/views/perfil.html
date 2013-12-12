@@ -31,33 +31,33 @@
 
   <div style="border: solid 1px black; margin-top: 20px;">
     Grafico
-    <p>Voto: {{vereadorProjeto.voto}}</p>
-    <p>Absteve-se: {{vereadorProjeto.absteve}}</p>
-    <p>Representação Externa: {{vereadorProjeto.repExterna}}</p>
-    <p>Ausente: {{vereadorProjeto.ausente}}</p>
+    <p>Voto: {{perfil[0].projetosVotos.voto}}</p>
+    <p>Absteve-se: {{perfil[0].projetosVotos.absteve}}</p>
+    <p>Representação Externa: {{perfil[0].projetosVotos.repExterna}}</p>
+    <p>Ausente: {{perfil[0].projetosVotos.ausente}}</p>
   </div>
 
 
   <div style="border: solid 1px black; margin-top: 20px;">
-    <p>Total de votos: {{vereadorProjeto.totalVoto}}</p>
+    <p>Total de votos: {{perfil[0].projetosVotos.voto + perfil[0].projetosVotos.absteve + perfil[0].projetosVotos.repExterna + perfil[0].projetosVotos.ausente}}</p>
     <div class="left">
       <p>Voto</p>
-      <p>{{vereadorProjeto.voto}}</p>
+      <p>{{perfil[0].projetosVotos.voto}}</p>
     </div>
 
     <div class="left">
       <p>Absteve-se</p>
-      <p>{{vereadorProjeto.absteve}}</p>
+      <p>{{perfil[0].projetosVotos.absteve}}</p>
     </div>
 
     <div class="left">
       <p>Representação Externa</p>
-      <p>{{vereadorProjeto.repExterna}}</p>
+      <p>{{perfil[0].projetosVotos.repExterna}}</p>
     </div>
 
     <div class="left">
       <p>Ausente</p>
-      <p>{{vereadorProjeto.ausente}}</p>
+      <p>{{perfil[0].projetosVotos.ausente}}</p>
     </div>
 
     <div class="clear"></div>

@@ -35,7 +35,7 @@ get '/api/perfil/:email' do
     twitter: "@AirtoFerronato",
     projetosVotos: {
       voto: 10,
-      absteve: 20,
+      absteve: 100,
       repExterna: 30,
       ausente: 40
     }
