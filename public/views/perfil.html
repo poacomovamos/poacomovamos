@@ -1,9 +1,6 @@
 <!-- perfil do vereador aqui sem os projetos -->
-<div class="container">
-
-  <div class="row row-offcanvas row-offcanvas-left">    
-
-    <div role="navigation" id="sidebar" class="col-xs-6 col-sm-3 sidebar-offcanvas">
+<div class="container"> 
+    <div class="col-md-6">        
       <h1>Perfil</h1>
       <div class="hero-unit">
     	  {{vereadoress | json}}
@@ -26,7 +23,7 @@
     </div>    
 
     <!-- projetos dos vereadores aqui -->
-    <div class="col-xs-12 col-sm-9">
+    <div class="col-md-6">
       <div class="hero-unit projetos">
 
         <h1>Projetos</h1>
@@ -61,7 +58,7 @@
             <p>Ausente</p>
             <p>{{perfil[0].projetosVotos.ausente}}</p>
           </div>
-
-  </div>
-
+        </div>
+      </div>
+    </div>
 </div>
