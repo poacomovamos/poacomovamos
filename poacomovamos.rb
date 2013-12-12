@@ -24,7 +24,7 @@ end
 get '/api/perfil/:email' do
   content_type :json
   #pegar vereador e projetos do banco, exemplo de estrtura
-  {
+  { vereador: {
     email: "ferronato@camarapoa.rs.gov.br",
     facebook: "https://www.facebook.com/airtoferronato",
     foto: "airtoferronato2.jpg",
@@ -39,7 +39,7 @@ get '/api/perfil/:email' do
       repExterna: 30,
       ausente: 40
     }
-  }.to_json
+  }}.to_json
 end
 
 get '/api/sessoes' do
