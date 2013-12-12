@@ -8,7 +8,7 @@ angular.module('poaComoVamos').
   //Perfil aqui embaixo
 
 
-  //Perfil aqui embaixo
+  //Projetos aqui embaixo
   $scope.perfil = perfil;
 
 
