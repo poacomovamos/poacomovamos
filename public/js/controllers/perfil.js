@@ -6,11 +6,10 @@ angular.module('poaComoVamos').
 
 
   //Perfil aqui embaixo
-  
+
 
 
   //Projetos aqui embaixo
   $scope.perfil = perfil;
-
 
 }]);

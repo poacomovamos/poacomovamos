@@ -25,7 +25,8 @@ get '/api/perfil/:email' do
   content_type :json
   #pegar vereador e projetos do banco, exemplo de estrtura
 
-  Vereador.first(:email => params[:email]).to_json
+  #GAMBI! Descobrir como isso funciona
+  { vereadores:  Vereador.first(:email => params[:email]) }.to_json
 
 end
 
