@@ -18,6 +18,7 @@ body {
   width: 940px;
   text-align: center;
   z-index: 0;
+  color: #000000;
 }
 
 .blue {
@@ -94,6 +95,16 @@ img.vereador {
   width: 7%;
 }
 
+div.perfilvereador {
+  text-align: center;
+  margin-top: 20px;
+}
+
+img.perfilvereador {
+  height: 140px;
+  width: 50%;
+}
+
 dd.email {
   font-size: 0.8em;
 }
@@ -126,4 +137,8 @@ dd.email {
 
 .clear {
   clear: both;
+}
+
+.panel{
+  padding-bottom: 10px;
 }
