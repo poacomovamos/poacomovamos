@@ -1,24 +1,28 @@
-<div class="content">
+<div class="contentvereadores-ext">
   <div class="hero-unit">
+    <div class="contentvereadores-int">
     {{vereadoress | json}}
     <div class="vereador" ng-repeat="vereador in vereadores | embaralhar">
-      <ul class="inline">
-        <li class="picture">
-         <a href="#/perfil/{{vereador.email}}">
-           <img ng-src="../img/vereadores/{{vereador.foto}}" class="vereador">
-         </a>
-        </li>
-        <li class="description">
-        <dl >
-          <dt><a href="/#/perfil/{{vereador.email}}"> {{vereador.nome}} ({{vereador.partido}}) </a><i ng-class="{ true: 'icon-ok', false: 'icon-remove' }[vereador.presencaUltimaSessao]"></i></dt>
-          <dd class="email"><a href="mailto:#">{{vereador.email}}</a></dd>
-        </dl>
-        </li>
-        <li class="social">
-          <a href="http://twitter.com/{{vereador.twitter}}"><img ng-src="../img/twitter-bird-light-bgs.png" class="twitter-icon"></a>
-          <a href="{{vereador.facebook}}"><img ng-src="../img/FB-f-Logo__blue_50.png" class="twitter-icon"></a>
-        </li>
-      </ul>
+      <div class="well">
+        <ul>
+          <li class="picture">
+           <a href="#/perfil/{{vereador.email}}">
+             <img ng-src="../img/vereadores/{{vereador.foto}}" class="vereador img-rounded">
+           </a>
+          </li>
+          <li class="description">
+          <dl >
+            <dt><a href="/#/perfil/{{vereador.email}}"> {{vereador.nome}} ({{vereador.partido}}) </a><i ng-class="{ true: 'icon-ok', false: 'icon-remove' }[vereador.presencaUltimaSessao]"></i></dt>
+            <dd class="email"><a href="mailto:#">{{vereador.email}}</a></dd>
+          </dl>
+          </li>
+          <li class="social">
+            <a href="http://twitter.com/{{vereador.twitter}}"><img ng-src="../img/twitter-bird-light-bgs.png" class="twitter-icon"></a>
+            <a href="{{vereador.facebook}}"><img ng-src="../img/FB-f-Logo__blue_50.png" class="twitter-icon"></a>
+          </li>
+        </ul>
+      </div>
+    </div>
     </div>
   </div>
 </div>

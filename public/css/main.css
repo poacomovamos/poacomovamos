@@ -66,33 +66,34 @@ li.option a:hover {
 
 div.vereador {
   width: 45%;
-  height: 130px;
   float: left;
   margin: 10px;
   font-size: 0.8em;
 }
 
 img.vereador {
-  height: 120px;
+  height: 140px;
   width: 100%;
 }
 
 .vereador ul li {
   margin: 0px;
   float: left;
+  list-style-type: none;
 }
 
 .vereador ul li.picture {
-  width: 23%;
+  width: 25%;
 }
 .vereador ul li.description {
   width: 60%;
   height: 120px;
-  background-color: white;
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
 .vereador ul li.social {
-  width: 7%;
+  width: 10%;
 }
 
 div.perfilvereador {
@@ -111,13 +112,13 @@ dd.email {
 
 .hero-unit {
     margin: 0 auto;
-    width: 940px;
-    font-size: 18px;
+    width: 940px;    
     font-weight: 200;
-    line-height: 30px;
+    line-height: 30px;   
+    padding: 20px;
     background-color: #2D3E4F;
     border-radius: 6px;
-    padding: 20px;
+    font-size: 18px;
     float: left;
 }
 
@@ -141,4 +142,23 @@ dd.email {
 
 .panel{
   padding-bottom: 10px;
+}
+
+.well {
+  height: auto;
+  float: left;
+}
+
+.contentvereadores-ext {
+  margin: 0 auto;
+  width: 940px;
+  z-index: 0;
+  color: #000000;
+}
+
+.contentvereadores-int {
+  margin: 0 auto;
+  width: 955px;
+  z-index: 0;
+  color: #000000;
 }
