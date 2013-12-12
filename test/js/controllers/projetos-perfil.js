@@ -25,10 +25,10 @@ describe('Controller: Perfil', function(){
   }));
 
   it('verifica existem votos', function() {
-    expect($scope.projetosVotos.voto).toBe(10);
-    expect($scope.projetosVotos.absteve).toBe(10);
-    expect($scope.projetosVotos.repExterna).toBe(20);
-    expect($scope.projetosVotos.ausente).toBe(30);
+    expect($scope.perfil.projetosVotos.voto).toBe(10);
+    expect($scope.perfil.projetosVotos.absteve).toBe(10);
+    expect($scope.perfil.projetosVotos.repExterna).toBe(20);
+    expect($scope.perfil.projetosVotos.ausente).toBe(30);
   });
 
 });
