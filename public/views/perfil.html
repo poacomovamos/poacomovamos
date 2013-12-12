@@ -2,7 +2,7 @@
 <div>
 
   <h1>Perfil</h1>
-
+{{perfil[0].facebook}}
   <div class="hero-unit">
 	  {{vereadoress | json}}
 	  <div class="vereador" ng-repeat="vereador in perfil">
@@ -31,33 +31,33 @@
 
   <div style="border: solid 1px black; margin-top: 20px;">
     Grafico
-    <p>Voto: {{voto}}</p>
-    <p>Absteve-se: {{absteve}}</p>
-    <p>Representação Externa: {{repExterna}}</p>
-    <p>Ausente: {{ausente}}</p>
+    <p>Voto: {{vereadorProjeto.voto}}</p>
+    <p>Absteve-se: {{vereadorProjeto.absteve}}</p>
+    <p>Representação Externa: {{vereadorProjeto.repExterna}}</p>
+    <p>Ausente: {{vereadorProjeto.ausente}}</p>
   </div>
 
 
   <div style="border: solid 1px black; margin-top: 20px;">
-    <p>Total de votos: 140</p>
+    <p>Total de votos: {{vereadorProjeto.totalVoto}}</p>
     <div class="left">
       <p>Voto</p>
-      <p>35</p>
+      <p>{{vereadorProjeto.voto}}</p>
     </div>
 
     <div class="left">
       <p>Absteve-se</p>
-      <p>35</p>
+      <p>{{vereadorProjeto.absteve}}</p>
     </div>
 
     <div class="left">
       <p>Representação Externa</p>
-      <p>35</p>
+      <p>{{vereadorProjeto.repExterna}}</p>
     </div>
 
     <div class="left">
       <p>Ausente</p>
-      <p>35</p>
+      <p>{{vereadorProjeto.ausente}}</p>
     </div>
 
     <div class="clear"></div>
