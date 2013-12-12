@@ -11,5 +11,6 @@ angular.module('poaComoVamos').
 
   //Projetos aqui embaixo
   $scope.projetosVotos = perfil.projetosVotos;
+  console.log(perfil);
 
 }]);
