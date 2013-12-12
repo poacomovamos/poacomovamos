@@ -1,66 +1,74 @@
 <!-- perfil do vereador aqui sem os projetos -->
-<div>
+<div class="container">
 
-  <h1>Perfil</h1>
-{{perfil[0].facebook}}
-  <div class="hero-unit">
-	  {{vereadoress | json}}
-	  <div class="vereador" ng-repeat="vereador in perfil">
-	    <ul class="inline">
-	      <li class="picture"><img ng-src="../img/vereadores/{{vereador.foto}}" class="vereador"></li>
-	      <li class="description">
-	      <dl >
-	        <dt>{{vereador.nome}} ({{vereador.partido}}) <i ng-class="{ true: 'icon-ok', false: 'icon-remove' }[vereador.presencaUltimaSessao]"></i></dt>
-	        <dd class="email"><a href="mailto:#">{{vereador.email}}</a></dd>
-	      </dl>
-	      </li>
-	      <li class="social">
-	        <a href="http://twitter.com/{{vereador.twitter}}"><img ng-src="../img/twitter-bird-light-bgs.png" class="twitter-icon"></a>
-	        <a href="{{vereador.facebook}}"><img ng-src="../img/FB-f-Logo__blue_50.png" class="twitter-icon"></a>
-	      </li>
-	    </ul>
-	  </div>
-	</div>
+  <div class="row row-offcanvas row-offcanvas-left">    
 
-</div>
+    <div role="navigation" id="sidebar" class="col-xs-6 col-sm-3 sidebar-offcanvas">
+      <h1>Perfil</h1>
+      <div class="hero-unit">
+    	  {{vereadoress | json}}
+    	  <div class="vereador">
+    	    <ul class="inline">
+    	      <li class="picture"><img ng-src="../img/vereadores/{{perfil[0].foto}}" class="vereador"></li>
+    	      <li class="description">
+    	      <dl >
+    	        <dt>{{perfil[0].nome}} ({{perfil[0].partido}}) <i ng-class="{ true: 'icon-ok', false: 'icon-remove' }[vereador.presencaUltimaSessao]"></i></dt>
+    	        <dd class="email"><a href="mailto:#">{{perfil[0].email}}</a></dd>
+    	      </dl>
+    	      </li>
+    	      <li class="social">
+    	        <a href="http://twitter.com/{{perfil[0].twitter}}"><img ng-src="../img/twitter-bird-light-bgs.png" class="twitter-icon"></a>
+    	        <a href="{{perfil[0].facebook}}"><img ng-src="../img/FB-f-Logo__blue_50.png" class="twitter-icon"></a>
+    	      </li>
+    	    </ul>
+    	  </div>
+    	</div>
+    </div>    
 
-<!-- projetos dos vereadores aqui -->
-<div class="hero-unit projetos">
+    <!-- projetos dos vereadores aqui -->
+    <div class="col-xs-12 col-sm-9">
+      <div class="hero-unit projetos">
 
-  <h1>Projetos</h1>
+        <h1>Projetos</h1>
 
-  <div style="border: solid 1px black; margin-top: 20px;">
-    Grafico
-    <p>Voto: {{vereadorProjeto.voto}}</p>
-    <p>Absteve-se: {{vereadorProjeto.absteve}}</p>
-    <p>Representação Externa: {{vereadorProjeto.repExterna}}</p>
-    <p>Ausente: {{vereadorProjeto.ausente}}</p>
-  </div>
+        <div style="border: solid 1px black; margin-top: 20px;">
+          Grafico
+          <p>Voto: {{vereadorProjeto.voto}}</p>
+          <p>Absteve-se: {{vereadorProjeto.absteve}}</p>
+          <p>Representação Externa: {{vereadorProjeto.repExterna}}</p>
+          <p>Ausente: {{vereadorProjeto.ausente}}</p>
+        </div>
 
 
-  <div style="border: solid 1px black; margin-top: 20px;">
-    <p>Total de votos: {{vereadorProjeto.totalVoto}}</p>
-    <div class="left">
-      <p>Voto</p>
-      <p>{{vereadorProjeto.voto}}</p>
+        <div style="border: solid 1px black; margin-top: 20px;">
+          <p>Total de votos: {{vereadorProjeto.totalVoto}}</p>
+          <div class="left">
+            <p>Voto</p>
+            <p>{{vereadorProjeto.voto}}</p>
+          </div>
+
+          <div class="left">
+            <p>Absteve-se</p>
+            <p>{{vereadorProjeto.absteve}}</p>
+          </div>
+
+          <div class="left">
+            <p>Representação Externa</p>
+            <p>{{vereadorProjeto.repExterna}}</p>
+          </div>
+
+          <div class="left">
+            <p>Ausente</p>
+            <p>{{vereadorProjeto.ausente}}</p>
+          </div>
+
+          <div class="clear"></div>
+        </div>
+
+      </div>
+
     </div>
 
-    <div class="left">
-      <p>Absteve-se</p>
-      <p>{{vereadorProjeto.absteve}}</p>
-    </div>
-
-    <div class="left">
-      <p>Representação Externa</p>
-      <p>{{vereadorProjeto.repExterna}}</p>
-    </div>
-
-    <div class="left">
-      <p>Ausente</p>
-      <p>{{vereadorProjeto.ausente}}</p>
-    </div>
-
-    <div class="clear"></div>
   </div>
 
 </div>
