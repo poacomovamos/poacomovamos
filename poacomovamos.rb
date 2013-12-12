@@ -40,7 +40,7 @@ get '/api/perfil/:email' do
       repExterna: 30,
       ausente: 40
     }
-  }}
+  }}.to_json
 
 end
 
