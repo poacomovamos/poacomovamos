@@ -10,7 +10,7 @@
         </li>
         <li class="description">
         <dl >
-          <dt>{{vereador.nome}} ({{vereador.partido}}) <i ng-class="{ true: 'icon-ok', false: 'icon-remove' }[vereador.presencaUltimaSessao]"></i></dt>
+          <dt><a href="/#/perfil/{{vereador.email}}"> {{vereador.nome}} ({{vereador.partido}}) </a><i ng-class="{ true: 'icon-ok', false: 'icon-remove' }[vereador.presencaUltimaSessao]"></i></dt>
           <dd class="email"><a href="mailto:#">{{vereador.email}}</a></dd>
         </dl>
         </li>
