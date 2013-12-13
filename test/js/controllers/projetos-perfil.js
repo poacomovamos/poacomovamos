@@ -3,7 +3,7 @@
 describe('Controller: Perfil', function(){
 
   var $scope, ctrl;
-  var vereadores;
+  var perfil;
 
   beforeEach(module('poaComoVamos'));
 
@@ -13,19 +13,22 @@ describe('Controller: Perfil', function(){
 
     ctrl = $controller('PerfilCtrl', {
       $scope: $scope,
-      vereadores: {
-        voto: 10,
-        absteve: 10
+      perfil: {
+        projetosVotos: {
+          voto: 10,
+          absteve: 10,
+          repExterna: 20,
+          ausente: 30
+        }
       }
     });
-
-
   }));
 
   it('verifica existem votos', function() {
-    expect($scope.vereadores.voto).toBe(10);
-    expect($scope.vereadores.absteve).toBe(10);
+    expect($scope.perfil.projetosVotos.voto).toBe(10);
+    expect($scope.perfil.projetosVotos.absteve).toBe(10);
+    expect($scope.perfil.projetosVotos.repExterna).toBe(20);
+    expect($scope.perfil.projetosVotos.ausente).toBe(30);
   });
-
 
 });
