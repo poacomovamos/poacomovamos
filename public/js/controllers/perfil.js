@@ -11,5 +11,6 @@ angular.module('poaComoVamos').
 
   //Projetos aqui embaixo
   $scope.perfil = perfil;
+  console.log(perfil);
 
 }]);
