@@ -13,35 +13,61 @@ class Buscadedados
 
 	end
 
-#Pega Link ultima sessão, utilizar para pegar todas sessões
-	def link_ultima_sessao
-		@link_da_sessao = @html_da_camara.css('a.sessoes')[0].attr("href").to_s
-		@desc_do_link_do_projeto = @base_URL + @link_da_sessao
+
+
+
+
+	def buscar_o_link_da_sessao
+		i = 0
+		count = 1
+		@link_da_sessao = Array.new(700)
+		nodo_vazio = Nokogiri::XML::NodeSet
+		numero_da_ultima_pagina = @html_da_camara.css('div.pagination a:nth-last-of-type(2)')[0].text.to_i 	
+		while (count <= numero_da_ultima_pagina)
+			j = 0
+			
+			while (@html_da_camara.css('div.box.no-box a.sessoes')[j] != nil)   
+				@link_da_sessao[i] = @base_URL + @html_da_camara.css('p a.sessoes')[j].attr("href").to_s
+				i = i + 1
+				j = j + 1
+			end
+			if (numero_da_ultima_pagina != count)
+				@html_da_camara = Nokogiri::HTML(open(@base_URL + @html_da_camara.css('div.pagination a.next_page').attr("href")))
+			end
+			count = count + 1
+		end
+		@link_da_sessao = @link_da_sessao.compact
+		puts @link_da_sessao 		
 	end
 
 
 
-#Deletar Abrir o link ultima sessão com projeto
-	def abrir_o_link_da_ultima_sessao_com_projeto
+	def abrir_o_link_da_sessao
 		@html_da_sessao = Nokogiri::HTML(open(@base_URL + '/votacoes?data=04%2F12%2F2013+00%3A00%3A00&numero=119&tiposessao=O'))
 	end
 
+
+
+
+
+
 #Deletar ver como pegar link pegar links das sessões
-	def pegar_desc_do_ultimo_projeto_da_ultima_sessao
+	def pegar_descricao_dos_projetos_da_sessao
+		
 		@desc_do_link_da_sessao = Array.new
 		@link_do_projeto = Array.new
-		for i in 0...5
-			@desc_do_link_da_sessao[i] = @html_da_sessao.css('table.list tr td:nth-child(2) span.detalhe a')[i].text
-			if @desc_do_link_da_sessao[i].include? "PLCL" or @desc_do_link_da_sessao[i].include? "PLL"
-				
+		i = 0
+		while (@html_da_sessao.css('table.list tr td:nth-child(2) span.detalhe a')[i] != nil or @html_da_sessao.css('table.list tr td:nth-child(2) span.detalhe a')[i+1] != nil)  
+			puts @desc_do_link_da_sessao[i] = @html_da_sessao.css('table.list tr td:nth-child(2) span.detalhe a')[i].text
+			if @desc_do_link_da_sessao[i].include? "PLCL" or @desc_do_link_da_sessao[i].include? "PLL"				
 				unless @link_do_projeto.include?(@html_da_sessao.css('table.list tr td:nth-child(2) span.detalhe a')[i].attr("href"))
-					@link_do_projeto << @html_da_sessao.css('table.list tr td:nth-child(2) span.detalhe a')[i].attr("href")
-					#ABRIR ESSE LINK
+					@link_do_projeto[i] = @html_da_sessao.css('table.list tr td:nth-child(2) span.detalhe a')[i].attr("href")
 				end
-				puts @link_do_projeto	
-			
 			end
+			i = i + 1
 		end
+
+	 @link_do_projeto
 	end
 
 
@@ -135,16 +161,17 @@ class Buscadedados
 end	
 
 bd = Buscadedados.new 
-
+bd.buscar_o_link_da_sessao
+=begin
 #puts bd.link_ultima_sessao
 
 bd.link_ultima_sessao
 bd.abrir_o_link_da_ultima_sessao_com_projeto
-bd.pegar_desc_do_ultimo_projeto_da_ultima_sessao
+bd.pegar_descricao_dos_projetos_da_sessao
 bd.pegar_o_ultimo_projeto_da_ultima_sessao
 bd.abrir_o_link_do_projeto
 bd.pegar_o_link_que_ordena_por_nome_as_presencas_dos_vereadores_naquele_projeto
 bd.abrir_o_link_de_detalhes_do_projeto
 bd.correr_a_lista_de_presencas_do_projeto
 #bd.salva_dados_do_projeto
-
+=end
