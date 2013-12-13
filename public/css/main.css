@@ -147,6 +147,7 @@ dd.email {
 .well {
   height: auto;
   float: left;
+  width: 100%;
 }
 
 .contentvereadores-ext {
