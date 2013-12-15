@@ -1,6 +1,6 @@
-require 'cucumber'
+#require 'cucumber'
 require 'json'
-require 'cucumber/rake/task'
+#require 'cucumber/rake/task'
 require 'mongo'
 require 'csv'
 
@@ -9,17 +9,17 @@ Dir.glob(base + '/lib/*.rb').each { |f| require f }
 include Mongo
 
 desc "Roda todos os testes (javascript e cucumber)"
-task :test => [:spec, :features, :jstest]
+task :test => [:spec, :jstest]#:features, :jstest]
 
 desc "Roda os testes em CI (excluindo JS por enquanto)"
-task :ci => [:spec, :features]
+task :ci => [:spec] #:features]
 
-desc "Roda os testes de pepino"
-task :features do
-  Cucumber::Rake::Task.new(:features) do |t|
-    t.cucumber_opts = "features --format pretty --tag ~@pending"
-  end
-end
+#desc "Roda os testes de pepino"
+#task :features do
+#  Cucumber::Rake::Task.new(:features) do |t|
+#    t.cucumber_opts = "features --format pretty --tag ~@pending"
+#  end
+#end
 
 desc "Roda os testes de javascript"
 task :jstest do
