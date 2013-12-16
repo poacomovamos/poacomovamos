@@ -15,10 +15,13 @@ class TestMain < Test::Unit::TestCase
     assert_equal("bernardino@camarapoa.rs.gov.br", Vereador.first(:email => "bernardino@camarapoa.rs.gov.br").email)
   end
 
-  def test_se_vereador_tem_votos_em_projetos
+=begin
+def test_se_vereador_tem_votos_em_projetos
   #assert_not_nil(Projeto.find("52aaf15f022884a015c8de90"))
   assert_equal("Autor", Projeto.first(:autor => "Autor").autor)
 
   end
+=end
+
 
 end
