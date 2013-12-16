@@ -6,7 +6,7 @@
             <div class="panel panel-default">
               <div class="panel-heading">{{perfil[0].nome}}</div>
               <div class="panel-body">
-                 
+
                  <img ng-src="../img/vereadores/{{perfil[0].foto}}" class="img-rounded perfilvereador">
 
                  <p>({{perfil[0].partido}})</p>
@@ -57,27 +57,27 @@
               <p>Ausente: {{perfil[0].projetosVotos.ausente}}</p>
             </div>
           </div>
-          
+
           <div class="well">
-            <p>Total de votos: {{perfil[0].projetosVotos.voto + perfil[0].projetosVotos.absteve + perfil[0].projetosVotos.repExterna + perfil[0].projetosVotos.ausente}}</p>
+            <p>Total de votos: {{perfil.projetosVotos.voto + perfil.projetosVotos.absteve + perfil.projetosVotos.repExterna + perfil.projetosVotos.ausente}}</p>
             <div class="left">
               <p>Voto</p>
-              <p>{{perfil[0].projetosVotos.voto}}</p>
+              <p>{{perfil.projetosVotos.voto}}</p>
             </div>
 
             <div class="left">
               <p>Absteve-se</p>
-              <p>{{perfil[0].projetosVotos.absteve}}</p>
+              <p>{{perfil.projetosVotos.absteve}}</p>
             </div>
 
             <div class="left">
               <p>Representação Externa</p>
-              <p>{{perfil[0].projetosVotos.repExterna}}</p>
+              <p>{{perfil.projetosVotos.repExterna}}</p>
             </div>
 
             <div class="left">
               <p>Ausente</p>
-              <p>{{perfil[0].projetosVotos.ausente}}</p>
+              <p>{{perfil.projetosVotos.ausente}}</p>
             </div>
           </div>
       </div>

@@ -27,7 +27,6 @@ get '/api/perfil/:email' do
 
   Vereador.first(:email => params[:email]).to_json
 
-
 end
 
 get '/api/sessoes' do
