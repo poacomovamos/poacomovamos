@@ -9,7 +9,7 @@ Dir.glob(base + '/lib/*.rb').each { |f| require f }
 include Mongo
 
 desc "Roda todos os testes (javascript e cucumber)"
-task :test => [:spec, :features, :jstest]
+task :test => [:importar_vereadores, :spec, :features, :jstest]
 
 desc "Roda os testes em CI (excluindo JS por enquanto)"
 task :ci => [:spec, :features]
@@ -31,6 +31,7 @@ desc "Roda os testes de unidade"
 task :spec do
   puts "===== Testes de Unidade ====="
   sh 'bundle exec rspec test/ruby/lib/*_spec.rb'
+  sh 'bundle exec rspec test/ruby/models/spec_*.rb'
 end
 
 task :environment do

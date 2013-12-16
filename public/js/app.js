@@ -10,16 +10,14 @@ angular.module('poaComoVamos', ['poaComoVamos.servicos', 'poaComoVamos.filters',
         templateUrl: '../views/vereadores.html',
         controller: 'VereadoresCtrl',
         resolve: {
-          //$resource.query não retorna uma promise, retorna um object ou array que sera populado quando devido
           vereadores: function(Vereadores) { return Vereadores.query() }
         }
       })
-      .when('/perfil', {
-        templateUrl: '../views/perfil.html',
-        controller: 'PerfilCtrl',
+      .when('/vereador/:nome', {
+        templateUrl: '../views/vereador.html',
+        controller: 'VereadorCtrl',
         resolve: {
-          //$resource.query não retorna uma promise, retorna um object ou array que sera populado quando devido
-          perfil: function(Vereadores) { return Vereadores.query() }
+          vereador: function($route, Vereador) { return Vereador.get( { nome: $route.current.params.nome } ) }
         }
       })
       .otherwise({
