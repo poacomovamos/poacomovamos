@@ -11,7 +11,6 @@ scheduler.cron '5 0 * * *' do
   LeitorSessoes.puxar_sessoes
 end
 
-
 get '/' do
   erb :index
 end
@@ -21,13 +20,9 @@ get '/api/vereador' do
   Vereador.all.to_json
 end
 
-get '/api/perfil/:email' do
+get '/api/vereador/:nome' do
   content_type :json
-  #pegar vereador e projetos do banco, exemplo de estrtura
-
-  Vereador.first(:email => params[:email]).to_json
-
-
+  Vereador.first(:nome => params[:nome]).to_json
 end
 
 get '/api/sessoes' do

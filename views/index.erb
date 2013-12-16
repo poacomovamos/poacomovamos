@@ -1,5 +1,12 @@
 <html>
   <head>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/main.css">
+  </head>
+  <body ng-app="poaComoVamos">
+    <div class="header"></div>
+    <div class="container" ng-view=""></div>
+
     <script type="text/javascript" src="js/vendor/RGraph.common.core.js" ></script>
     <script type="text/javascript" src="js/vendor/RGraph.bar.js" ></script>
     <!--[if lt IE 9]><script src="js/vendor/excanvas.js"></script><![endif]-->
@@ -8,19 +15,10 @@
     <script src="js/vendor/angular-resource.js"></script>
     <script src="js/app.js"></script>
     <script src="js/services/vereadores.js"></script>
-    <script src="js/services/perfil.js"></script>
+    <script src="js/services/vereador.js"></script>
     <script src="js/filters/embaralhar.js"></script>
     <script src="js/controllers/vereadores.js"></script>
     <script src="js/controllers/components.js"></script>
-    <script src="js/controllers/perfil.js"></script>
-
-   
-
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/main.css">
-  </head>
-  <body ng-app="poaComoVamos">
-    <div class="header"></div>
-    <div class="container" ng-view=""></div>
+    <script src="js/controllers/vereador.js"></script>
   </body>
 </html>

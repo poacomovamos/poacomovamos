@@ -3,21 +3,21 @@
 describe('Controller: perfis', function() {
 
   var $scope, ctrl;
-  var perfil;
+  var vereador;
 
   beforeEach(module('poaComoVamos'));
 
   beforeEach(inject(function($rootScope, $controller) {
     $scope = $rootScope.$new();
-    ctrl = $controller('PerfilCtrl', {
+    ctrl = $controller('VereadorCtrl', {
       $scope: $scope,
-      perfil: ['Nome', 'Partido', 'email', 'telefone', 'twitter', 'facebook', 'foto']
+      vereador: ['Nome', 'Partido', 'email', 'telefone', 'twitter', 'facebook', 'foto']
     });
   }));
 
   it('deve colocar os label no escopo', function() {
-    expect($scope.perfil).toBeDefined();
-    expect($scope.perfil.length).toBe(7);
+    expect($scope.vereador).toBeDefined();
+    expect($scope.vereador.length).toBe(7);
   });
 
 });
