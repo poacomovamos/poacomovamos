@@ -28,7 +28,6 @@ class TestMain < Test::Unit::TestCase
         :votos => [v1,v2,v3]
         )
 
-
         assert_not_nil(p)
         assert_equal("autor", p.autor)
         assert_equal("sim", p.votos.first(:id_vereador => "id1").tipo_voto)
