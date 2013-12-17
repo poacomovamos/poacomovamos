@@ -93,36 +93,38 @@ class LeitorDeProjetosCamara
 	def salva_dados_do_projeto (link_do_projeto)
 		@html_do_projeto = Nokogiri::HTML(open(link_do_projeto.to_s))
 		abrir_link_de_ordenacao_lista_de_presencas_do_projeto
+
 		puts @nome_do_projeto = @html_do_projeto.css('div.box.no-box b')[0].text.split(' ')[1..-1].join(' ')
 		@tipodevoto = ''
 		indice_do_tipo_de_voto_na_pagina = 0
 		while @html_da_lista_do_projeto.css('table.list tr td:nth-child(3)')[indice_do_tipo_de_voto_na_pagina] != nil
 
-   		@tipodevoto = @html_da_lista_do_projeto.css('table.list tr td:nth-child(3)')[indice_do_tipo_de_voto_na_pagina].text
-   		if "Sim" == @tipodevoto
-   			puts "Sim"
-   			puts @html_da_lista_do_projeto.css('table.list tr td:nth-child(1)')[indice_do_tipo_de_voto_na_pagina].text
-   		elsif "Ausente" == @tipodevoto
-   			puts "Ausente"
-   			puts @html_da_lista_do_projeto.css('table.list tr td:nth-child(1)')[indice_do_tipo_de_voto_na_pagina].text
-   		elsif @tipodevoto.include? "Absten"
-   			puts "Abstencao"
-   			puts @html_da_lista_do_projeto.css('table.list tr td:nth-child(1)')[indice_do_tipo_de_voto_na_pagina].text
-   		elsif @tipodevoto.include? "Representa"
-   			puts "Representacao externa"
-   			puts @html_da_lista_do_projeto.css('table.list tr td:nth-child(1)')[indice_do_tipo_de_voto_na_pagina].text
-		elsif @tipodevoto.include? "N"
-   			puts "Nao votou"
-   			puts @html_da_lista_do_projeto.css('table.list tr td:nth-child(1)')[indice_do_tipo_de_voto_na_pagina].text
-   		end
+	   		@tipodevoto = @html_da_lista_do_projeto.css('table.list tr td:nth-child(3)')[indice_do_tipo_de_voto_na_pagina].text
+	   		if "Sim" == @tipodevoto
+	   			puts "Sim"
+	   			puts @html_da_lista_do_projeto.css('table.list tr td:nth-child(1)')[indice_do_tipo_de_voto_na_pagina].text
+	   		elsif "Ausente" == @tipodevoto
+	   			puts "Ausente"
+	   			puts @html_da_lista_do_projeto.css('table.list tr td:nth-child(1)')[indice_do_tipo_de_voto_na_pagina].text
+	   		elsif @tipodevoto.include? "Absten"
+	   			puts "Abstencao"
+	   			puts @html_da_lista_do_projeto.css('table.list tr td:nth-child(1)')[indice_do_tipo_de_voto_na_pagina].text
+	   		elsif @tipodevoto.include? "Representa"
+	   			puts "Representacao externa"
+	   			puts @html_da_lista_do_projeto.css('table.list tr td:nth-child(1)')[indice_do_tipo_de_voto_na_pagina].text
+			elsif @tipodevoto.include? "N"
+	   			puts "Nao votou"
+	   			puts @html_da_lista_do_projeto.css('table.list tr td:nth-child(1)')[indice_do_tipo_de_voto_na_pagina].text
+	   		end
 
-   		puts '----------------------------------------------------------------'
+	   		puts '----------------------------------------------------------------'
 
-   		indice_do_tipo_de_voto_na_pagina +=1
+	   		indice_do_tipo_de_voto_na_pagina +=1
 
-   	end
+	   	end
 
-   	def abrir_o_link_de_detalhes_do_projeto
+  		abrir_o_link_de_detalhes_do_projeto
+
    		puts @ementa_do_projeto = @html_detalhes_do_projeto.css('table.attributes tr td')[4].text
 		puts @status_do_projeto = @html_detalhes_do_projeto.css('table.attributes tr td')[6].text
 		puts @autor_do_projeto = @html_detalhes_do_projeto.css('table.attributes tr td')[3].text

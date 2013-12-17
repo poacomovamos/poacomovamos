@@ -1,10 +1,12 @@
 class Projeto
-  include MongoMapper::Document
+    include MongoMapper::Document
     key :nome_projeto, String
-    key :ementa, String
-    key :status, String
-    key :autor, String
-    many :votos
+    key :ementa_projeto, String
+    key :status_projeto, String
+    key :autor_projeto, String
+    key :data_abertura_projeto, String
+    key :data_ultima_tramitacao_projeto, String
+    many :votos_projeto
 end
 
 class Voto
