@@ -23,7 +23,6 @@ class TestMain < Test::Unit::TestCase
             :presente_ultima_sessao => true
         )
         assert_equal("bernardino@camarapoa.rs.gov.br", v.email)
-        # assert_equal("bernardino@camarapoa.rs.gov.br", Vereador.first(:email => "bernardino@camarapoa.rs.gov.br").email)
     end
 
     def test_se_vereador_tem_votos_em_projetos
@@ -44,37 +43,34 @@ class TestMain < Test::Unit::TestCase
         assert_equal("sim", p.votos.first(:id_vereador => "id1").tipo_voto)
     end
 
-    # def test_se_vereador_tem_votos_em_projetos
-    #     v1 = Voto.create(
-    #         :id_vereador => 'id1',
-    #          :tipo_voto => 'sim'
-    #     ).save
+    def test_tem_sim_em_um_projeto_com_dados_fakes
+        p = Projeto.create(
+            :nome_projeto => "Projeto1",
+            :ementa_projeto => "ementa",
+            :status_projeto => "status",
+            :autor_projeto => "autor",
+            :data_abertura_projeto => "12/03/2010",
+            :data_ultima_tramitacao_projeto => "25/12/2013",
+            :votos => [
+                Voto.new(:id_vereador => 'id1', :tipo_voto => 'sim'),
+                Voto.new(:id_vereador => 'id2', :tipo_voto => 'nao'),
+                Voto.new(:id_vereador => 'id3', :tipo_voto => 'nao'),
+            ]
+        ).save
 
-    #     v2 = Voto.create(
-    #         :id_vereador => 'id2',
-    #         :tipo_voto => 'sim'
-    #     ).save
+        assert_equal("sim", Projeto.first(:nome_projeto => "Projeto1").votos.first(:tipo_voto => "sim").tipo_voto)
+    end
 
-    #     v3 = Voto.create(
-    #         :id_vereador => 'id3',
-    #         :tipo_voto => 'nao'
-    #     ).save
+    def test_tem_1_sim_no_Projeto1_fake
+        assert_equal(1, Projeto.first(:nome_projeto => "Projeto1").votos.all(:tipo_voto => "sim").count)
+    end
 
-    #     p = Projeto.new(
-    #         :nome_projeto => "Projeto1",
-    #         :ementa_projeto => "ementa",
-    #         :status_projeto => "status",
-    #         :autor_projeto => "autor",
-    #         :data_abertura_projeto => " ",
-    #         :data_ultima_tramitacao_projeto => " ",
-    #         :votos => [v1,v2,v3]
-    #     ).save
+    def test_tem_2_nao_no_Projeto1_fake
+        assert_equal(2, Projeto.first(:nome_projeto => "Projeto1").votos.all(:tipo_voto => "nao").count)
+    end
 
-
-    #     assert_not_nil(p)
-    #     assert_equal("autor", p.autor)
-    #     assert_equal("sim", p.votos.first(:id_vereador => "id1").tipo_voto)
-    # end
-
+    def test_tem_votos_em_projetos
+        assert_equal(2, Projeto.first(:nome_projeto => "Projeto1").votos.all(:tipo_voto => "nao")
+    end
 
 end
