@@ -1,6 +1,6 @@
 'use strict'
 
-describe('Controller: perfis', function() {
+describe('Controller: Vereador', function() {
 
   var $scope, ctrl;
   var vereador;
