@@ -5,37 +5,24 @@
       	  {{vereadoress | json}}
             <div class="panel panel-default">
               <div class="panel-heading">{{vereador.nome}}</div>
-              <div class="panel-body">
-<<<<<<< HEAD:public/views/vereador.html
-                 
-                 <img ng-src="../img/vereadores/{{vereador.foto}}" class="img-rounded perfilvereador">
-=======
-
-                 <img ng-src="../img/vereadores/{{perfil.foto}}" class="img-rounded perfilvereador">
->>>>>>> 6398146bab6994e457f3037b5854ca26723a8306:public/views/perfil.html
-
+              <div class="panel-body">       
+                <img ng-src="../img/vereadores/{{vereador.foto}}" class="img-rounded perfilvereador">
                  <p>({{vereador.partido}})</p>
-
                   <a href="http://twitter.com/{{vereador.twitter}}" target="_blank">
                     <img ng-src="../img/twitter-bird-light-bgs.png">
                   </a>
                   <a href="{{vereador.facebook}}" target="_blank">
                     <img ng-src="../img/FB-f-Logo__blue_50.png">
                   </a>
-
                   <small>
                     <a href="mailto:{{vereador.email}}">{{vereador.email}}</a>
                   </small>
-
               </div>
-
             </div>
       </div>
 
       <!-- projetos dos vereadores aqui -->
       <div class="col-md-8">
-
-
           <div class="panel panel-default">
               <div class="panel-heading">Grafico de votação</div>
               <div class="panel-body">
@@ -60,47 +47,27 @@
           </div>
 
           <div class="well">
-<<<<<<< HEAD:public/views/vereador.html
-            <p>Total de votos: {{vereador[0].projetosVotos.voto + vereador[0].projetosVotos.absteve + vereador[0].projetosVotos.repExterna + vereador[0].projetosVotos.ausente}}</p>
-=======
 
             <p>Total de votos: {{perfil.projetosVotos.voto + perfil.projetosVotos.absteve + perfil.projetosVotos.repExterna + perfil.projetosVotos.ausente}}</p>
->>>>>>> 6398146bab6994e457f3037b5854ca26723a8306:public/views/perfil.html
-            <div class="col-md-3">
 
+            <div class="col-md-3">
               <p>Voto</p>
-<<<<<<< HEAD:public/views/vereador.html
-              <p>{{vereador[0].projetosVotos.voto}}</p>
-=======
               <p>{{perfil.projetosVotos.voto}}</p>
->>>>>>> 6398146bab6994e457f3037b5854ca26723a8306:public/views/perfil.html
             </div>
 
             <div class="col-md-3">
               <p>Absteve-se</p>
-<<<<<<< HEAD:public/views/vereador.html
-              <p>{{vereador[0].projetosVotos.absteve}}</p>
-=======
               <p>{{perfil.projetosVotos.absteve}}</p>
->>>>>>> 6398146bab6994e457f3037b5854ca26723a8306:public/views/perfil.html
             </div>
 
             <div class="col-md-3">
               <p>Rep.Ext</p>
-<<<<<<< HEAD:public/views/vereador.html
-              <p>{{vereador[0].projetosVotos.repExterna}}</p>
-=======
               <p>{{perfil.projetosVotos.repExterna}}</p>
->>>>>>> 6398146bab6994e457f3037b5854ca26723a8306:public/views/perfil.html
             </div>
 
             <div class="col-md-3">
               <p>Ausente</p>
-<<<<<<< HEAD:public/views/vereador.html
-              <p>{{vereador[0].projetosVotos.ausente}}</p>
-=======
               <p>{{perfil.projetosVotos.ausente}}</p>
->>>>>>> 6398146bab6994e457f3037b5854ca26723a8306:public/views/perfil.html
             </div>
           </div>
       </div>
