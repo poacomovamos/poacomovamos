@@ -4,11 +4,12 @@ class Projeto
     key :ementa, String
     key :status, String
     key :autor, String
-    key :votos, Array
+    many :votos
 end
 
 class Voto
     include MongoMapper::Document
     key :id_vereador, String
     key :tipo_voto, String
+    belongs_to :projeto
 end
