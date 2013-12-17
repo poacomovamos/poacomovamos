@@ -10,17 +10,17 @@ class LeitorDeProjetosCamara
 		@html_da_camara = Nokogiri::HTML(open(@base_URL + '/votacoes'))
 	end
 
-	
+
 	def buscar_link_das_sessoes
 		indice_controle_da_posicao_do_array = 0
 		contador_de_paginas = 1
 		@link_da_sessao = Array.new
 		nodo_vazio = Nokogiri::XML::NodeSet
-		numero_da_ultima_pagina = @html_da_camara.css('div.pagination a:nth-last-of-type(2)')[0].text.to_i 	
+		numero_da_ultima_pagina = @html_da_camara.css('div.pagination a:nth-last-of-type(2)')[0].text.to_i
 		while contador_de_paginas <= numero_da_ultima_pagina
 			indice_dos_links_na_pagina = 0
-			
-			while @html_da_camara.css('div.box.no-box a.sessoes')[indice_dos_links_na_pagina] != nil   
+
+			while @html_da_camara.css('div.box.no-box a.sessoes')[indice_dos_links_na_pagina] != nil
 				if @html_da_camara.css('p a.sessoes')[indice_dos_links_na_pagina].text.split.last.to_i >= 2013
 					@link_da_sessao[indice_controle_da_posicao_do_array] = @base_URL + @html_da_camara.css('p a.sessoes')[indice_dos_links_na_pagina].attr("href").to_s
 					indice_controle_da_posicao_do_array = indice_controle_da_posicao_do_array + 1
@@ -32,7 +32,7 @@ class LeitorDeProjetosCamara
 			end
 			contador_de_paginas += 1
 		end
-		@link_da_sessao 		
+		@link_da_sessao
 	end
 
 
@@ -41,9 +41,9 @@ class LeitorDeProjetosCamara
 		@desc_do_link_da_sessao = Array.new
 		@link_do_projeto = Array.new
 		indice_do_link_da_sessao = 0
-		while @html_da_sessao.css('table.list tr td:nth-child(2) span.detalhe a')[indice_do_link_da_sessao] != nil or @html_da_sessao.css('table.list tr td:nth-child(2) span.detalhe a')[indice_do_link_da_sessao+1] != nil  
+		while @html_da_sessao.css('table.list tr td:nth-child(2) span.detalhe a')[indice_do_link_da_sessao] != nil or @html_da_sessao.css('table.list tr td:nth-child(2) span.detalhe a')[indice_do_link_da_sessao+1] != nil
 			@desc_do_link_da_sessao[indice_do_link_da_sessao] = @html_da_sessao.css('table.list tr td:nth-child(2) span.detalhe a')[indice_do_link_da_sessao].text
-			if @desc_do_link_da_sessao[indice_do_link_da_sessao].include? "PROC"	
+			if @desc_do_link_da_sessao[indice_do_link_da_sessao].include? "PROC"
 				unless @link_do_projeto.include?(@html_da_sessao.css('table.list tr td:nth-child(2) span.detalhe a')[indice_do_link_da_sessao].attr("href"))
 					@link_do_projeto[indice_do_link_da_sessao] = @base_URL + @html_da_sessao.css('table.list tr td:nth-child(2) span.detalhe a')[indice_do_link_da_sessao].attr("href")
 				end
@@ -75,14 +75,14 @@ class LeitorDeProjetosCamara
 		elsif numero_do_processo_e_ano.include?('PROCESSO')
 			numeroProcesso_e_ano_array = numero_do_processo_e_ano.split('PROCESSO')[1].split('/')
 		else
-			numeroProcesso_e_ano_array = numero_do_processo_e_ano.split('-')[1].split('/')	
-		end 
+			numeroProcesso_e_ano_array = numero_do_processo_e_ano.split('-')[1].split('/')
+		end
 		numeroProcesso_e_ano_array[0] = numeroProcesso_e_ano_array[0][1..-1]
-		while numeroProcesso_e_ano_array[0].length < 5 
+		while numeroProcesso_e_ano_array[0].length < 5
 			numeroProcesso_e_ano_array[0] = '0' + numeroProcesso_e_ano_array[0]
 		end
 		ano_do_processo = numeroProcesso_e_ano_array[1].split(' ')
-		numeroProcesso_e_ano_array[1] = '20' + ano_do_processo[0] 
+		numeroProcesso_e_ano_array[1] = '20' + ano_do_processo[0]
 		if numeroProcesso_e_ano_array[1].include?('\'')
 			numeroProcesso_e_ano_array[1] = '2000'
 		end
@@ -110,7 +110,7 @@ class LeitorDeProjetosCamara
    			puts @html_da_lista_do_projeto.css('table.list tr td:nth-child(1)')[indice_do_tipo_de_voto_na_pagina].text
    		elsif @tipodevoto.include? "Representa"
    			puts "Representacao externa"
-   			puts @html_da_lista_do_projeto.css('table.list tr td:nth-child(1)')[indice_do_tipo_de_voto_na_pagina].text 
+   			puts @html_da_lista_do_projeto.css('table.list tr td:nth-child(1)')[indice_do_tipo_de_voto_na_pagina].text
 			elsif @tipodevoto.include? "N"
    			puts "Nao votou"
    			puts @html_da_lista_do_projeto.css('table.list tr td:nth-child(1)')[indice_do_tipo_de_voto_na_pagina].text
@@ -121,21 +121,21 @@ class LeitorDeProjetosCamara
    		indice_do_tipo_de_voto_na_pagina +=1
 
    	end
-   		
-   	abrir_o_link_de_detalhes_do_projeto
-   	puts @ementa_do_projeto = @html_detalhes_do_projeto.css('table.attributes tr td')[4].text
+
+   	def abrir_o_link_de_detalhes_do_projeto
+   		puts @ementa_do_projeto = @html_detalhes_do_projeto.css('table.attributes tr td')[4].text
 		puts @status_do_projeto = @html_detalhes_do_projeto.css('table.attributes tr td')[6].text
 		puts @autor_do_projeto = @html_detalhes_do_projeto.css('table.attributes tr td')[3].text
 		puts @data_de_abertura_do_projeto = @html_detalhes_do_projeto.css('table.attributes tr td')[2].text
-		puts @data_de_ultima_tramitacao_do_projeto = @html_detalhes_do_projeto.css('table.attributes tr td')[8].text		
+		puts @data_de_ultima_tramitacao_do_projeto = @html_detalhes_do_projeto.css('table.attributes tr td')[8].text
 	end
 
 	def executa_todo_o_script
-		busca_de_dados = LeitorDeProjetosCamara.new 
+		busca_de_dados = LeitorDeProjetosCamara.new
 		contador_de_sessoes = 1
 		link_das_sessoes = busca_de_dados.buscar_link_das_sessoes
 		link_das_sessoes.each do |link_da_sessao|
-			
+
 		  link_dos_projetos = busca_de_dados.pegar_links_dos_projetos_da_sessao(link_da_sessao)
 		  link_dos_projetos.each do |link_do_projeto|
 		  	busca_de_dados.salva_dados_do_projeto(link_do_projeto)
