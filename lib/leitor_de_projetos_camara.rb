@@ -120,7 +120,6 @@ class LeitorDeProjetosCamara
 	   		puts '----------------------------------------------------------------'
 
 	   		indice_do_tipo_de_voto_na_pagina +=1
-
 	   	end
 
   		abrir_o_link_de_detalhes_do_projeto

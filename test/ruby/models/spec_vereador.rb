@@ -44,6 +44,37 @@ class TestMain < Test::Unit::TestCase
         assert_equal("sim", p.votos.first(:id_vereador => "id1").tipo_voto)
     end
 
+    # def test_se_vereador_tem_votos_em_projetos
+    #     v1 = Voto.create(
+    #         :id_vereador => 'id1',
+    #          :tipo_voto => 'sim'
+    #     ).save
+
+    #     v2 = Voto.create(
+    #         :id_vereador => 'id2',
+    #         :tipo_voto => 'sim'
+    #     ).save
+
+    #     v3 = Voto.create(
+    #         :id_vereador => 'id3',
+    #         :tipo_voto => 'nao'
+    #     ).save
+
+    #     p = Projeto.new(
+    #         :nome_projeto => "Projeto1",
+    #         :ementa_projeto => "ementa",
+    #         :status_projeto => "status",
+    #         :autor_projeto => "autor",
+    #         :data_abertura_projeto => " ",
+    #         :data_ultima_tramitacao_projeto => " ",
+    #         :votos => [v1,v2,v3]
+    #     ).save
+
+
+    #     assert_not_nil(p)
+    #     assert_equal("autor", p.autor)
+    #     assert_equal("sim", p.votos.first(:id_vereador => "id1").tipo_voto)
+    # end
 
 
 end
