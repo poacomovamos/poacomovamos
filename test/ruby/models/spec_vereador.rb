@@ -69,8 +69,8 @@ class TestMain < Test::Unit::TestCase
         assert_equal(2, Projeto.first(:nome_projeto => "Projeto1").votos.all(:tipo_voto => "nao").count)
     end
 
-    def test_tem_votos_em_projetos
-        assert_equal(2, Projeto.first(:nome_projeto => "Projeto1").votos.all(:tipo_voto => "nao")
-    end
+    # def test_tem_votos_em_projetos
+    #     assert_equal(2, Projeto.first(:nome_projeto => "Projeto1").votos.all(:tipo_voto => "nao").count)
+    # end
 
 end
