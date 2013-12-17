@@ -111,7 +111,7 @@ class LeitorDeProjetosCamara
    		elsif @tipodevoto.include? "Representa"
    			puts "Representacao externa"
    			puts @html_da_lista_do_projeto.css('table.list tr td:nth-child(1)')[indice_do_tipo_de_voto_na_pagina].text
-			elsif @tipodevoto.include? "N"
+		elsif @tipodevoto.include? "N"
    			puts "Nao votou"
    			puts @html_da_lista_do_projeto.css('table.list tr td:nth-child(1)')[indice_do_tipo_de_voto_na_pagina].text
    		end
