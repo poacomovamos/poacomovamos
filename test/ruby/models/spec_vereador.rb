@@ -12,7 +12,18 @@ class TestMain < Test::Unit::TestCase
     end
 
     def test_se_vereador_tem_propriedade_email
-        assert_equal("bernardino@camarapoa.rs.gov.br", Vereador.first(:email => "bernardino@camarapoa.rs.gov.br").email)
+        v = Vereador.new(
+            :nome => "Vereador1",
+            :partido => "PT",
+            :email => "bernardino@camarapoa.rs.gov.br",
+            :telefone => "999915847",
+            :twitter => "@twitter",
+            :facebook => "www.facebook.com.br/fulaninho",
+            :foto => "fulaninho.jpg",
+            :presente_ultima_sessao => true
+        )
+        assert_equal("bernardino@camarapoa.rs.gov.br", v.email)
+        # assert_equal("bernardino@camarapoa.rs.gov.br", Vereador.first(:email => "bernardino@camarapoa.rs.gov.br").email)
     end
 
     def test_se_vereador_tem_votos_em_projetos
@@ -32,4 +43,7 @@ class TestMain < Test::Unit::TestCase
         assert_equal("autor", p.autor)
         assert_equal("sim", p.votos.first(:id_vereador => "id1").tipo_voto)
     end
+
+
+
 end
