@@ -35,3 +35,17 @@ Certifique-se de que o mongo esta rodando: ```mongod```
 Com o mongo rodando, importe os dados da planilha de vereadores: ```rake importar_vereadores```
 
 Digite e Divirta-se ```shotgun``` =)
+
+#### Ambiente de produção no **[heroku](https://toolbelt.heroku.com/)**
+
+- Dentro do diretório do projeto:```cd poacomovamos```
+
+- ```heroku create nome_projeto```
+
+- ```git push heroku master```
+
+- ```heroku addons:add mongolab``` ou acessando **[MongoLab](https://addons.heroku.com/mongolab)**
+
+- ```heroku run rake importar_vereadores```
+
+Digite e Divirta-se ainda mais ```heroku open``` =)
