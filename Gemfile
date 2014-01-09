@@ -9,7 +9,6 @@ gem 'formatador'
 gem 'nokogiri'
 gem 'rufus-scheduler'
 gem 'cucumber'
-gem 'tzinfo-data'
 
 group :test, :development do
   gem 'cucumber'
