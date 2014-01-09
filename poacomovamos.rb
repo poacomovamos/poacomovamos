@@ -11,7 +11,6 @@ scheduler.cron '5 0 * * *' do
   LeitorSessoes.puxar_sessoes
 end
 
-
 get '/' do
   erb :index
 end
@@ -19,6 +18,11 @@ end
 get '/api/vereador' do
   content_type :json
   Vereador.all.to_json
+end
+
+get '/api/vereador/:nome' do
+  content_type :json
+  Vereador.first(:nome => params[:nome]).to_json
 end
 
 get '/api/sessoes' do
