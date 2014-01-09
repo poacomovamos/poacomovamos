@@ -21,5 +21,5 @@ group :test, :development do
   gem 'webrat'
   gem 'rake'
   gem 'racksh'
-  gem 'tzinfo-data'
+
 end
