@@ -8,4 +8,4 @@ rvm:
   - "2.0.0-p353"
 
 script: 
-  - rake test --trace
+  - rake test
