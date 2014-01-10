@@ -1,6 +1,6 @@
 require 'json'
-require 'cucumber/rake/task'
 require 'mongo'
+require 'cucumber/rake/task'
 require 'csv'
 
 base = File.dirname(__FILE__)
