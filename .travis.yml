@@ -8,4 +8,4 @@ rvm:
   - "2.0.0-p247"
 
 script: 
-  - rake test
+  - bundle exec rake test
