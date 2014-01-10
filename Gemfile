@@ -8,7 +8,6 @@ gem 'json'
 gem 'formatador'
 gem 'nokogiri'
 gem 'rufus-scheduler'
-gem 'cucumber'
 
 group :test, :development do
   gem 'cucumber'
