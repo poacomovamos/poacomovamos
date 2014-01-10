@@ -1,4 +1,3 @@
-require 'cucumber'
 require 'json'
 require 'cucumber/rake/task'
 require 'mongo'
