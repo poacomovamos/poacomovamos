@@ -8,9 +8,9 @@ gem 'json'
 gem 'formatador'
 gem 'nokogiri'
 gem 'rufus-scheduler'
-gem 'cucumber'
 
 group :test, :development do
+  gem 'cucumber'
   gem 'shotgun'
   gem 'tux'
   gem 'pry'
@@ -19,5 +19,4 @@ group :test, :development do
   gem 'webrat'
   gem 'rake'
   gem 'racksh'
-
 end
