@@ -31,11 +31,11 @@ class TestMain < Test::Unit::TestCase
         v3 = Voto.new(:id_vereador => 'id3', :tipo_voto => 'nao')
 
         p = Projeto.new(
-        :nome_projeto => "Projeto1",
-        :ementa => "ementa",
-        :status => "status",
-        :autor => "autor",
-        :votos => [v1,v2,v3]
+            :nome_projeto => "Projeto1",
+            :ementa => "ementa",
+            :status => "status",
+            :autor => "autor",
+            :vcloseotos => [v1,v2,v3]
         )
 
         assert_not_nil(p)
