@@ -1,9 +1,13 @@
 body {
-    background: #fafafa;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    color: #333;
+  background: url('../img/background_desktop.jpg');
+  background-attachment: fixed;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #000000;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
+/*
 .header_logo {
   width: 100%;
   height: 100%;
@@ -12,10 +16,35 @@ body {
   top: 0;
   z-index: -1;
 }
+*/
+
+header{
+  background-color: rgb(41, 127, 185);
+  height: 36px;
+  padding-top: 6px;
+}
+
+header input {
+  float: right;
+  margin-right: 20px;
+}
+
+header ul{
+  float: left;
+  padding-left: 20px;
+}
+
+header ul li{
+  display: inline-block;
+}
+
+header ul li a{
+  color: white;
+}
 
 .content {
   margin: 0 auto;
-  width: 940px;
+  width: 980px;
   text-align: center;
   z-index: 0;
   color: #000000;
@@ -23,10 +52,6 @@ body {
 
 .blue {
   background-color: #2E81B7;
-}
-
-.content header {
-  height: 40px;
 }
 
 .content section.transparency {
@@ -112,9 +137,9 @@ dd.email {
 
 .hero-unit {
     margin: 0 auto;
-    width: 940px;    
+    width: 940px;
     font-weight: 200;
-    line-height: 30px;   
+    line-height: 30px;
     padding: 20px;
     background-color: #2D3E4F;
     border-radius: 6px;
