@@ -5,8 +5,20 @@
           <li><a href="#">Inicio | </a></li>
           <li><a href="#">Presença na Câmara</a></li>
       </ul>
-      <input type="text"/>
-      <div class="clear"></div>
+
+    <input type="text"  ng-pattern="/^[a-zA-Z]{4,20}/" ng-model="busca" placeholder="Buscar vereador">
+
+    <div class="clear"></div>
+
+    <div class="busca" >
+        <div  ng-repeat="vereador in vereadors | filter:busca ">
+            <div class="resultado-busca" ng-show="busca">
+                <a href="#/vereador/{{vereador.nome}}">{{ vereador.nome }}</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="clear"></div>
     </nav>
   </section>
 
@@ -16,7 +28,7 @@
     </div>
     <div id="poa-logo">
       <img src="img/poa_logo.png" alt="Porto Alegre Como Vamos" title="Porto Alegre Como Vamos" />
-    </div>  
+    </div>
     <div id="transparency"></div>
   </section>
 </header>

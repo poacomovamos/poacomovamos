@@ -181,11 +181,7 @@ dd.email {
   color: #000000;
 }
 
-div.box-busca input {
-  width: 200px;
-}
-
-.box-busca {
+header input {
   width: 200px;
 }
 
@@ -194,6 +190,9 @@ div.busca {
   background-color:  white;
   width: 196px;
   border-radius: 5px;
+  float: right;
+  margin-right: 20px;
+  z-index: 1000;
 }
 
 div.resultado-busca{
@@ -202,4 +201,5 @@ div.resultado-busca{
   padding-top: 3px;
   padding-bottom: 3px;
   border-color: rgb(66, 139, 202);
+  z-index: 1500;
 }
