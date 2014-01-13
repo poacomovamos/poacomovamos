@@ -7,38 +7,27 @@ body {
   background-size: cover;
 }
 
-/*
-.header_logo {
-  width: 100%;
-  height: 100%;
-  background-image: url('../img/header_bg.jpg');
-  position: fixed;
-  top: 0;
-  z-index: -1;
-}
-*/
-
-header{
+#barra-menu{
   background-color: rgb(41, 127, 185);
   height: 36px;
   padding-top: 6px;
 }
 
-header input {
+#barra-menu input {
   float: right;
   margin-right: 20px;
 }
 
-header ul{
+#barra-menu ul{
   float: left;
   padding-left: 20px;
 }
 
-header ul li{
+#barra-menu ul li{
   display: inline-block;
 }
 
-header ul li a{
+#barra-menu ul li a{
   color: white;
 }
 
@@ -54,25 +43,25 @@ header ul li a{
   background-color: #2E81B7;
 }
 
-.content section.transparency {
+div#transparency {
   background-color: white;
   opacity: 0.6;
   height: 260px;
 }
-.content section.poa_logo {
-  top: 200px;
+div#poa-dialog {
+  margin-top: 35px;
+  margin-left: 403px;
   width: inherit;
-  margin: 0 auto;
   position: absolute;
+  z-index: 1;
 }
-
-.content section.poa_dialog {
-  top: 100px;
+div#poa-logo {
+  margin-left: 369px;
+  margin-top: 135px;
   width: inherit;
-  margin: 0 auto;
   position: absolute;
+  z-index: 1;
 }
-
 li.option a {
   height: 30px;
   display: block;
