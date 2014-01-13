@@ -8,7 +8,6 @@ body {
 }
 
 #barra-menu{
-  background-color: rgb(41, 127, 185);
   height: 36px;
   padding-top: 6px;
 }
@@ -41,6 +40,10 @@ body {
 
 .blue {
   background-color: #2E81B7;
+}
+
+.bg-blue{
+  background-color: rgb(41, 127, 185);
 }
 
 div#transparency {
