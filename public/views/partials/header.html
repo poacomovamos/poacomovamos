@@ -1,17 +1,34 @@
-<div>
-  <header class="header_logo"></header>
-  <section class="content">
-    <header class="blue">
-      <ul class="nav pull-right">
-        <li class="option"><a class="btn btn-link" href="#">Inicio</a></li>
+<header>
+  <section id="barra-menu" class="bg-blue">
+    <nav>
+      <ul>
+          <li><a href="#">Inicio | </a></li>
+          <li><a href="#">Presença na Câmara</a></li>
       </ul>
-    </header>
-    <section class="transparency"></section>
-    <section class="poa_dialog">
-      <img src="img/dialogs.png"/>
-    </section>
-    <section class="poa_logo">
-      <img src="img/poa_logo.png"/>
-    </section>
+
+    <input type="text"  ng-pattern="/^[a-zA-Z]{4,20}/" ng-model="busca" placeholder="Buscar vereador">
+
+    <div class="clear"></div>
+
+    <div class="busca" >
+        <div  ng-repeat="vereador in vereadors | filter:busca ">
+            <div class="resultado-busca" ng-show="busca">
+                <a href="#/vereador/{{vereador.nome}}">{{ vereador.nome }}</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="clear"></div>
+    </nav>
   </section>
-</div>
+
+  <section class="logo">
+    <div id="poa-dialog">
+      <img src="img/dialogs.png" alt="" title="" />
+    </div>
+    <div id="poa-logo">
+      <img src="img/poa_logo.png" alt="Porto Alegre Como Vamos" title="Porto Alegre Como Vamos" />
+    </div>
+    <div id="transparency"></div>
+  </section>
+</header>

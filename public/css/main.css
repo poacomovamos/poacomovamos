@@ -1,51 +1,92 @@
 body {
-    background: #fafafa;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    color: #333;
+  background: url('../img/background_desktop.jpg');
+  background-attachment: fixed;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #FFF;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-.header_logo {
-  width: 100%;
-  height: 100%;
-  background-image: url('../img/header_bg.jpg');
-  position: fixed;
-  top: 0;
-  z-index: -1;
+section#barra-menu{
+  height: 43px;
+  padding-top: 9px;
+}
+
+section#barra-menu input {
+  float: right;
+  margin-right: 20px;
+}
+
+section#barra-menu ul{
+  float: left;
+  padding-left: 20px;
+}
+
+section#barra-menu ul li{
+  display: inline-block;
+}
+
+section#barra-menu ul li a{
+  color: white;
 }
 
 .content {
   margin: 0 auto;
-  width: 940px;
+  width: 980px;
   text-align: center;
   z-index: 0;
-  color: #000000;
+  color: #FFF;
 }
 
 .blue {
   background-color: #2E81B7;
 }
 
-.content header {
-  height: 40px;
+.bg-blue{
+  background-color: rgb(41, 127, 185);
 }
 
-.content section.transparency {
+div#transparency {
   background-color: white;
   opacity: 0.6;
   height: 260px;
 }
-.content section.poa_logo {
-  top: 200px;
+div#poa-dialog {
+  margin-top: 35px;
+  margin-left: 403px;
   width: inherit;
-  margin: 0 auto;
   position: absolute;
+  z-index: 1;
+}
+div#poa-logo {
+  margin-left: 369px;
+  margin-top: 135px;
+  width: inherit;
+  position: absolute;
+  z-index: 1;
 }
 
-.content section.poa_dialog {
-  top: 100px;
-  width: inherit;
-  margin: 0 auto;
-  position: absolute;
+section.slogan{
+  height: 214px;
+  text-align: center;
+  padding-top:10px;
+}
+
+section.slogan h1{
+  margin-top:0px;
+  font-weight: bold;
+  font-size: 38.5px;
+  padding: 20px 10px;
+}
+
+section.slogan p{
+  font-size: 18px;
+}
+
+section.slogan h1, section.slogan p{
+  width: 612px;
+  text-align: center;
+  margin: auto;
 }
 
 li.option a {
@@ -112,9 +153,9 @@ dd.email {
 
 .hero-unit {
     margin: 0 auto;
-    width: 940px;    
+    width: 940px;
     font-weight: 200;
-    line-height: 30px;   
+    line-height: 30px;
     padding: 20px;
     background-color: #2D3E4F;
     border-radius: 6px;
@@ -162,4 +203,27 @@ dd.email {
   width: 955px;
   z-index: 0;
   color: #000000;
+}
+
+header input {
+  width: 200px;
+}
+
+div.busca {
+  margin-left: 2px;
+  background-color:  white;
+  width: 196px;
+  border-radius: 5px;
+  float: right;
+  margin-right: 20px;
+  z-index: 1000;
+}
+
+div.resultado-busca{
+  border-bottom: solid;
+  border-bottom-width: 1px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  border-color: rgb(66, 139, 202);
+  z-index: 1500;
 }
