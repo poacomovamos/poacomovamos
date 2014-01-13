@@ -188,3 +188,26 @@ dd.email {
   z-index: 0;
   color: #000000;
 }
+
+div.box-busca input {
+  width: 200px;
+}
+
+.box-busca {
+  width: 200px;
+}
+
+div.busca {
+  margin-left: 2px;
+  background-color:  white;
+  width: 196px;
+  border-radius: 5px;
+}
+
+div.resultado-busca{
+  border-bottom: solid;
+  border-bottom-width: 1px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  border-color: rgb(66, 139, 202);
+}
