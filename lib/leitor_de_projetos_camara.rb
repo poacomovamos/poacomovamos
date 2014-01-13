@@ -90,11 +90,11 @@ class LeitorDeProjetosCamara
 	end
 
 	#O metodo não salva, apenas imprime na tela as informações de projeto coletadas, um dia ira salvar no banco
-	def salva_dados_do_projeto (link_do_projeto)
+	def pega_dados_do_projeto (link_do_projeto)
 		@html_do_projeto = Nokogiri::HTML(open(link_do_projeto.to_s))
 		abrir_link_de_ordenacao_lista_de_presencas_do_projeto
 
-		puts @nome_do_projeto = @html_do_projeto.css('div.box.no-box b')[0].text.split(' ')[1..-1].join(' ')
+		@nome_do_projeto = @html_do_projeto.css('div.box.no-box b')[0].text.split(' ')[1..-1].join(' ')
 		@tipodevoto = ''
 		indice_do_tipo_de_voto_na_pagina = 0
 		while @html_da_lista_do_projeto.css('table.list tr td:nth-child(3)')[indice_do_tipo_de_voto_na_pagina] != nil
@@ -124,12 +124,24 @@ class LeitorDeProjetosCamara
 
   		abrir_o_link_de_detalhes_do_projeto
 
+  		puts pegar_link_do_projeto(@html_detalhes_do_projeto.css('div#documentos ul li a.projeto_detalhe')[0].attr("onclick")).to_s
    		puts @ementa_do_projeto = @html_detalhes_do_projeto.css('table.attributes tr td')[4].text
 		puts @status_do_projeto = @html_detalhes_do_projeto.css('table.attributes tr td')[6].text
 		puts @autor_do_projeto = @html_detalhes_do_projeto.css('table.attributes tr td')[3].text
 		puts @data_de_abertura_do_projeto = @html_detalhes_do_projeto.css('table.attributes tr td')[2].text
 		puts @data_de_ultima_tramitacao_do_projeto = @html_detalhes_do_projeto.css('table.attributes tr td')[8].text
+
+		#salva_os_dados_no_banco(nome_do_projeto, ementa_do_projeto, status_do_projeto, autor_do_projeto, data_de_abertura_do_projeto, data_de_ultima_tramitacao_do_projeto)
+
 	end
+
+    def pegar_link_do_projeto(link)
+	    start_at = "http" 
+	    end_at = ".pdf"
+	    ini = link.index(start_at)
+	    length = link.index(end_at, ini) - ini + 4
+	    link[ini,length]
+    end
 
 	def executa_todo_o_script
 		busca_de_dados = LeitorDeProjetosCamara.new
@@ -143,5 +155,9 @@ class LeitorDeProjetosCamara
 		  end
 		  contador_de_sessoes += 1
 		end
+	end
+
+	def salva_os_dados_no_banco ()
+
 	end
 end
