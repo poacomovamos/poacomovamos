@@ -15,4 +15,18 @@ angular.module('poaComoVamos').
             console.log(data);
         });
 
+       $scope.limpar = function(){
+            /*$scope.busca = '';*/
+            /*alert("foi");*/
+           /* document.getElementsByClassName("busca")[0].style = "display: none";
+            document.getElementsByClassName("busca")[0].style = "display: block";*/
+        }
+
 }]);
+
+/*var limparCampoDePesquisa = function(){
+    document.getElementsByTagName("input")[0].value = "";
+    document.getElementsByClassName("busca")[0].style = "display: none";
+    document.getElementsByClassName("busca")[0].style = "display: block";
+}*/
+
