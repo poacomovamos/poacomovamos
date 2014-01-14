@@ -6,17 +6,17 @@
           <li><a href="#">Presença na Câmara</a></li>
       </ul>
 
-    <input type="text"  ng-blur="limpar()" ng-pattern="/^[a-zA-Z]{1,20}/" ng-model="busca" placeholder="Buscar vereador" >
+        <input id="buscarvereador" type="text"  ng-pattern="/^[a-zA-Z]{1,20}/" ng-model="busca" placeholder="Buscar vereador" >
 
-    <div class="clear"></div>
+        <div class="clear"></div>
 
-    <div class="busca" >
-        <div  ng-repeat="vereador in vereadors | filter:busca ">
-            <div class="resultado-busca" ng-show="busca">
-                <a  href="#/vereador/{{vereador.nome}}">{{ vereador.nome }}</a>
+        <div class="busca">
+            <div  ng-repeat="vereador in vereadors | filter:busca ">
+                <div class="resultado-busca" ng-show="busca">
+                    <a  href="#/vereador/{{vereador.nome}}">{{ vereador.nome }}</a>
+                </div>
             </div>
         </div>
-    </div>
 
     <div class="clear"></div>
     </nav>
