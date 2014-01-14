@@ -1,5 +1,4 @@
 angular.module("poaComoVamos.components", []).
-
   directive('header', function() {
     return {
       restrict: 'C',
