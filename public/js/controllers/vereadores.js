@@ -14,5 +14,4 @@ angular.module('poaComoVamos').
         }).error(function(data){
             console.log(data);
         });
-
 }]);
