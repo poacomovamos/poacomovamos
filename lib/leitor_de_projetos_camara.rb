@@ -1,8 +1,10 @@
 require 'rubygems'
 require 'nokogiri'
 require 'open-uri'
+require 'mongo_mapper'
+require 'ostruct'
 
-
+require_relative '../models/projeto.rb'
 
 class LeitorDeProjetosCamara
 	def initialize
@@ -97,47 +99,60 @@ class LeitorDeProjetosCamara
 		@nome_do_projeto = @html_do_projeto.css('div.box.no-box b')[0].text.split(' ')[1..-1].join(' ')
 		@tipodevoto = ''
 		indice_do_tipo_de_voto_na_pagina = 0
+		@votos = []
 		while @html_da_lista_do_projeto.css('table.list tr td:nth-child(3)')[indice_do_tipo_de_voto_na_pagina] != nil
 
+			@voto = OpenStruct.new
+			@voto.nomeVereador =  @html_da_lista_do_projeto.css('table.list tr td:nth-child(1)')[indice_do_tipo_de_voto_na_pagina].text
 	   		@tipodevoto = @html_da_lista_do_projeto.css('table.list tr td:nth-child(3)')[indice_do_tipo_de_voto_na_pagina].text
 	   		if "Sim" == @tipodevoto
-	   			puts "Sim"
-	   			puts @html_da_lista_do_projeto.css('table.list tr td:nth-child(1)')[indice_do_tipo_de_voto_na_pagina].text
+	   			@voto.tipo = "Sim"
+	   		
+	   		elsif @tipodevoto.include? "N"
+	   			if @tipodevoto.length == 3
+	   				@voto.tipo = "Não"
+	   			else
+	   				@voto.tipo = "Não votou"
+	   			end
 	   		elsif "Ausente" == @tipodevoto
-	   			puts "Ausente"
-	   			puts @html_da_lista_do_projeto.css('table.list tr td:nth-child(1)')[indice_do_tipo_de_voto_na_pagina].text
+	   			@voto.tipo = "Ausente"
+	   			
 	   		elsif @tipodevoto.include? "Absten"
-	   			puts "Abstencao"
-	   			puts @html_da_lista_do_projeto.css('table.list tr td:nth-child(1)')[indice_do_tipo_de_voto_na_pagina].text
+	   			@voto.tipo = "Abstencao"
+	   			
 	   		elsif @tipodevoto.include? "Representa"
-	   			puts "Representacao externa"
-	   			puts @html_da_lista_do_projeto.css('table.list tr td:nth-child(1)')[indice_do_tipo_de_voto_na_pagina].text
-			elsif @tipodevoto.include? "N"
-	   			puts "Nao votou"
-	   			puts @html_da_lista_do_projeto.css('table.list tr td:nth-child(1)')[indice_do_tipo_de_voto_na_pagina].text
+	   			@voto.tipo = "Representacao externa"
 	   		end
 
-	   		puts '----------------------------------------------------------------'
-
+	   		@votos.push(@voto)
 	   		indice_do_tipo_de_voto_na_pagina +=1
 	   	end
 
   		abrir_o_link_de_detalhes_do_projeto
-
-  		puts pegar_link_do_projeto(@html_detalhes_do_projeto.css('div#documentos ul li a.projeto_detalhe')[0].attr("onclick")).to_s
+  		@link_do_pdf = @html_detalhes_do_projeto.css('div#documentos ul li a.projeto_detalhe')[0]
+  		if @link_do_pdf != nil 
+  			@link_do_pdf = pegar_link_do_projeto(@link_do_pdf.attr("onclick")).to_s
+  			puts @link_do_pdf
+  		end
    		puts @ementa_do_projeto = @html_detalhes_do_projeto.css('table.attributes tr td')[4].text
 		puts @status_do_projeto = @html_detalhes_do_projeto.css('table.attributes tr td')[6].text
 		puts @autor_do_projeto = @html_detalhes_do_projeto.css('table.attributes tr td')[3].text
 		puts @data_de_abertura_do_projeto = @html_detalhes_do_projeto.css('table.attributes tr td')[2].text
 		puts @data_de_ultima_tramitacao_do_projeto = @html_detalhes_do_projeto.css('table.attributes tr td')[8].text
 
-		#salva_os_dados_no_banco(nome_do_projeto, ementa_do_projeto, status_do_projeto, autor_do_projeto, data_de_abertura_do_projeto, data_de_ultima_tramitacao_do_projeto)
+		salva_os_dados_no_banco(@nome_do_projeto, @ementa_do_projeto, @status_do_projeto, @autor_do_projeto, @data_de_abertura_do_projeto, @data_de_ultima_tramitacao_do_projeto, @link_do_pdf, @votos)
 
 	end
 
     def pegar_link_do_projeto(link)
-	    start_at = "http" 
-	    end_at = ".pdf"
+	    start_at = "http"
+	    
+	    if link.include? ".pdf"
+	    	end_at = ".pdf"
+	    else
+	    	end_at = ".doc"
+		end
+
 	    ini = link.index(start_at)
 	    length = link.index(end_at, ini) - ini + 4
 	    link[ini,length]
@@ -151,13 +166,23 @@ class LeitorDeProjetosCamara
 
 		  link_dos_projetos = busca_de_dados.pegar_links_dos_projetos_da_sessao(link_da_sessao)
 		  link_dos_projetos.each do |link_do_projeto|
-		  	busca_de_dados.salva_dados_do_projeto(link_do_projeto)
+		  	busca_de_dados.pega_dados_do_projeto(link_do_projeto)
 		  end
 		  contador_de_sessoes += 1
 		end
 	end
 
-	def salva_os_dados_no_banco ()
-
+	def salva_os_dados_no_banco (nome_do_projeto, ementa_do_projeto, status_do_projeto, autor_do_projeto, data_de_abertura_do_projeto, data_de_ultima_tramitacao_do_projeto, link_do_pdf, lista_de_votos)
+		p = Projeto.create(
+			 :nome_projeto => nome_do_projeto,
+			 :ementa_projeto => ementa_do_projeto,
+			 :status_projeto => status_do_projeto,
+			 :autor_projeto => autor_do_projeto,
+			 :data_abertura_projeto => data_de_abertura_do_projeto,
+			 :data_ultima_tramitacao_projeto => data_de_ultima_tramitacao_do_projeto,
+			 :link => link_do_pdf,
+			 :votos => lista_de_votos
+		).save
 	end
 end
+
