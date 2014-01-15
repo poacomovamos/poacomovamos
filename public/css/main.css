@@ -50,20 +50,22 @@ div#transparency {
   background-color: white;
   opacity: 0.6;
   height: 260px;
+  position: relative;
+  z-index: 1;
 }
 div#poa-dialog {
   margin-top: 35px;
   margin-left: 403px;
   width: inherit;
   position: absolute;
-  z-index: 1;
+  z-index: 2;
 }
 div#poa-logo {
   margin-left: 369px;
   margin-top: 135px;
   width: inherit;
   position: absolute;
-  z-index: 1;
+  z-index: 2;
 }
 
 section.slogan{
@@ -254,11 +256,7 @@ dd.email {
   color: #000000;
 }
 
-div.box-busca input {
-  width: 200px;
-}
-
-.box-busca {
+header input {
   width: 200px;
 }
 
@@ -267,6 +265,13 @@ div.busca {
   background-color:  white;
   width: 196px;
   border-radius: 5px;
+  z-index: 3;
+  position:relative;
+  margin-left: 762px;
+}
+
+.logo{
+  z-index: 0;
 }
 
 div.resultado-busca{
@@ -275,4 +280,5 @@ div.resultado-busca{
   padding-top: 3px;
   padding-bottom: 3px;
   border-color: rgb(66, 139, 202);
+  z-index: 3;
 }

@@ -11,7 +11,7 @@ class TestMain < Test::Unit::TestCase
         assert_not_nil(Vereador)
     end
 
-    def test_se_vereador_tem_propriedade_email
+    def test_se_estrutura_vereador_tem_propriedade_email
         v = Vereador.new(
             :nome => "Vereador1",
             :partido => "PT",
@@ -25,7 +25,7 @@ class TestMain < Test::Unit::TestCase
         assert_equal("bernardino@camarapoa.rs.gov.br", v.email)
     end
 
-    def test_se_vereador_tem_votos_em_projetos
+    def test_se_estrutura_projeto_tem_campo_votos
         v1 = Voto.new(:id_vereador => 'id1', :tipo_voto => 'sim')
         v2 = Voto.new(:id_vereador => 'id2', :tipo_voto => 'sim')
         v3 = Voto.new(:id_vereador => 'id3', :tipo_voto => 'nao')
@@ -35,7 +35,7 @@ class TestMain < Test::Unit::TestCase
             :ementa => "ementa",
             :status => "status",
             :autor => "autor",
-            :vcloseotos => [v1,v2,v3]
+            :votos => [v1,v2,v3]
         )
 
         assert_not_nil(p)

@@ -24,5 +24,10 @@ class TestMain < Test::Unit::TestCase
 	end
 
 
+	def testa_retornando_link_sem_lixo
+		link = "<a onclisssssssssssck=ssddddd\"windowddddddd.open(&amp;apos;http://200.169.19.94/processo_eletronico/018822013PLL/018822013PLL_PROJETO_723876564_412.pdf&amp;apos;,&amp;apos;janela&amp;apos;,&amp;apos;target=_blank&amp;apos;)\" href=\"#\" class=\"p>"
+		assert_equal("http://200.169.19.94/processo_eletronico/018822013PLL/018822013PLL_PROJETO_723876564_412.pdf", @site.pegar_link_do_projeto(link))
+	end
+
 
 end
