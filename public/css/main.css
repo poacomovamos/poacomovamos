@@ -210,26 +210,3 @@ dd.email {
 header input {
   width: 200px;
 }
-
-div.busca {
-  margin-left: 2px;
-  background-color:  white;
-  width: 196px;
-  border-radius: 5px;
-  z-index: 3;
-  position:relative;
-  margin-left: 762px;
-}
-
-.logo{
-  z-index: 0;
-}
-
-div.resultado-busca{
-  border-bottom: solid;
-  border-bottom-width: 1px;
-  padding-top: 3px;
-  padding-bottom: 3px;
-  border-color: rgb(66, 139, 202);
-  z-index: 3;
-}
