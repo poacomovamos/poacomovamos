@@ -6,6 +6,62 @@
     Uma plataforma que mostra o que está acontecendo no legislativo acompanhando o trabalho dos vereadores e o dia a dia na Câmara. 
   </p>
 </section>
+
+<section class="conteudo vereadores">
+  <h2>Presença na câmara</h2>
+  <p>
+    O legislativo de uma cidade é encabeçado pelos vereadores. Eles tem três funções principais: fiscalizar as ações da prefeitura; defender os interesses da comunidade e elaborar projetos de lei. Para executar parte dessas atividades é preciso sua presença na câmara e é dessa forma que começamos nossa fiscalização, observando a assiduidade de nossos representantes. 
+  </p>
+
+<!--
+  Implementação futura, para ordenação de vereadores
+  <p class="ordem-vereadores">Ordenar por:</p>
+
+  <ul>
+    <li>
+      <input id="ordem-alfabetica" name="ordenar-vereadores" type="radio">
+      <label for="ordem-alfabetica" class="icon-circle">Ordem alfabética</label>
+    </li>
+    <li>
+      <input id="percentual-assiduidade" name="ordenar-vereadores" type="radio">
+      <label for="percentual-assiduidade" class="icon-circle">Percentual geral de assiduidade</label>
+    </li>
+    <li>
+      <input id="presenca-ultima-sessao" name="ordenar-vereadores" type="radio">
+      <label for="presenca-ultima-sessao" class="icon-circle">Presença na câmara na última sessão</label>
+    </li>
+  </ul>
+-->
+
+  <ul class="lista-vereadores">
+    <li ng-repeat="vereador in vereadores | embaralhar">
+      
+      <div class="vereador-contatos">
+        <div>
+          <a href="#/vereador/{{vereador.nome}}">
+            <img ng-src="../img/vereadores/{{vereador.foto}}" class="vereador img-rounded">
+          </a>
+        </div>
+        
+        <div>
+
+        </div>
+        
+        <div>
+
+        </div>
+      </div>
+
+      <div>
+
+      </div>
+
+    </li>
+    <li class="clear"></li>
+  </ul>
+
+</section>
+
 <!--
 <div class="contentvereadores-ext">
   <div class="hero-unit">

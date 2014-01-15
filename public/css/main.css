@@ -30,7 +30,7 @@ section#barra-menu ul li a{
   color: white;
 }
 
-.content {
+.wrapper {
   margin: 0 auto;
   width: 980px;
   text-align: center;
@@ -89,6 +89,55 @@ section.slogan h1, section.slogan p{
   margin: auto;
 }
 
+section.vereadores{
+  padding: 30px 58px;
+  background-color: rgb(43, 61, 79);
+  text-align: left;
+}
+
+section.vereadores h2{
+  font-size: 14.5px;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding-bottom: 20px;
+  margin: 0px;
+}
+
+section.vereadores p.ordem-vereadores{
+  margin-top: 30px;
+}
+
+section.vereadores ul{
+  list-style: none;
+  padding: 0;
+}
+
+section.vereadores ul li{
+  display: inline-block;
+  margin-right: 50px;
+  color: #bbc2c4;
+}
+
+section.vereadores ul li label{
+  font-weight: 300;
+}
+
+section.vereadores ul.lista-vereadores{
+
+}
+
+section.vereadores ul.lista-vereadores li{
+  display: block;
+}
+
+section.vereadores ul.lista-vereadores li:nth-child(odd){
+  float:left;
+}
+
+section.vereadores ul.lista-vereadores li:nth-child(even){
+  float:right;
+}
+
 li.option a {
   height: 30px;
   display: block;
@@ -105,16 +154,15 @@ li.option a:hover {
 
 }
 
-div.vereador {
-  width: 45%;
-  float: left;
-  margin: 10px;
-  font-size: 0.8em;
+div.vereador-contatos {
+  background: #efeff1;
+  width: 350px;
 }
 
-img.vereador {
-  height: 140px;
-  width: 100%;
+ul.lista-vereadores div a img.vereador {
+  height: 52px;
+  width: 42px;
+  border-radius: 0;
 }
 
 .vereador ul li {
@@ -179,6 +227,7 @@ dd.email {
 
 .clear {
   clear: both;
+  float: none !important;
 }
 
 .panel{
