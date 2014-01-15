@@ -1,3 +1,10 @@
+@font-face {
+    font-family: "allerregular";
+    font-style: normal;
+    font-weight: normal;
+    src: url("../fonts/aller_rg-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/aller_rg-webfont.woff") format("woff"), url("../fonts/aller_rg-webfont.ttf") format("truetype"), url("../fonts/aller_rg-webfont.svg#allerregular") format("svg");
+}
+
 body {
   background: url('../img/background_desktop.jpg');
   background-attachment: fixed;
@@ -189,12 +196,13 @@ ul.lista-vereadores div a img.vereador {
 
 div.perfilvereador {
   text-align: center;
-  margin-top: 20px;
+  background-color: #FFFFFF;
+  color: #000000;
 }
 
 img.perfilvereador {
-  height: 140px;
-  width: 50%;
+  height: 300px;
+  width: 100%;
 }
 
 dd.email {
@@ -203,12 +211,11 @@ dd.email {
 
 .hero-unit {
     margin: 0 auto;
-    width: 940px;
+    width: 980px;
     font-weight: 200;
     line-height: 30px;
     padding: 20px;
     background-color: #2D3E4F;
-    border-radius: 6px;
     font-size: 18px;
     float: left;
 }
@@ -240,6 +247,7 @@ dd.email {
   height: auto;
   float: left;
   width: 100%;
+  color: black;
 }
 
 .contentvereadores-ext {
@@ -258,4 +266,107 @@ dd.email {
 
 header input {
   width: 200px;
+}
+
+.tab-content{
+  background-color: #FFFFFF;
+  color: #000000;
+   padding: 20px;
+}
+
+.nav-tabs > li {
+    width: 180px;
+    font-size: 12px;
+}
+
+.desactive {
+  background-color: #297FB9;
+  margin-right: 2px;
+  border-radius: 6px 6px 0 0;
+}
+
+.nav-tabs > li > a {
+  margin-right: 0;
+  color: #FFFFFF;
+}
+
+.tab-pane {
+   text-align: justify;
+}
+
+.titulo {
+  text-align: left;
+  font-size: 12px;
+  font-weight: bold;
+  color: #2D3E4F;
+}
+
+.twitter-link, .facebook-link {
+    background: none repeat scroll 0 0 #3E454D;
+    bottom: 0;
+    color: rgba(0, 0, 0, 0);
+    display: block;
+    font: 0px/0 a;
+    height: 30px;
+    position: absolute;
+    text-align: center;
+    text-decoration: none;
+    text-shadow: none;
+    width: 50%;
+}
+.twitter-link:hover, .facebook-link:hover {
+    background: none repeat scroll 0 0 #BDC2C6;
+}
+.twitter-link {
+    left: 0;
+}
+.facebook-link {
+    left: 50%;
+}
+.twitter-link:before, .facebook-link:before {
+    color: #FFFFFF;
+    font-size: 1rem;
+    line-height: 30px;
+}
+.hidden-text {
+    color: rgba(0, 0, 0, 0);
+    font: 0px/0 a;
+    text-shadow: none;
+}
+.presence-meter-bar, .presence-meter-amount {
+    border-radius: 2px;
+    color: rgba(0, 0, 0, 0);
+    font: 0px/0 a;
+    text-shadow: none;
+}
+.presence-meter-bar {
+    background: none repeat scroll 0 0 #FFFFFF;
+    height: 8px;
+    margin: 18px 0 10px 64px;
+    position: relative;
+}
+.presence-meter-bar:before {
+    background: none repeat scroll 0 0 #44AB9A;
+    color: #FFFFFF;
+    content: attr(data-frequency);
+    display: block;
+    font-family: 'allerregular',sans-serif;
+    font-size: 1rem;
+    height: 30px;
+    left: -64px;
+    line-height: 30px;
+    position: absolute;
+    text-align: center;
+    top: -11px;
+    width: 60px;
+}
+.presence-meter-amount {
+    background: none repeat scroll 0 0 #44AB9A;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+}
+.low-frequency .presence-meter-amount, .low-frequency:before {
+    background: none repeat scroll 0 0 #BF392B;
 }
