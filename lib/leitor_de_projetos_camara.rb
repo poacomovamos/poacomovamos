@@ -91,7 +91,6 @@ class LeitorDeProjetosCamara
 		numeroProcesso_e_ano_array
 	end
 
-	#O metodo não salva, apenas imprime na tela as informações de projeto coletadas, um dia ira salvar no banco
 	def pega_dados_do_projeto (link_do_projeto)
 		@html_do_projeto = Nokogiri::HTML(open(link_do_projeto.to_s))
 		abrir_link_de_ordenacao_lista_de_presencas_do_projeto
@@ -107,13 +106,6 @@ class LeitorDeProjetosCamara
 	   		@tipodevoto = @html_da_lista_do_projeto.css('table.list tr td:nth-child(3)')[indice_do_tipo_de_voto_na_pagina].text
 	   		if "Sim" == @tipodevoto
 	   			@voto.tipo = "Sim"
-	   		
-	   		elsif @tipodevoto.include? "N"
-	   			if @tipodevoto.length == 3
-	   				@voto.tipo = "Não"
-	   			else
-	   				@voto.tipo = "Não votou"
-	   			end
 	   		elsif "Ausente" == @tipodevoto
 	   			@voto.tipo = "Ausente"
 	   			
@@ -122,8 +114,13 @@ class LeitorDeProjetosCamara
 	   			
 	   		elsif @tipodevoto.include? "Representa"
 	   			@voto.tipo = "Representacao externa"
+	   		elsif @tipodevoto.include? "N"
+	   			if @tipodevoto.length == 3
+	   				@voto.tipo = "Não"
+	   			else
+	   				@voto.tipo = "Não votou"
+	   			end
 	   		end
-
 	   		@votos.push(@voto)
 	   		indice_do_tipo_de_voto_na_pagina +=1
 	   	end

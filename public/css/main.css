@@ -159,14 +159,16 @@ li.option a {
   text-shadow: none;
 }
 
-li.option a:hover {
-
-}
-
 div.vereador-contatos {
   background: #efeff1;
   width: 350px;
 }
+
+div.vereador-contatos > div{
+  display: inline-block;
+}
+
+
 
 ul.lista-vereadores div a img.vereador {
   height: 52px;
@@ -174,25 +176,6 @@ ul.lista-vereadores div a img.vereador {
   border-radius: 0;
 }
 
-.vereador ul li {
-  margin: 0px;
-  float: left;
-  list-style-type: none;
-}
-
-.vereador ul li.picture {
-  width: 25%;
-}
-.vereador ul li.description {
-  width: 60%;
-  height: 120px;
-  margin-left: 5px;
-  margin-right: 5px;
-}
-
-.vereador ul li.social {
-  width: 10%;
-}
 
 div.perfilvereador {
   text-align: center;
