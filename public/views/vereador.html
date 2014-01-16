@@ -1,54 +1,54 @@
 <!-- perfil do vereador aqui sem os projetos -->
 <div class="content">
   <div class="hero-unit">
-      <div class="col-md-4">
+      <div class="col-md-3">
       	  {{vereadoress | json}}
             <div >
               <div class="perfilvereador">
-                <img ng-src="../img/vereadores/{{vereador.foto}}" class="perfilvereador">
-
-            <!--     <dl>
-                  <dt class="hidden-text">Twitter</dt>
-                  <dd>
-                  '<a class="icon-twitter twitter-link" href="http://twitter.com/{{vereador.twitter}}" target="_blank">Ir para twitter</a>
-                  </dd>
-                  <dt class="hidden-text">Facebook</dt>
-                  <dd>
-                  <a class="icon-facebook facebook-link" href="{{vereador.facebook}}" target="_blank">Ir para Facebook</a>
-                  </dd>
-                </dl> -->
+                <img ng-src="../img/vereadores/{{vereador.foto}}" class="perfilvereador" />
                   {{vereador.nome}} <br />
                   {{vereador.partido}} <br />
                   ({{vereador.telefone}}) <br />
-                  <small>
-                    <a href="mailto:{{vereador.email}}">{{vereador.email}}</a>
+                  <small class='emailvereador'>
+                    {{vereador.email}}
                   </small>
-
-                  <p>ASSIDUIDADE</p>
-                  <div class="presence-meter-bar low-frequency" data-frequency="39%">
-                    <span class="presence-meter-amount" style="width:39%;">Freqüencia de 39%</span>
+                  <hr class="linha-perfil"/>
+                  Presença na câmara
+                  <div class="presence">
+                    <div class="presence-meter-bar high-frequency" data-frequency="100%">
+                      <span class="presence-meter-amount" style="width:100%;">Freqüencia de 39%</span>
+                    </div>
                   </div>
-
+                  <div>
+                    <a href="http://www.twitter.com/{{vereador.twitter}}" target="_blank">
+                      <div class='social'>
+                        <i class="fa fa-twitter"></i>
+                      </div>
+                    </a>
+                    <a href="{{vereador.facebook}}" target="_blank">
+                      <div class='social'>
+                        <i class="fa fa-facebook"></i>
+                      </div>
+                    </a>
+                </div>
               </div>
             </div>
       </div>
 
       <!-- projetos dos vereadores aqui -->
-      <div class="col-md-8">
-          <div class="panel panel-default">
-              <div class="panel-heading">Grafico de votação</div>
+      <div class="col-md-9">
+              <div class="panel-heading">Gráfico de votação em projetos</div>
               <div class="panel-body">
-                 <canvas id="cvs" width="500" height="250">[No canvas support]</canvas>
+                 <canvas id="cvs" width="600" height="350">[No canvas support]</canvas>
                  {{ initGrafico() }}
               </div>
-          </div>
       </div>
 
-      <div class="col-md-12">
-            <h4>TOTAL DE PROJETOS: </h4>
+      <div class="col-md-12 projetos">
+            <h5>TOTAL DE PROJETOS: </h5>
              <!-- Nav tabs -->
               <ul id="tab-projetos" class="nav nav-tabs">
-                <li class="desactive"><a href="#votou" data-toggle="tab">VOTOU</a></li>
+                <li class="active desactive"><a href="#votou" data-toggle="tab">VOTOU</a></li>
                 <li class="desactive"><a href="#naovotou" data-toggle="tab">NÃO VOTOU</a></li>
                 <li class="desactive"><a href="#ausente" data-toggle="tab">AUSENTE</a></li>
                 <li class="desactive"><a href="#externa" data-toggle="tab">REP.EXTERNA</a></li>
@@ -58,56 +58,94 @@
               <!-- Tab panes -->
               <div class="tab-content">
 
-                <div class="col-md-2 titulo">Projeto</div>
-                <div class="col-md-6 titulo">Empresa</div>
-                <div class="col-md-2 titulo">Data</div>
-                <div class="col-md-2 titulo">Voto</div>
-
                 <div class="tab-pane active" id="votou">
-                  votou = Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                  consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                  cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                  proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                  <div class="col-md-2 titulo">Projeto</div>
+                  <div class="col-md-6 titulo">Ementa</div>
+                  <div class="col-md-2 titulo">Data de abertura</div>
+                  <div class="col-md-2 titulo">Voto</div>
+
+                  <div class="datalhes-projeto">
+                    <div class="col-md-2">02246/2013 - PLL</div>
+                    <div class="col-md-6">
+                        abstencao = Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    </div>
+                    <div class="col-md-2">22/05/2013</div>
+                    <div class="col-md-2">Sim</div>
+                  </div>
                 </div>
 
-
-
                 <div class="tab-pane" id="naovotou">
-                  naovotou = Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                  consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                  cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                  proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                  <div class="col-md-2 titulo">Projeto</div>
+                  <div class="col-md-6 titulo">Ementa</div>
+                  <div class="col-md-2 titulo">Data de abertura</div>
+                  <div class="col-md-2 titulo">Voto</div>
+
+                   <div class="datalhes-projeto">
+                    <div class="col-md-2">02246/2013 - PLL</div>
+                    <div class="col-md-6">
+                        abstencao = Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    </div>
+                    <div class="col-md-2">22/05/2013</div>
+                    <div class="col-md-2">Não votou</div>
+                  </div>
                 </div>
 
                 <div class="tab-pane" id="ausente">
-                  ausente = Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                  consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                  cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                  proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                  <div class="col-md-2 titulo">Projeto</div>
+                  <div class="col-md-6 titulo">Ementa</div>
+                  <div class="col-md-2 titulo">Data de abertura</div>
+                  <div class="col-md-2 titulo">Voto</div>
+
+                   <div class="datalhes-projeto">
+                    <div class="col-md-2">02246/2013 - PLL</div>
+                    <div class="col-md-6">
+                        abstencao = Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    </div>
+                    <div class="col-md-2">22/05/2013</div>
+                    <div class="col-md-2">Ausente</div>
+                  </div>
                 </div>
 
                 <div class="tab-pane" id="externa">
-                  externa = Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                  consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                  cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                  proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                  <div class="col-md-2 titulo">Projeto</div>
+                  <div class="col-md-6 titulo">Ementa</div>
+                  <div class="col-md-2 titulo">Data de abertura</div>
+                  <div class="col-md-2 titulo">Voto</div>
+
+                   <div class="datalhes-projeto">
+                    <div class="col-md-2">02246/2013 - PLL</div>
+                    <div class="col-md-6">
+                        abstencao = Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    </div>
+                    <div class="col-md-2">22/05/2013</div>
+                    <div class="col-md-2">Rep.Externa</div>
+                  </div>
                 </div>
 
                 <div class="tab-pane" id="abstencao">
-                  abstencao = Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                  consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                  cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                  proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                  <div class="col-md-2 titulo">Projeto</div>
+                  <div class="col-md-6 titulo">Ementa</div>
+                  <div class="col-md-2 titulo">Data de abertura</div>
+                  <div class="col-md-2 titulo">Voto</div>
+
+                   <div class="datalhes-projeto">
+                    <div class="col-md-2">02246/2013 - PLL</div>
+                    <div class="col-md-6">
+                        abstencao = Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    </div>
+                    <div class="col-md-2">22/05/2013</div>
+                    <div class="col-md-2">Abstenção</div>
+                  </div>
                 </div>
 
               </div>

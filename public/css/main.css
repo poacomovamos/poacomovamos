@@ -220,6 +220,11 @@ ul.lista-vereadores li div.border-bottom-vereador{
   border-bottom: 1px solid rgb(39, 38, 43);
 }
 
+img.perfilvereador {
+  height: 200px;
+  width: 100%;
+}
+
 ul.lista-vereadores li:nth-last-child(-n+3) div.border-bottom-vereador{
   border: none;
 }
@@ -229,7 +234,7 @@ ul.lista-vereadores li:nth-last-child(-n+3) div.border-bottom-vereador{
     width: 980px;
     font-weight: 200;
     line-height: 30px;
-    padding: 20px;
+    padding: 30px 25px 0 15px;
     background-color: #2D3E4F;
     font-size: 18px;
     float: left;
@@ -243,6 +248,7 @@ ul.lista-vereadores li:nth-last-child(-n+3) div.border-bottom-vereador{
 
 .projetos {
   color: white;
+  margin-top: 40px;
 }
 
 .left {
@@ -284,9 +290,16 @@ header input {
 }
 
 .tab-content{
-  background-color: #FFFFFF;
+  background-color: #C4DEED;
   color: #000000;
-   padding: 20px;
+  padding: 20px;
+  float: left;
+}
+
+
+
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+   background-color: #C4DEED;
 }
 
 .nav-tabs > li {
@@ -295,7 +308,7 @@ header input {
 }
 
 .desactive {
-  background-color: #297FB9;
+  background-color: #2D638F;
   margin-right: 2px;
   border-radius: 6px 6px 0 0;
 }
@@ -305,13 +318,17 @@ header input {
   color: #FFFFFF;
 }
 
+.nav-tabs > li > a:hover, .nav-tabs > li > a:focus  {
+  color: #000000;
+}
+
 .tab-pane {
    text-align: justify;
 }
 
 .titulo {
-  text-align: left;
-  font-size: 12px;
+  text-align: center;
+  font-size: 14px;
   font-weight: bold;
   color: #2D3E4F;
 }
@@ -360,6 +377,12 @@ header input {
     margin: 18px 0 10px 64px;
     position: relative;
 }
+.presence{
+  clear: both;
+  width: 100%;
+  height: 50px;
+  padding: 5px;
+}
 .presence-meter-bar:before {
     background: none repeat scroll 0 0 #44AB9A;
     color: #FFFFFF;
@@ -384,4 +407,43 @@ header input {
 }
 .low-frequency .presence-meter-amount, .low-frequency:before {
     background: none repeat scroll 0 0 #BF392B;
+}
+
+small.emailvereador {
+  font-size: 10px;
+}
+
+.linha-perfil {
+  margin: 10px 20px 10px 20px;
+}
+
+div.social {
+  background-color: #50585D;
+  width: 50%;
+  float: left;
+  font-size: 2em;
+  padding: 10px;
+}
+
+div.perfilvereador a {
+  color: #FFFFFF;
+}
+
+div.perfilvereador a:hover {
+  color: #428BCA;
+}
+
+.datalhes-projeto {
+  background-color: #FFFFFF;
+  opacity: 0.7;
+  padding:  10px 0 10px 0;
+  float: left;
+  width: 100%;
+  height: auto;
+  font-size: 12px;
+  line-height: 16px;
+  text-align: center;
+}
+.panel-heading{
+  padding: 0 0 103px 0;
 }
