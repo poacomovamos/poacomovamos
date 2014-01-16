@@ -5,11 +5,12 @@ angular.module('poaComoVamos').
   controller('VereadorCtrl', ['$scope', 'vereador', '$routeParams', function ($scope, vereador, $routeParams) {
 
   $scope.initGrafico = function(){
-	 var bar = new RGraph.Bar('cvs', [4,8,5,3])
+	 var bar = new RGraph.Bar('cvs', [30,22,10,3])
 		.Set('labels', ['Votou', 'Absteve-se','Rep. Externa','Ausente'])
+		.Set('text.color', '#FFFFFF')
 		.Set('colors.sequential', true)
-		.Set('shadow', true)
-		.Set('shadow.color', '#ccc')
+		.Set('background.grid', false)
+
 		.Draw();
 
 		var colors = [];

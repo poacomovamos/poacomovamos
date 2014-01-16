@@ -198,10 +198,11 @@ div.perfilvereador {
   text-align: center;
   background-color: #FFFFFF;
   color: #000000;
+  font-size: 16px;
 }
 
 img.perfilvereador {
-  height: 300px;
+  height: 200px;
   width: 100%;
 }
 
@@ -290,6 +291,10 @@ header input {
   color: #FFFFFF;
 }
 
+.nav-tabs > li > a:hover, .nav-tabs > li > a:focus  {
+  color: #000000;
+}
+
 .tab-pane {
    text-align: justify;
 }
@@ -345,6 +350,12 @@ header input {
     margin: 18px 0 10px 64px;
     position: relative;
 }
+.presence{
+  clear: both;
+  width: 100%;
+  height: 50px;
+  padding: 5px;
+}
 .presence-meter-bar:before {
     background: none repeat scroll 0 0 #44AB9A;
     color: #FFFFFF;
@@ -370,3 +381,4 @@ header input {
 .low-frequency .presence-meter-amount, .low-frequency:before {
     background: none repeat scroll 0 0 #BF392B;
 }
+
