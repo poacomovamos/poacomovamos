@@ -91,7 +91,6 @@ class LeitorDeProjetosCamara
 		numeroProcesso_e_ano_array
 	end
 
-	#O metodo não salva, apenas imprime na tela as informações de projeto coletadas, um dia ira salvar no banco
 	def pega_dados_do_projeto (link_do_projeto)
 		@html_do_projeto = Nokogiri::HTML(open(link_do_projeto.to_s))
 		abrir_link_de_ordenacao_lista_de_presencas_do_projeto
