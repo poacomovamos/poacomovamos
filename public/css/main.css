@@ -1,3 +1,10 @@
+@font-face {
+    font-family: "allerregular";
+    font-style: normal;
+    font-weight: normal;
+    src: url("../fonts/aller_rg-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/aller_rg-webfont.woff") format("woff"), url("../fonts/aller_rg-webfont.ttf") format("truetype"), url("../fonts/aller_rg-webfont.svg#allerregular") format("svg");
+}
+
 body {
   background: url('../img/background_desktop.jpg');
   background-attachment: fixed;
@@ -30,7 +37,7 @@ section#barra-menu ul li a{
   color: white;
 }
 
-.content {
+.wrapper {
   margin: 0 auto;
   width: 980px;
   text-align: center;
@@ -91,6 +98,55 @@ section.slogan h1, section.slogan p{
   margin: auto;
 }
 
+section.vereadores{
+  padding: 30px 58px;
+  background-color: rgb(43, 61, 79);
+  text-align: left;
+}
+
+section.vereadores h2{
+  font-size: 14.5px;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding-bottom: 20px;
+  margin: 0px;
+}
+
+section.vereadores p.ordem-vereadores{
+  margin-top: 30px;
+}
+
+section.vereadores ul{
+  list-style: none;
+  padding: 0;
+}
+
+section.vereadores ul li{
+  display: inline-block;
+  margin-right: 50px;
+  color: #bbc2c4;
+}
+
+section.vereadores ul li label{
+  font-weight: 300;
+}
+
+section.vereadores ul.lista-vereadores{
+
+}
+
+section.vereadores ul.lista-vereadores li{
+  display: block;
+}
+
+section.vereadores ul.lista-vereadores li:nth-child(odd){
+  float:left;
+}
+
+section.vereadores ul.lista-vereadores li:nth-child(even){
+  float:right;
+}
+
 li.option a {
   height: 30px;
   display: block;
@@ -107,16 +163,15 @@ li.option a:hover {
 
 }
 
-div.vereador {
-  width: 45%;
-  float: left;
-  margin: 10px;
-  font-size: 0.8em;
+div.vereador-contatos {
+  background: #efeff1;
+  width: 350px;
 }
 
-img.vereador {
-  height: 140px;
-  width: 100%;
+ul.lista-vereadores div a img.vereador {
+  height: 52px;
+  width: 42px;
+  border-radius: 0;
 }
 
 .vereador ul li {
@@ -141,12 +196,13 @@ img.vereador {
 
 div.perfilvereador {
   text-align: center;
-  margin-top: 20px;
+  background-color: #FFFFFF;
+  color: #000000;
 }
 
 img.perfilvereador {
-  height: 140px;
-  width: 50%;
+  height: 300px;
+  width: 100%;
 }
 
 dd.email {
@@ -155,12 +211,11 @@ dd.email {
 
 .hero-unit {
     margin: 0 auto;
-    width: 940px;
+    width: 980px;
     font-weight: 200;
     line-height: 30px;
     padding: 20px;
     background-color: #2D3E4F;
-    border-radius: 6px;
     font-size: 18px;
     float: left;
 }
@@ -181,6 +236,7 @@ dd.email {
 
 .clear {
   clear: both;
+  float: none !important;
 }
 
 .panel{
@@ -191,6 +247,7 @@ dd.email {
   height: auto;
   float: left;
   width: 100%;
+  color: black;
 }
 
 .contentvereadores-ext {
@@ -211,25 +268,105 @@ header input {
   width: 200px;
 }
 
-div.busca {
-  margin-left: 2px;
-  background-color:  white;
-  width: 196px;
-  border-radius: 5px;
-  z-index: 3;
-  position:relative;
-  margin-left: 762px;
+.tab-content{
+  background-color: #FFFFFF;
+  color: #000000;
+   padding: 20px;
 }
 
-.logo{
-  z-index: 0;
+.nav-tabs > li {
+    width: 180px;
+    font-size: 12px;
 }
 
-div.resultado-busca{
-  border-bottom: solid;
-  border-bottom-width: 1px;
-  padding-top: 3px;
-  padding-bottom: 3px;
-  border-color: rgb(66, 139, 202);
-  z-index: 3;
+.desactive {
+  background-color: #297FB9;
+  margin-right: 2px;
+  border-radius: 6px 6px 0 0;
+}
+
+.nav-tabs > li > a {
+  margin-right: 0;
+  color: #FFFFFF;
+}
+
+.tab-pane {
+   text-align: justify;
+}
+
+.titulo {
+  text-align: left;
+  font-size: 12px;
+  font-weight: bold;
+  color: #2D3E4F;
+}
+
+.twitter-link, .facebook-link {
+    background: none repeat scroll 0 0 #3E454D;
+    bottom: 0;
+    color: rgba(0, 0, 0, 0);
+    display: block;
+    font: 0px/0 a;
+    height: 30px;
+    position: absolute;
+    text-align: center;
+    text-decoration: none;
+    text-shadow: none;
+    width: 50%;
+}
+.twitter-link:hover, .facebook-link:hover {
+    background: none repeat scroll 0 0 #BDC2C6;
+}
+.twitter-link {
+    left: 0;
+}
+.facebook-link {
+    left: 50%;
+}
+.twitter-link:before, .facebook-link:before {
+    color: #FFFFFF;
+    font-size: 1rem;
+    line-height: 30px;
+}
+.hidden-text {
+    color: rgba(0, 0, 0, 0);
+    font: 0px/0 a;
+    text-shadow: none;
+}
+.presence-meter-bar, .presence-meter-amount {
+    border-radius: 2px;
+    color: rgba(0, 0, 0, 0);
+    font: 0px/0 a;
+    text-shadow: none;
+}
+.presence-meter-bar {
+    background: none repeat scroll 0 0 #FFFFFF;
+    height: 8px;
+    margin: 18px 0 10px 64px;
+    position: relative;
+}
+.presence-meter-bar:before {
+    background: none repeat scroll 0 0 #44AB9A;
+    color: #FFFFFF;
+    content: attr(data-frequency);
+    display: block;
+    font-family: 'allerregular',sans-serif;
+    font-size: 1rem;
+    height: 30px;
+    left: -64px;
+    line-height: 30px;
+    position: absolute;
+    text-align: center;
+    top: -11px;
+    width: 60px;
+}
+.presence-meter-amount {
+    background: none repeat scroll 0 0 #44AB9A;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+}
+.low-frequency .presence-meter-amount, .low-frequency:before {
+    background: none repeat scroll 0 0 #BF392B;
 }
