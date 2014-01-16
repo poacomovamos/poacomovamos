@@ -19,6 +19,7 @@ module.exports = function(config) {
 
     // list of files to exclude
     exclude: [
+      'public/js/tabs.js',
       'public/js/vendor/bootstrap.js',
       'public/js/vendor/bootstrap.min.js'
     ],
