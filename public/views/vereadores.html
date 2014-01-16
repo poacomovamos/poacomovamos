@@ -13,50 +13,34 @@
     O legislativo de uma cidade é encabeçado pelos vereadores. Eles tem três funções principais: fiscalizar as ações da prefeitura; defender os interesses da comunidade e elaborar projetos de lei. Para executar parte dessas atividades é preciso sua presença na câmara e é dessa forma que começamos nossa fiscalização, observando a assiduidade de nossos representantes. 
   </p>
 
-<!--
-  Implementação futura, para ordenação de vereadores
-  <p class="ordem-vereadores">Ordenar por:</p>
-
-  <ul>
-    <li>
-      <input id="ordem-alfabetica" name="ordenar-vereadores" type="radio">
-      <label for="ordem-alfabetica" class="icon-circle">Ordem alfabética</label>
-    </li>
-    <li>
-      <input id="percentual-assiduidade" name="ordenar-vereadores" type="radio">
-      <label for="percentual-assiduidade" class="icon-circle">Percentual geral de assiduidade</label>
-    </li>
-    <li>
-      <input id="presenca-ultima-sessao" name="ordenar-vereadores" type="radio">
-      <label for="presenca-ultima-sessao" class="icon-circle">Presença na câmara na última sessão</label>
-    </li>
-  </ul>
--->
-
   <ul class="lista-vereadores">
     <li ng-repeat="vereador in vereadores | embaralhar">
       
-      <div class="vereador-contatos">
+      <div class="vereador">
         <div>
           <a href="#/vereador/{{vereador.nome}}">
             <img ng-src="../img/vereadores/{{vereador.foto}}" class="vereador img-rounded">
           </a>
         </div>
         
-        <div>
+        <div class="vereador-contatos">
           <p><a href="/#/vereador/{{vereador.nome}}"> {{vereador.nome}} ({{vereador.partido}}) </a></p>
           <p>{{vereador.email}}</p>
           <p>{{vereador.telefone}}</p>
         </div>
         
-        <div>
-          <div class="vereador-twitter"><a href=""><i class="fa fa-twitter-square">Ir para Twitter</i></a></div>
-          <div class="vereador-facebook"><a href=""><i class="fa fa-facebook-square">Ir para Facebook</i></a></div>
+        <div class="rede-social">
+          <div class="vereador-twitter"><a href="https://twitter.com/{{vereador.twitter}}" title="Twitter" target="_blank"><i class="fa fa-twitter"></i></a></div>
+          <div class="vereador-facebook"><a href="{{vereador.facebook}}" title="Facebook" target="_blank"><i class="fa fa-facebook"></i></a></div>
         </div>
       </div>
 
-      <div>
-
+      <div class="border-bottom-vereador">
+        <div class="presence-meter-bar low-frequency" data-frequency="39%">
+          <span class="presence-meter-amount" style="width:39%;">
+              Freqüencia de 39%
+          </span>
+        </div>
       </div>
 
     </li>
@@ -64,39 +48,3 @@
   </ul>
 
 </section>
-
-<!--
-<div class="contentvereadores-ext">
-  <div class="hero-unit">
-    <div class="contentvereadores-int">
-    {{vereadoress | json}}
-    <div class="vereador" ng-repeat="vereador in vereadores | embaralhar">
-      <div class="well">
-        <ul>
-          <li class="picture">
-           <a href="#/vereador/{{vereador.nome}}">
-             <img ng-src="../img/vereadores/{{vereador.foto}}" class="vereador img-rounded">
-           </a>
-          </li>
-          <li class="description">
-          <dl >
-            <dt><a href="/#/vereador/{{vereador.nome}}"> {{vereador.nome}} ({{vereador.partido}}) </a><i ng-class="{ true: 'icon-ok', false: 'icon-remove' }[vereador.presencaUltimaSessao]"></i></dt>
-            <dd class="email"><a href="mailto:{{vereador.email}}">{{vereador.email}}</a></dd>
-          </dl>
-          </li>
-          <li class="social">
-            <a href="http://twitter.com/{{vereador.twitter}}" target="_blank">
-              <img ng-src="../img/twitter-bird-light-bgs.png" class="twitter-icon">
-            </a>
-            <a href="{{vereador.facebook}}" target="_blank">
-              <img ng-src="../img/FB-f-Logo__blue_50.png" class="twitter-icon">
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
-    </div>
-  </div>
-</div>
--->
-

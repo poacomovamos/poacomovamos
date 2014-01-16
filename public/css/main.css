@@ -1,14 +1,18 @@
 @font-face {
-    font-family: "allerregular";
-    font-style: normal;
-    font-weight: normal;
-    src: url("../fonts/aller_rg-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/aller_rg-webfont.woff") format("woff"), url("../fonts/aller_rg-webfont.ttf") format("truetype"), url("../fonts/aller_rg-webfont.svg#allerregular") format("svg");
+  font-family: 'allerregular';
+  src: url('../fonts/aller_rg-webfont.eot');
+  src: url('../fonts/aller_rg-webfont.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/aller_rg-webfont.woff') format('woff'),
+  url('../fonts/aller_rg-webfont.ttf') format('truetype'),
+  url('../fonts/aller_rg-webfont.svg#allerregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
 }
 
 body {
   background: url('../img/background_desktop.jpg');
   background-attachment: fixed;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'Lato', sans-serif;
   color: #FFF;
   background-repeat: no-repeat;
   background-size: cover;
@@ -123,7 +127,6 @@ section.vereadores ul{
 
 section.vereadores ul li{
   display: inline-block;
-  margin-right: 50px;
   color: #bbc2c4;
 }
 
@@ -131,12 +134,9 @@ section.vereadores ul li label{
   font-weight: 300;
 }
 
-section.vereadores ul.lista-vereadores{
-
-}
-
 section.vereadores ul.lista-vereadores li{
   display: block;
+  width: 422px;
 }
 
 section.vereadores ul.lista-vereadores li:nth-child(odd){
@@ -147,28 +147,15 @@ section.vereadores ul.lista-vereadores li:nth-child(even){
   float:right;
 }
 
-li.option a {
-  height: 30px;
-  display: block;
-  color: white;
-  padding: 4px 12px;
-  font-size: 14px;
-  line-height: 30px;
-  text-align: center;
-  vertical-align: middle;
-  text-shadow: none;
-}
-
-div.vereador-contatos {
+div.vereador {
   background: #efeff1;
-  width: 350px;
+  margin-top: 20px;
 }
 
-div.vereador-contatos > div{
+div.vereador > div{
   display: inline-block;
+  vertical-align: top;
 }
-
-
 
 ul.lista-vereadores div a img.vereador {
   height: 52px;
@@ -176,20 +163,65 @@ ul.lista-vereadores div a img.vereador {
   border-radius: 0;
 }
 
+div.vereador-contatos{
+  width: calc(100% - 84px);
+}
 
-div.perfilvereador {
+div.vereador-contatos a{
+  text-decoration: none;
+  color: #2d3f51;
+}
+
+div.vereador p{
+  margin: 0;
+  font-size: 12px;
+  font-family: 'allerregular';
+  font-weight: bold;
+  color: #2d3f51;
+}
+
+div.vereador p:first-child{
+  text-transform: uppercase;
+}
+
+div.vereador div.vereador-twitter, div.vereador div.vereador-facebook{
+  background-color: #3e454d;
+  width: 36px;
+  height: 26px;
   text-align: center;
-  background-color: #FFFFFF;
-  color: #000000;
+  padding-top: 2px;
 }
 
-img.perfilvereador {
-  height: 300px;
-  width: 100%;
+div.vereador div.vereador-twitter:hover, div.vereador div.vereador-facebook:hover{
+  background: #bdc2c6;
 }
 
-dd.email {
-  font-size: 0.8em;
+div.vereador div.rede-social a{
+  display: block;
+}
+
+
+div.vereador i{
+  color: #ffffff;
+}
+
+ul.lista-vereadores .presence-meter-bar:before {
+    width: 42px;
+    font-size: 1.3rem;
+    left: -50px;
+}
+
+ul.lista-vereadores .presence-meter-bar {
+  margin: 18px 0 10px 50px;
+}
+
+ul.lista-vereadores li div.border-bottom-vereador{
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgb(39, 38, 43);
+}
+
+ul.lista-vereadores li:nth-last-child(-n+3) div.border-bottom-vereador{
+  border: none;
 }
 
 .hero-unit {
