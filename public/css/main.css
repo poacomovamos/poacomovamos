@@ -300,8 +300,13 @@ ul.lista-vereadores li div.border-bottom-vereador{
 }
 /* end #info */
 
+.perfilvereador{
+  background-color: #efefef;
+  color: #2d3f51;
+}
+
 img.perfilvereador {
-  height: 200px;
+  height: 300px;
   width: 100%;
 }
 
