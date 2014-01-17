@@ -1,6 +1,6 @@
 require 'rubygems'
 require 'mongo_mapper'
-require '../environment'
+require './environment'
 
 class Vereador
   include MongoMapper::Document
