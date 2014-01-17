@@ -32,7 +32,16 @@ angular.module('poaComoVamos.filters').
       return naoResource( arrayOriginal ) || estaResolvido( arrayOriginal )
     }
 
-	return function(arrayOriginal){
-      return podeSerEmbaralhado( arrayOriginal )? embaralharArray( arrayOriginal ) : []
+  var embaralhado = [];
+
+	return function(arrayOriginal){      
+      if(embaralhado.length > 0) return embaralhado
+
+      if (podeSerEmbaralhado( arrayOriginal )){
+        embaralhado = embaralharArray( arrayOriginal ) 
+        return embaralhado;
+      } else{
+        return [];
+      }
 	 }
 	});
