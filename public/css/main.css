@@ -18,6 +18,7 @@ body {
   background-size: cover;
 }
 
+/* Menu */
 section#barra-menu{
   height: 43px;
   padding-top: 9px;
@@ -40,6 +41,7 @@ section#barra-menu ul li{
 section#barra-menu ul li a{
   color: white;
 }
+/* Menu - FIM */
 
 .wrapper {
   margin: 0 auto;
@@ -106,14 +108,6 @@ section.vereadores{
   padding: 30px 58px;
   background-color: rgb(43, 61, 79);
   text-align: left;
-}
-
-section.vereadores h2{
-  font-size: 14.5px;
-  font-weight: bold;
-  text-transform: uppercase;
-  padding-bottom: 20px;
-  margin: 0px;
 }
 
 section.vereadores p.ordem-vereadores{
@@ -220,6 +214,92 @@ ul.lista-vereadores li div.border-bottom-vereador{
   border-bottom: 1px solid rgb(39, 38, 43);
 }
 
+/* #form */
+#form {
+    background-color: #19bb9b;
+    padding: 30px 58px;
+}
+#contact-us {
+    background: #edeff1;
+}
+#form fieldset {
+    padding: 30px;
+    text-align: left;
+}
+#form label {
+    color: #19bb9b;
+    display: block;
+    font-size: 11px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    text-align: left;
+    text-transform: uppercase;
+}
+.input {
+    border: 1px solid #e2e2e2;
+    height: 36px;
+    margin-top: 6px;
+    width: 100%;
+    font-size: 15px;
+    font-family: 'allerregular';
+}
+.input-text {
+    border: 1px solid #e2e2e2;
+    height: 140px;
+    margin-top: 6px;
+    width: 100%;
+}
+.submit {
+    border: 0;
+    background: #19bb9b;
+    color: #fff;
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 50px;
+    text-transform: uppercase;
+    -webkit-appearance:none;
+}
+/* end #form */
+
+/* #info */
+#info {
+    background-color: #333333;
+    color: #a4a4a4;
+    line-height: 1rem;
+    padding: 30px 58px;
+    text-align: left;
+}
+#info a {
+    color: #a4a4a4;
+    text-decoration: none;
+}
+#info a:hover {
+    text-decoration: underline;
+}
+.info-comovamos p {
+    padding-bottom: 15px;
+}
+.social-title {
+    font-family: 'allerregular', sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 30px 0 3px 0;
+}
+.info-comovamos {
+    float: left;
+    width: 70%;
+    margin-right: 20px;
+    line-height: 14px;
+    font-size: 12px;
+}
+
+#info > dl{
+  margin-top: -33px;
+  padding-bottom: 50px;
+}
+/* end #info */
+
 img.perfilvereador {
   height: 200px;
   width: 100%;
@@ -244,6 +324,17 @@ ul.lista-vereadores li:nth-last-child(-n+3) div.border-bottom-vereador{
     font-size: 60px;
     line-height: 1;
     letter-spacing: -1px;
+}
+
+.sectiontitles {
+    color: rgb(255, 255, 255);
+    font-family: 'allerregular',sans-serif;
+    font-size: 14.5px;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding-bottom: 20px;
+    margin: 0px;
+    text-align: left;
 }
 
 .projetos {
