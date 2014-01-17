@@ -4,7 +4,7 @@ angular.module("poaComoVamos.components", []).
       restrict: 'C',
       replace: true,
       transclude: true,
-      controller: "BuscaCtrl",
+      controller: 'BuscaCtrl',
       templateUrl: 'views/partials/header.html'
     };
   });
