@@ -19,21 +19,21 @@ angular.module('poaComoVamos').
     }
 }]).
 directive('autoComplete', function($timeout, $location) {
-    return function(scope, iElement, iAttrs) {
-        scope.$watch(iAttrs.uiItems, function(source){
-            if(!source) return
+  return function(scope, iElement, iAttrs) {
+    scope.$watch(iAttrs.uiItems, function(source){
+      if(!source) return
 
-            iElement.autocomplete({
-                source: source,
-                select: function() {
-                    $timeout(function() {
-                      iElement.trigger('input');
-                      scope.$apply(function() {
-                            $location.path("/vereador/" + iElement[0].value);
-                      });
-                    }, 0);
-                }
+      iElement.autocomplete({
+        source: source,
+        select: function() {
+          $timeout(function() {
+            iElement.trigger('input');
+            scope.$apply(function() {
+              $location.path("/vereador/" + iElement[0].value);
             });
-        })
-    };
+          }, 0);
+        }
+      });
+    })
+  };
 });
