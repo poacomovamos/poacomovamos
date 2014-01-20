@@ -3,11 +3,11 @@
 angular.module('poaComoVamos.filters', []);
 angular.module('poaComoVamos.servicos', ['ngResource']);
 
-angular.module('poaComoVamos', ['poaComoVamos.servicos', 'poaComoVamos.filters', 'poaComoVamos.components'])
+angular.module('poaComoVamos', ['poaComoVamos.servicos', 'poaComoVamos.filters', 'poaComoVamos.comuns', 'poaComoVamos.vereadores'])
   .config(['$routeProvider', function ($routeProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: '../views/vereadores.html',
+        templateUrl: '../views/vereadores/vereadores.html',
         controller: 'VereadoresCtrl',
         resolve: {
           vereadores: function(Vereadores) { return Vereadores.query() }

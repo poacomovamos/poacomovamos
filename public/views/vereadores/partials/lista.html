@@ -1,0 +1,41 @@
+<section class="lista-de-vereadores vereadores">
+  <h2 class="titulos-secoes">Presença na câmara</h2>
+  <p>
+    O legislativo de uma cidade é encabeçado pelos vereadores. Eles tem três funções principais: fiscalizar as ações da prefeitura; defender os interesses da comunidade e elaborar projetos de lei. Para executar parte dessas atividades é preciso sua presença na câmara e é dessa forma que começamos nossa fiscalização, observando a assiduidade de nossos representantes.
+  </p>
+
+  <ul class="lista-vereadores">
+    <li ng-repeat="vereador in vereadores | embaralhar">
+
+      <div class="vereador">
+        <div>
+          <a href="#/vereador/{{vereador.nome}}">
+            <img ng-src="../img/vereadores/{{vereador.foto}}" class="vereador img-rounded">
+          </a>
+        </div>
+
+        <div class="vereador-contatos">
+          <p><a href="/#/vereador/{{vereador.nome}}"> {{vereador.nome}} ({{vereador.partido}}) </a></p>
+          <p>{{vereador.email}}</p>
+          <p>{{vereador.telefone}}</p>
+        </div>
+
+        <div class="rede-social">
+          <div class="vereador-twitter"><a href="https://twitter.com/{{vereador.twitter}}" title="Twitter" target="_blank"><i class="fa fa-twitter"></i></a></div>
+          <div class="vereador-facebook"><a href="{{vereador.facebook}}" title="Facebook" target="_blank"><i class="fa fa-facebook"></i></a></div>
+        </div>
+      </div>
+
+      <div class="border-bottom-vereador">
+        <div class="presence-meter-bar low-frequency" data-frequency="39%">
+          <span class="presence-meter-amount" style="width:39%;">
+              Freqüencia de 39%
+          </span>
+        </div>
+      </div>
+
+    </li>
+    <li class="clear"></li>
+  </ul>
+
+</section>
