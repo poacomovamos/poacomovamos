@@ -3,7 +3,7 @@
 angular.module('poaComoVamos.filters', []);
 angular.module('poaComoVamos.servicos', ['ngResource']);
 
-angular.module('poaComoVamos', ['poaComoVamos.servicos', 'poaComoVamos.filters', 'poaComoVamos.comuns', 'poaComoVamos.vereadores'])
+angular.module('poaComoVamos', ['poaComoVamos.servicos', 'poaComoVamos.filters', 'poaComoVamos.comuns', 'poaComoVamos.vereadores', 'poaComoVamos.vereador'])
   .config(['$routeProvider', function ($routeProvider) {
     $routeProvider
       .when('/', {
@@ -14,7 +14,7 @@ angular.module('poaComoVamos', ['poaComoVamos.servicos', 'poaComoVamos.filters',
         }
       })
       .when('/vereador/:nome', {
-        templateUrl: '../views/vereador.html',
+        templateUrl: '../views/vereador/vereador.html',
         controller: 'VereadorCtrl',
         resolve: {
           vereador: function($route, Vereador) { return Vereador.get( { nome: $route.current.params.nome } ) }

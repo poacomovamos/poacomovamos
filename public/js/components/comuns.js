@@ -5,6 +5,6 @@ angular.module("poaComoVamos.comuns", []).
       replace: true,
       transclude: true,
       controller: 'BuscaCtrl',
-      templateUrl: 'views/partials/header.html'
+      templateUrl: 'views/header.html'
     };
   });
