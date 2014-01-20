@@ -299,11 +299,24 @@ ul.lista-vereadores li div.border-bottom-vereador{
 .perfilvereador{
   background-color: #efefef;
   color: #2d3f51;
+  font-family: 'allerregular';
 }
 
 img.perfilvereador {
   height: 300px;
   width: 100%;
+}
+
+.nomevereador{
+  font-size: 18px;
+}
+
+.partidovereador{
+  font-size: 16px;
+}
+
+.telvereador{
+  font-size: 14px;
 }
 
 ul.lista-vereadores li:nth-last-child(-n+3) div.border-bottom-vereador{
@@ -496,7 +509,7 @@ header input {
 }
 
 small.emailvereador {
-  font-size: 10px;
+  font-size: 11px;
 }
 
 .linha-perfil {
