@@ -43,7 +43,7 @@ section#barra-menu ul li a{
 }
 /* Menu - FIM */
 
-.wrapper {
+.embrulhador {
   margin: 0 auto;
   width: 980px;
   text-align: center;
@@ -51,22 +51,18 @@ section#barra-menu ul li a{
   color: #FFF;
 }
 
-.blue {
-  background-color: #2E81B7;
-}
-
-.bg-blue{
+.bg-azul{
   background-color: rgb(41, 127, 185);
 }
 
-div#transparency {
+div#transparente {
   background-color: white;
   opacity: 0.6;
   height: 260px;
   position: relative;
   z-index: 1;
 }
-div#poa-dialog {
+div#poa-dialogo {
   margin-top: 35px;
   margin-left: 403px;
   width: inherit;
@@ -219,7 +215,7 @@ ul.lista-vereadores li div.border-bottom-vereador{
     background-color: #19bb9b;
     padding: 30px 58px;
 }
-#contact-us {
+#contatenos {
     background: #edeff1;
 }
 #form fieldset {
@@ -325,13 +321,7 @@ ul.lista-vereadores li:nth-last-child(-n+3) div.border-bottom-vereador{
     float: left;
 }
 
-.hero-unit h1 {
-    font-size: 60px;
-    line-height: 1;
-    letter-spacing: -1px;
-}
-
-.sectiontitles {
+.titulos-secoes {
     color: rgb(255, 255, 255);
     font-family: 'allerregular',sans-serif;
     font-size: 14.5px;
