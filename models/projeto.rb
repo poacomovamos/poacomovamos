@@ -6,6 +6,7 @@ class Projeto
     key :autor_projeto, String
     key :data_abertura_projeto, String
     key :data_ultima_tramitacao_projeto, String
+    key :data_de_votacao, String
     key :link, String
     many :votos
 end

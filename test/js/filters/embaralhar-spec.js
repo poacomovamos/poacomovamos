@@ -2,22 +2,33 @@
 
 describe('Filters: embaralhar', function() {
 
-  var original, embaralhado, embaralhar;
+  var original, embaralhado, embaralhar, segundoEmbaralhado;
 
   beforeEach(module('poaComoVamos'));
 
   beforeEach(inject(function($filter) {
     embaralhar = $filter('embaralhar');
     original = ['Jose Sarney', 'Fernando Collor', 'Itamar Franco', 'Fernando Henrique Cardoso', 'Luis Inacio Lula', 'Dilma Rousseff'];
-    embaralhado = embaralhar( original );
   }));
 
-  it('deve retornar um array com o mesmo tamanho', function(){
-    expect( original.length ).toEqual( embaralhado.length );
-  });
+  describe("recebe um array de vereadores", function(){
 
-  it('deve embaralhar o array', function() {
-    expect( original ).not.toEqual( embaralhado );
+    beforeEach(inject(function($filter) {
+      embaralhado = embaralhar( original );
+      segundoEmbaralhado = embaralhar( original );
+    }));
+
+    it('deve retornar um array com o mesmo tamanho', function(){
+      expect( original.length ).toEqual( embaralhado.length );
+    });
+
+    it('deve embaralhar o array', function() {
+      expect( original ).not.toEqual( embaralhado );
+    });
+
+    it('apos primeiro embaralhar, proximos embaralhars devem retornar o mesmo array',function(){
+      expect(embaralhado).toEqual(segundoEmbaralhado);
+    });
   });
 
   describe('quando recebe um $resouce', function(){

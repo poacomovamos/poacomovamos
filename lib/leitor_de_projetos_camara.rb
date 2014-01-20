@@ -37,6 +37,11 @@ class LeitorDeProjetosCamara
 		@link_da_sessao
 	end
 
+	def pegar_data_de_votacao(link_da_sessao)
+		@html_da_sessao = Nokogiri::HTML(open('http://votacoes.camarapoa.rs.gov.br/votacoes?data=04%2F12%2F2013+00%3A00%3A00&numero=119&tiposessao=O'))
+		@data_de_votacao = @html_da_sessao.css('div.box.no-box h3')[1].text
+		@data_de_votacao[0,10]
+	end
 
 	def pegar_links_dos_projetos_da_sessao(link_da_sessao)
 		@html_da_sessao = Nokogiri::HTML(open(link_da_sessao))
@@ -55,7 +60,6 @@ class LeitorDeProjetosCamara
 		puts @link_do_projeto = @link_do_projeto.compact
 	 	@link_do_projeto
 	end
-
 
 	def abrir_link_de_ordenacao_lista_de_presencas_do_projeto
 		@desc_do_link_das_presencas = @html_do_projeto.css('div.box.no-box ul a').attr("href")
@@ -91,7 +95,7 @@ class LeitorDeProjetosCamara
 		numeroProcesso_e_ano_array
 	end
 
-	def pega_dados_do_projeto (link_do_projeto)
+	def pega_dados_do_projeto (link_do_projeto, data_de_votacao)
 		@html_do_projeto = Nokogiri::HTML(open(link_do_projeto.to_s))
 		abrir_link_de_ordenacao_lista_de_presencas_do_projeto
 
@@ -136,8 +140,8 @@ class LeitorDeProjetosCamara
 		puts @autor_do_projeto = @html_detalhes_do_projeto.css('table.attributes tr td')[3].text
 		puts @data_de_abertura_do_projeto = @html_detalhes_do_projeto.css('table.attributes tr td')[2].text
 		puts @data_de_ultima_tramitacao_do_projeto = @html_detalhes_do_projeto.css('table.attributes tr td')[8].text
-
-		salva_os_dados_no_banco(@nome_do_projeto, @ementa_do_projeto, @status_do_projeto, @autor_do_projeto, @data_de_abertura_do_projeto, @data_de_ultima_tramitacao_do_projeto, @link_do_pdf, @votos)
+		puts @data_de_votacao = data_de_votacao
+		salva_os_dados_no_banco(@nome_do_projeto, @ementa_do_projeto, @status_do_projeto, @autor_do_projeto, @data_de_abertura_do_projeto, @data_de_ultima_tramitacao_do_projeto, @link_do_pdf, @votos, @data_de_votacao)
 
 	end
 
@@ -162,8 +166,9 @@ class LeitorDeProjetosCamara
 		link_das_sessoes.each do |link_da_sessao|
 
 		  link_dos_projetos = busca_de_dados.pegar_links_dos_projetos_da_sessao(link_da_sessao)
+		  data_de_votacao = pegar_data_de_votacao(link_da_sessao)
 		  link_dos_projetos.each do |link_do_projeto|
-		  	busca_de_dados.pega_dados_do_projeto(link_do_projeto)
+		  	busca_de_dados.pega_dados_do_projeto(link_do_projeto, data_de_votacao)
 		  end
 		  contador_de_sessoes += 1
 		end
@@ -177,6 +182,7 @@ class LeitorDeProjetosCamara
 			 :autor_projeto => autor_do_projeto,
 			 :data_abertura_projeto => data_de_abertura_do_projeto,
 			 :data_ultima_tramitacao_projeto => data_de_ultima_tramitacao_do_projeto,
+			 :data_de_votacao => data_de_votacao,
 			 :link => link_do_pdf,
 			 :votos => lista_de_votos
 		).save

@@ -1,4 +1,4 @@
-<section class="bg-blue slogan">
+<section class="bg-azul slogan">
   <h1>
     VOCÊ VOTOU, VOCÊ ELEGEU, AGORA VOCÊ FISCALIZA.
   </h1>
@@ -8,27 +8,27 @@
 </section>
 
 <section class="conteudo vereadores">
-  <h2 class="sectiontitles">Presença na câmara</h2>
+  <h2 class="titulos-secoes">Presença na câmara</h2>
   <p>
-    O legislativo de uma cidade é encabeçado pelos vereadores. Eles tem três funções principais: fiscalizar as ações da prefeitura; defender os interesses da comunidade e elaborar projetos de lei. Para executar parte dessas atividades é preciso sua presença na câmara e é dessa forma que começamos nossa fiscalização, observando a assiduidade de nossos representantes. 
-  </p>  
+    O legislativo de uma cidade é encabeçado pelos vereadores. Eles tem três funções principais: fiscalizar as ações da prefeitura; defender os interesses da comunidade e elaborar projetos de lei. Para executar parte dessas atividades é preciso sua presença na câmara e é dessa forma que começamos nossa fiscalização, observando a assiduidade de nossos representantes.
+  </p>
 
   <ul class="lista-vereadores">
     <li ng-repeat="vereador in vereadores | embaralhar">
-      
+
       <div class="vereador">
         <div>
           <a href="#/vereador/{{vereador.nome}}">
             <img ng-src="../img/vereadores/{{vereador.foto}}" class="vereador img-rounded">
           </a>
         </div>
-        
+
         <div class="vereador-contatos">
           <p><a href="/#/vereador/{{vereador.nome}}"> {{vereador.nome}} ({{vereador.partido}}) </a></p>
           <p>{{vereador.email}}</p>
           <p>{{vereador.telefone}}</p>
         </div>
-        
+
         <div class="rede-social">
           <div class="vereador-twitter"><a href="https://twitter.com/{{vereador.twitter}}" title="Twitter" target="_blank"><i class="fa fa-twitter"></i></a></div>
           <div class="vereador-facebook"><a href="{{vereador.facebook}}" title="Facebook" target="_blank"><i class="fa fa-facebook"></i></a></div>
@@ -50,8 +50,8 @@
 </section>
 
 <section id="form">
-  <h2 class="sectiontitles">Entre em contato conosco</h2>
-  <form id="contact-us" action=".">
+  <h2 class="titulos-secoes">Entre em contato conosco</h2>
+  <form id="contatenos" action=".">
 
     <fieldset>
       <label>Nome<input name="name" class="input" required="" type="text"></label>
@@ -63,7 +63,7 @@
   </form>
 </section>
 <section id="info">
-    <h2 class="sectiontitles">Expediente</h2>
+    <h2 class="titulos-secoes">Expediente</h2>
     <div class="info-comovamos">
 
       <p>O Porto Alegre Como Vamos é um movimento da sociedade civil, apartidário, sem fins lucrativos, que pretende trazer o cidadão a participar dos processos que acontecem na cidade, incidindo em políticas públicas e promovendo espaços de interação abertos para a melhoria da cidade.</p>
