@@ -296,27 +296,39 @@ ul.lista-vereadores li div.border-bottom-vereador{
 }
 /* end #info */
 
-.perfilvereador{
+.perfil-vereador{
   background-color: #efefef;
   color: #2d3f51;
   font-family: 'allerregular';
 }
 
-img.perfilvereador {
+img.perfil-vereador {
   height: 300px;
   width: 100%;
 }
 
-.nomevereador{
+.nome-vereador{
   font-size: 18px;
+  margin: 15px 0 0 0;
 }
 
-.partidovereador{
+.partido-vereador{
   font-size: 16px;
+  margin: -5px 0 5px 0;
 }
 
-.telvereador{
+.tel-vereador{
   font-size: 14px;
+  margin: -5px 0 0 0;
+}
+
+p.presenca-camara{
+  font-size: 16px;
+  margin: 0 0 0 0;
+}
+
+hr.linha-perfil{
+  color: #000000;
 }
 
 ul.lista-vereadores li:nth-last-child(-n+3) div.border-bottom-vereador{
@@ -473,7 +485,7 @@ header input {
 .presence-meter-bar {
     background: none repeat scroll 0 0 #FFFFFF;
     height: 8px;
-    margin: 18px 0 10px 64px;
+    margin: 18px 0 10px 45px;
     position: relative;
 }
 .presence{
@@ -490,12 +502,12 @@ header input {
     font-family: 'allerregular',sans-serif;
     font-size: 1rem;
     height: 30px;
-    left: -64px;
+    left: -45px;
     line-height: 30px;
     position: absolute;
     text-align: center;
     top: -11px;
-    width: 60px;
+    width: 40px;
 }
 .presence-meter-amount {
     background: none repeat scroll 0 0 #44AB9A;
@@ -512,24 +524,22 @@ small.emailvereador {
   font-size: 11px;
 }
 
-.linha-perfil {
-  margin: 10px 20px 10px 20px;
-}
-
 div.social {
   background-color: #50585D;
   width: 50%;
   float: left;
   font-size: 2em;
   padding: 10px;
+  color: #ffffff;
 }
 
-div.perfilvereador a {
+div.perfil-vereador a {
   color: #FFFFFF;
+  display: block;
 }
 
-div.perfilvereador a:hover {
-  color: #428BCA;
+div.perfil-vereador a:hover {
+  color: #2d3f51;
 }
 
 .datalhes-projeto {

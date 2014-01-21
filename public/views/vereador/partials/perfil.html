@@ -1,32 +1,32 @@
 <div class="col-md-3 perfil">
   {{vereadoress | json}}
     <div >
-      <div class="perfilvereador">
-        <img ng-src="../img/vereadores/perfil/{{vereador.foto}}" class="perfilvereador" />
-          {{vereador.nome}} <br />
-          {{vereador.partido}} <br />
-          ({{vereador.telefone}}) <br />
-          <small class='emailvereador'>
-            {{vereador.email}}
-          </small>
-          <hr class="linha-perfil"/>
-          Presença na câmara
-          <div class="presence">
-            <div class="presence-meter-bar high-frequency" data-frequency="100%">
-              <span class="presence-meter-amount" style="width:100%;">Freqüencia de 39%</span>
-            </div>
+      <div class="perfil-vereador">
+        <img ng-src="../img/vereadores/perfil/{{vereador.foto}}" class="perfil-vereador" />
+        <p class="nome-vereador">{{vereador.nome}} </p>
+        <p class="partido-vereador">{{vereador.partido}} </p>
+        <p class="tel-vereador">{{vereador.telefone.slice(0, 9)}} </p>
+        <small class="emailvereador">
+          {{vereador.email}}
+        </small>
+        <!-- <hr class="linha-perfil" /> -->
+        <p class="presenca-camara">Presença na câmara</p>
+        <div class="presence">
+          <div class="presence-meter-bar high-frequency" data-frequency="100%">
+            <span class="presence-meter-amount" style="width:100%;">Freqüencia de 39%</span>
           </div>
-          <div>
-            <a href="http://www.twitter.com/{{vereador.twitter}}" target="_blank">
-              <div class='social'>
-                <i class="fa fa-twitter"></i>
-              </div>
+        </div>
+        <div>
+          <div class="social">
+            <a href="http://www.twitter.com/{{vereador.twitter}}" target="_blank">         
+              <i class="fa fa-twitter"></i>
             </a>
+          </div>
+          <div class="social">
             <a href="{{vereador.facebook}}" target="_blank">
-              <div class='social'>
-                <i class="fa fa-facebook"></i>
-              </div>
+              <i class="fa fa-facebook"></i>
             </a>
+          </div>
         </div>
       </div>
     </div>
