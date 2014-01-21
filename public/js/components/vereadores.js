@@ -16,7 +16,6 @@ angular.module("poaComoVamos.vereadores", []).
       transclude: true,
       templateUrl: 'views/vereadores/partials/lista.html'
     };
-
   }).
 
   directive('contato', function() {
@@ -26,7 +25,6 @@ angular.module("poaComoVamos.vereadores", []).
       transclude: true,
       templateUrl: 'views/vereadores/partials/contato.html'
     };
-
   }).
 
   directive('rodape', function() {
@@ -36,5 +34,13 @@ angular.module("poaComoVamos.vereadores", []).
       transclude: true,
       templateUrl: 'views/vereadores/partials/rodape.html'
     };
+  }).
 
+  directive('home', function() {
+    return {
+      restrict: 'E',
+      replace: true,
+      transclude: true,
+      templateUrl: 'views/vereadores/partials/logo-home.html'
+    };
   });

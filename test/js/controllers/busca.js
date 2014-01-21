@@ -24,7 +24,7 @@ describe('Controller: busca,', function() {
 
   it('deve extrair um nome de uma lista', function(){
     scope.extrairNomes(vereadores);
-    expect(scope.names[2]).toBe('antonio');
+    expect(scope.names[0]).toBe('antonio');
     $httpBackend.flush();
   });
 
