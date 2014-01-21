@@ -10,6 +10,8 @@ gem 'json'
 gem 'formatador'
 gem 'nokogiri'
 gem 'rufus-scheduler'
+gem 'cucumber'
+  gem 'rake'
 
 group :test, :development do
   gem 'cucumber'
