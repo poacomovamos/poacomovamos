@@ -1,44 +1,37 @@
 'use strict'
 
-describe('Controller: busca', function() {
+describe('Controller: busca,', function() {
 
-  var $scope, $rootScope, $httpBackend, $resource, createController;
-  var vereadores;
+  var scope, $httpBackend;
+  var vereadores = [{nome : 'antonio', telefone: '00000000'}, {nome : 'Cesar cezar', telefone: '00000000'}, {nome : 'Any'}];
 
-  beforeEach(inject(function($injector) {
-    /*$scope = $rootScope.$new();
-    ctrl = $controller('BuscaCtrl', {
-      $scope: $scope
-    });
+  beforeEach(angular.mock.module("poaComoVamos"));
 
-    $httpBackend = $injector.get('$httpBackend');
-    $resource = $injector.get('$resource');
+  beforeEach(angular.mock.inject(function($rootScope, $controller, _$httpBackend_){
 
-    $httpBackend.expectGET('/foo_bar').respond();
-    resourceArray = $resource('/foo_bar').query();*/
+    $httpBackend = _$httpBackend_;
+    $httpBackend.when('GET', '/api/vereador').respond([{nome : 'foo'}]);
 
-/*    $httpBackend = $injector.get('$httpBackend');
-    $httpBackend.when('GET', '/test.rb').respond({nome: 'meu nome'});
+    scope = $rootScope.$new(); 
 
-    $rootScope = $injector.get('$rootScope');
-    var $controller = $injector.get('$controller');
-
-    createController = function() {
-      return $controller('BuscaCtrl', {'$scope' : $rootScope });
-    };*/
-
+    $controller('BuscaCtrl', {$scope: scope});
   }));
 
-/*  afterEach(function() {
+  afterEach(function() {
     $httpBackend.verifyNoOutstandingExpectation();
     $httpBackend.verifyNoOutstandingRequest();
   });
 
-  it('deve retornar 36 nomes', function(){
-    $httpBackend.expectGET('/test.rb');
-    var controller = createController();
-    expect(controller.extrairNomes().length).toBe(1);
+  it('deve extrair um nome de uma lista', function(){
+    scope.extrairNomes(vereadores);
+    expect(scope.names[2]).toBe('antonio');
     $httpBackend.flush();
-  });*/
+  });
+
+  it('deve retornar a quantidade de nomes, igual ao numero de vereadores recebidos', function(){
+    scope.extrairNomes(vereadores);
+    expect(scope.names.length).toBe(vereadores.length);
+    $httpBackend.flush();
+  });
 
 });

@@ -10,12 +10,12 @@ angular.module('poaComoVamos').
     });
 
     $scope.extrairNomes = function(vereadores){
-        if(!vereadores) return [];
+      if(!vereadores) return [];
 
-        $scope.names = [];
-        for (var i = vereadores.length - 1; i >= 0; i--) {
-            $scope.names.push(vereadores[i].nome);
-        };
+      $scope.names = [];
+      for (var i = 0; i < vereadores.length; i++) {
+        $scope.names.push(vereadores[i].nome);
+      };
     }
 }]).
 directive('autoComplete', function($timeout, $location) {
