@@ -2,43 +2,29 @@
 
 describe('Controller: busca', function() {
 
-  var $scope, $rootScope, $httpBackend, $resource, createController;
-  var vereadores;
+  var $scope, ctrl;
+  var vereador;
 
-  beforeEach(inject(function($injector) {
-    /*$scope = $rootScope.$new();
+  beforeEach(module('poaComoVamos'));
+/*
+  beforeEach(inject(function($rootScope, $controller) {
+    $scope = $rootScope.$new();
     ctrl = $controller('BuscaCtrl', {
-      $scope: $scope
+      $scope: $scope,
+      vereador: {
+        nome: "Airto Ferronato",
+        partido: "PSB",
+        email: "ferronato@camarapoa.rs.gov.br",
+        telefone: "4221/4222/4223",
+        twitter: "@AirtoFerronato",
+        facebook: "https://www.facebook.com/airtoferronato",
+        foto: "airtoferronato2.jpg"
+      }
     });
-
-    $httpBackend = $injector.get('$httpBackend');
-    $resource = $injector.get('$resource');
-
-    $httpBackend.expectGET('/foo_bar').respond();
-    resourceArray = $resource('/foo_bar').query();*/
-
-/*    $httpBackend = $injector.get('$httpBackend');
-    $httpBackend.when('GET', '/test.rb').respond({nome: 'meu nome'});
-
-    $rootScope = $injector.get('$rootScope');
-    var $controller = $injector.get('$controller');
-
-    createController = function() {
-      return $controller('BuscaCtrl', {'$scope' : $rootScope });
-    };*/
-
-  }));
-
-/*  afterEach(function() {
-    $httpBackend.verifyNoOutstandingExpectation();
-    $httpBackend.verifyNoOutstandingRequest();
-  });
+  }));*/
 
   it('deve retornar 36 nomes', function(){
-    $httpBackend.expectGET('/test.rb');
-    var controller = createController();
-    expect(controller.extrairNomes().length).toBe(1);
-    $httpBackend.flush();
-  });*/
+
+  });
 
 });
