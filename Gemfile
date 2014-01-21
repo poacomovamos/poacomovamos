@@ -1,8 +1,6 @@
 source 'https://rubygems.org'
 
-ruby "2.0.0",
-  :engine => "jruby",
-  :engine_version => "p195"
+ruby '1.9.3'
 
 gem 'sinatra'
 gem 'mongo'
