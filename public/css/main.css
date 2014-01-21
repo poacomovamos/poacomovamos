@@ -55,13 +55,22 @@ section#barra-menu ul li a{
   background-color: rgb(41, 127, 185);
 }
 
-div#transparente {
+div#transparente-home {
   background-color: white;
   opacity: 0.6;
   height: 260px;
   position: relative;
   z-index: 1;
 }
+
+div#transparente-internas {
+  background-color: white;
+  opacity: 0.6;
+  height: 205px;
+  position: relative;
+  z-index: 1;
+}
+
 div#poa-dialogo {
   margin-top: 35px;
   margin-left: 403px;
@@ -69,6 +78,7 @@ div#poa-dialogo {
   position: absolute;
   z-index: 2;
 }
+
 div#poa-logo {
   margin-left: 369px;
   margin-top: 135px;

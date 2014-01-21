@@ -25,4 +25,13 @@ angular.module("poaComoVamos.vereador", []).
       transclude: true,
       templateUrl: 'views/vereador/partials/projetos.html'
     };
+  }).
+
+  directive('interna', function() {
+    return {
+      restrict: 'E',
+      replace: true,
+      transclude: true,
+      templateUrl: 'views/vereador/partials/logo-interna.html'
+    };
   });
