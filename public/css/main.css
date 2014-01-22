@@ -564,6 +564,11 @@ div.perfil-vereador a:hover {
   text-align: center;
   margin-bottom: 20px;
 }
+
+.ementa{
+  text-align: left !important;
+}
+
 .panel-heading{
   padding: 0 0 103px 0;
 }

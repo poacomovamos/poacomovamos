@@ -8,6 +8,7 @@ angular.module('poaComoVamos').
 	 var bar = new RGraph.Bar('cvs', [30,5,22,10,3])
 		.Set('labels', ['Votou','Não votou', 'Absteve-se','Rep. Externa','Ausente'])
 		.Set('text.color', '#FFFFFF')
+    .Set('text.size', 12)
 		.Set('colors.sequential', true)
 		.Set('background.grid', false)
 		.Draw();
