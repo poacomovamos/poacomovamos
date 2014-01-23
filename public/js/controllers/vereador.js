@@ -9,7 +9,7 @@ angular.module('poaComoVamos').
 		.Set('labels', ['Votou','Não votou', 'Absteve-se','Rep. Externa','Ausente'])
 		.Set('text.color', '#FFFFFF')
     .Set('text.size', 12)
-		.Set('colors.sequential', true)
+    .Set('colors.sequential', true)
 		.Set('background.grid', false)
 		.Draw();
 

@@ -269,13 +269,22 @@ ul.lista-vereadores li div.border-bottom-vereador{
 /* end #form */
 
 /* #info */
-#info {
+section#info.rodape-home {
     background-color: #333333;
     color: #a4a4a4;
     line-height: 1rem;
     padding: 30px 58px;
     text-align: left;
 }
+
+section#info.rodape-interna {
+    background-color: #333333;
+    color: #a4a4a4;
+    line-height: 1rem;
+    padding: 30px;
+    text-align: left;
+}
+
 #info a {
     color: #a4a4a4;
     text-decoration: none;
@@ -286,12 +295,44 @@ ul.lista-vereadores li div.border-bottom-vereador{
 .info-comovamos p {
     padding-bottom: 15px;
 }
-.social-title {
+section.rodape-home .social-title {
     font-family: 'allerregular', sans-serif;
     font-weight: bold;
     text-transform: uppercase;
     padding: 30px 0 3px 0;
 }
+
+section.rodape-interna .social-title {
+    font-family: 'allerregular', sans-serif;
+    margin: 0 0 0 30px;
+    line-height: 20px;
+}
+
+section.rodape-interna ul.social-title{
+  list-style: none;
+  padding: 10px;
+}
+
+section.rodape-interna ul.social-title li{
+  display: inline-block;
+  padding: 0 20px;
+}
+
+section.rodape-interna ul.social-title li:first-child {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+section.rodape-interna ul.social-title:nth-child(odd) {
+  float:left;
+  margin-left: 90px;
+}
+
+section.rodape-interna ul.social-title:nth-child(even) {
+  float:right;
+  margin-right: 90px;
+}
+
 .info-comovamos {
     float: left;
     width: 70%;
@@ -350,7 +391,7 @@ ul.lista-vereadores li:nth-last-child(-n+3) div.border-bottom-vereador{
     width: 980px;
     font-weight: 200;
     line-height: 30px;
-    padding: 30px 25px 0 15px;
+    padding: 30px 20px 20px 20px;
     background-color: #2D3E4F;
     font-size: 18px;
     float: left;
@@ -565,7 +606,7 @@ div.perfil-vereador a:hover {
   margin-bottom: 20px;
 }
 
-div.col-md-6{
+.col-md-6{
   text-align: justify;
 }
 
