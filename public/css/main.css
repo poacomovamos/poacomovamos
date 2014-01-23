@@ -565,8 +565,8 @@ div.perfil-vereador a:hover {
   margin-bottom: 20px;
 }
 
-.ementa{
-  text-align: left !important;
+div.col-md-6{
+  text-align: justify;
 }
 
 .panel-heading{
