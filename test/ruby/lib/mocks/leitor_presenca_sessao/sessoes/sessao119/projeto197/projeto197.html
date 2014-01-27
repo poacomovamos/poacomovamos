@@ -1,0 +1,513 @@
+<!DOCTYPE html PUBLIC "//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  	<script src="projeto197_files/jquery_002.js" type="text/javascript"></script>
+<script src="projeto197_files/jqueryui.js" type="text/javascript"></script>
+<script src="projeto197_files/jquery.js" type="text/javascript"></script>
+    <link href="projeto197_files/reset.css" media="screen" rel="stylesheet" type="text/css">
+<link href="projeto197_files/jquery-ui.css" media="screen" rel="stylesheet" type="text/css">
+<link href="projeto197_files/application.css" media="screen" rel="stylesheet" type="text/css">
+<link href="projeto197_files/tipsy.css" media="screen" rel="stylesheet" type="text/css">
+    
+    
+    <title>Camarapoa - Resultado de Votaçõess</title>
+  </head>
+  <body>
+		<div id="container">
+      <div id="header">  
+      	<h2>Camarapoa - Resultados de Votações - Versão para Avaliação</h2>            
+      </div>
+      <div id="content">        
+        <ul>
+  <a href="http://votacoes.camarapoa.rs.gov.br/votacoes"><img src="projeto197_files/arrow_left.png">Voltar</a><br><br>
+    
+      <div class="box no-box">
+  <h3>119ª Sessão Ordinária de 04 de dezembro de 2013</h3>
+  <p><a href="http://votacoes.camarapoa.rs.gov.br/comparecimentos?numero_sessao=119&amp;tipo_sessao=O">Acesse aqui o Relatório de Comparecimento</a></p>
+  <b>Proposição: PLL 197/13 - PROC. 1866/13</b>
+  	
+	<div>	
+  
+  	<b>Ementa:</b> Assegura a gestantes e pessoas acompanhadas de 
+criancas de colo com ate 2 (dois) anos a reserva de, no minimo, 3% (tres
+ por cento) do total das vagas em estacionamentos mantidos por shopping 
+centers, centros comerciais e hipermercados.
+  	<br>
+  	<br>
+    <a original-title="Visualize outros detalhes e os documentos que compõem o projeto" href="#detalhes_processo" class="detalhe"><img src="projeto197_files/application_view_detail.png">Visualizar Detalhes do Projeto</a>
+  	
+  </div>
+  
+  
+
+  <br><br>
+  Horário de Início:  15:27:52<br>
+  Horário de Encerramento:  15:30:16<br>
+  Situação:  Aprovado<br><br>
+    
+  Tipo de votacao: Nominal <br>
+  Número da votacao: N201<br>
+  Item pauta: Sim<br>
+  Ordem dia: Sim <br><br>
+
+
+	 <h3>Resultado da Votação</h3>	
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+
+	 Sim: 15<br>    
+	 Não: 5<br>  
+	   
+	   
+	   
+	   
+	  
+	 Ausente: 7<br>  
+	   
+	   
+	 Não votou: 8<br><br>  
+
+
+
+<script>
+
+   
+jQuery(function($) {		 	 	
+ 	 	
+	// ==================
+	// = Preview dialog =
+	// ================== 	
+	$('#detalhes_processo').dialog({
+    autoOpen: false,
+    modal: true,
+    width: 760,
+    minHeight: 10,
+    resizable: false,
+    title: 'Detalhes do Projeto'
+  });    
+  
+	//===================================
+	// = exibição de detalhes do processo
+	//===================================  
+		
+  $('a[href="#detalhes_processo"]').click(function() {    	
+		params = "numero=01866&ano=2013";
+		  	    	  	
+		$.ajax({
+			url: '/votacoes/get_detalhes_processo',
+				  data: params  ,
+				  success: function(result) {  	
+				    $('#detalhes_processo').html(result);    
+				    $('#detalhes_processo').dialog('open');
+				    return false;
+				  }
+				});  	      
+    });  
+    
+  });
+  
+
+$('.detalhe').tipsy();
+</script>
+    
+
+      <ul>
+    		 <a href="projeto197ordenado.html">Ordenar lista por nome</a> <br><br>
+      </ul>
+      <ul>
+          
+          <div class="box no-box">
+        	  <b> Bancada do DEM</b><br>
+        	  <div class="box no-box">
+            	<table class="attributes">
+                     
+              		    <tbody><tr>
+                        <th>Reginaldo Pujol</th>
+                        <td>Ausente</td>
+                      </tr>
+              	    
+              	</tbody></table><br><br>
+            </div>
+          </div>
+        
+          <div class="box no-box">
+        	  <b> Bancada do PCdoB</b><br>
+        	  <div class="box no-box">
+            	<table class="attributes">
+                     
+              		    <tbody><tr>
+                        <th>João Derly</th>
+                        <td>Sim</td>
+                      </tr>
+              	     
+              		    <tr>
+                        <th>Jussara Cony</th>
+                        <td>Sim</td>
+                      </tr>
+              	    
+              	</tbody></table><br><br>
+            </div>
+          </div>
+        
+          <div class="box no-box">
+        	  <b> Bancada do PDT</b><br>
+        	  <div class="box no-box">
+            	<table class="attributes">
+                     
+              		    <tbody><tr>
+                        <th>Delegado Cleiton</th>
+                        <td>Ausente</td>
+                      </tr>
+              	     
+              		    <tr>
+                        <th>Dr. Thiago</th>
+                        <td>Não votou</td>
+                      </tr>
+              	     
+              		    <tr>
+                        <th>Luiza Neves</th>
+                        <td>Não votou</td>
+                      </tr>
+              	     
+              		    <tr>
+                        <th>Márcio Bins Ely</th>
+                        <td>Não votou</td>
+                      </tr>
+              	     
+              		    <tr>
+                        <th>Mario Fraga</th>
+                        <td>Ausente</td>
+                      </tr>
+              	    
+              	</tbody></table><br><br>
+            </div>
+          </div>
+        
+          <div class="box no-box">
+        	  <b> Bancada do PMDB</b><br>
+        	  <div class="box no-box">
+            	<table class="attributes">
+                     
+              		    <tbody><tr>
+                        <th>Idenir Cecchim</th>
+                        <td>Não votou</td>
+                      </tr>
+              	     
+              		    <tr>
+                        <th>Lourdes Sprenger</th>
+                        <td>Não</td>
+                      </tr>
+              	     
+              		    <tr>
+                        <th>Professor Garcia</th>
+                        <td>Não</td>
+                      </tr>
+              	     
+              		    <tr>
+                        <th>Valter Nagelstein</th>
+                        <td>Ausente</td>
+                      </tr>
+              	    
+              	</tbody></table><br><br>
+            </div>
+          </div>
+        
+          <div class="box no-box">
+        	  <b> Bancada do PP</b><br>
+        	  <div class="box no-box">
+            	<table class="attributes">
+                     
+              		    <tbody><tr>
+                        <th>Guilherme Socias Villela</th>
+                        <td>Não</td>
+                      </tr>
+              	     
+              		    <tr>
+                        <th>João Carlos Nedel</th>
+                        <td>Sim</td>
+                      </tr>
+              	     
+              		    <tr>
+                        <th>Mônica Leal</th>
+                        <td>Não votou</td>
+                      </tr>
+              	    
+              	</tbody></table><br><br>
+            </div>
+          </div>
+        
+          <div class="box no-box">
+        	  <b> Bancada do PPS</b><br>
+        	  <div class="box no-box">
+            	<table class="attributes">
+                     
+              		    <tbody><tr>
+                        <th>Any Ortiz</th>
+                        <td>Sim</td>
+                      </tr>
+              	    
+              	</tbody></table><br><br>
+            </div>
+          </div>
+        
+          <div class="box no-box">
+        	  <b> Bancada do PRB</b><br>
+        	  <div class="box no-box">
+            	<table class="attributes">
+                     
+              		    <tbody><tr>
+                        <th>Séfora Mota</th>
+                        <td>Sim</td>
+                      </tr>
+              	     
+              		    <tr>
+                        <th>Waldir Canal</th>
+                        <td>Sim</td>
+                      </tr>
+              	    
+              	</tbody></table><br><br>
+            </div>
+          </div>
+        
+          <div class="box no-box">
+        	  <b> Bancada do PROS</b><br>
+        	  <div class="box no-box">
+            	<table class="attributes">
+                     
+              		    <tbody><tr>
+                        <th>Bernardino Vendruscolo</th>
+                        <td>Sim</td>
+                      </tr>
+              	    
+              	</tbody></table><br><br>
+            </div>
+          </div>
+        
+          <div class="box no-box">
+        	  <b> Bancada do PSB</b><br>
+        	  <div class="box no-box">
+            	<table class="attributes">
+                     
+              		    <tbody><tr>
+                        <th>Airto Ferronato</th>
+                        <td>Sim</td>
+                      </tr>
+              	     
+              		    <tr>
+                        <th>Paulinho Motorista</th>
+                        <td>Sim</td>
+                      </tr>
+              	    
+              	</tbody></table><br><br>
+            </div>
+          </div>
+        
+          <div class="box no-box">
+        	  <b> Bancada do PSD</b><br>
+        	  <div class="box no-box">
+            	<table class="attributes">
+                     
+              		    <tbody><tr>
+                        <th>Tarciso Flecha Negra</th>
+                        <td>Não votou</td>
+                      </tr>
+              	    
+              	</tbody></table><br><br>
+            </div>
+          </div>
+        
+          <div class="box no-box">
+        	  <b> Bancada do PSDB</b><br>
+        	  <div class="box no-box">
+            	<table class="attributes">
+                     
+              		    <tbody><tr>
+                        <th>Mario Manfro</th>
+                        <td>Não</td>
+                      </tr>
+              	    
+              	</tbody></table><br><br>
+            </div>
+          </div>
+        
+          <div class="box no-box">
+        	  <b> Bancada do PSOL</b><br>
+        	  <div class="box no-box">
+            	<table class="attributes">
+                     
+              		    <tbody><tr>
+                        <th>Fernanda Melchionna</th>
+                        <td>Sim</td>
+                      </tr>
+              	     
+              		    <tr>
+                        <th>Pedro Ruas</th>
+                        <td>Ausente</td>
+                      </tr>
+              	    
+              	</tbody></table><br><br>
+            </div>
+          </div>
+        
+          <div class="box no-box">
+        	  <b> Bancada do PT</b><br>
+        	  <div class="box no-box">
+            	<table class="attributes">
+                     
+              		    <tbody><tr>
+                        <th>Alberto Kopittke</th>
+                        <td>Sim</td>
+                      </tr>
+              	     
+              		    <tr>
+                        <th>Engº Comassetto</th>
+                        <td>Ausente</td>
+                      </tr>
+              	     
+              		    <tr>
+                        <th>Marcelo Sgarbossa</th>
+                        <td>Não votou</td>
+                      </tr>
+              	     
+              		    <tr>
+                        <th>Mauro Pinheiro</th>
+                        <td>Não votou</td>
+                      </tr>
+              	     
+              		    <tr>
+                        <th>Sofia Cavedon</th>
+                        <td>Ausente</td>
+                      </tr>
+              	    
+              	</tbody></table><br><br>
+            </div>
+          </div>
+        
+          <div class="box no-box">
+        	  <b> Bancada do PTB</b><br>
+        	  <div class="box no-box">
+            	<table class="attributes">
+                     
+              		    <tbody><tr>
+                        <th>Alceu Brasinha</th>
+                        <td>Sim</td>
+                      </tr>
+              	     
+              		    <tr>
+                        <th>Cassio Trogildo</th>
+                        <td>Sim</td>
+                      </tr>
+              	     
+              		    <tr>
+                        <th>Elizandro Sabino</th>
+                        <td>Sim</td>
+                      </tr>
+              	     
+              		    <tr>
+                        <th>Paulo Brum</th>
+                        <td>Sim</td>
+                      </tr>
+              	    
+              	</tbody></table><br><br>
+            </div>
+          </div>
+        
+          <div class="box no-box">
+        	  <b> Bancada do SDD</b><br>
+        	  <div class="box no-box">
+            	<table class="attributes">
+                     
+              		    <tbody><tr>
+                        <th>Clàudio Janta</th>
+                        <td>Não</td>
+                      </tr>
+              	    
+              	</tbody></table><br><br>
+            </div>
+          </div>
+        
+      </ul>
+      <a href="http://votacoes.camarapoa.rs.gov.br/votacoes"><img src="projeto197_files/arrow_left.png">Voltar</a><br><br>
+   
+   
+</div></ul> 
+ 
+
+      </div>      
+      <div id="footer">desenvolvido pela Assessoria de Informática - Câmara Municipal de Porto Alegre - 2011</div>
+    </div>
+  
+<div aria-labelledby="ui-dialog-title-detalhes_processo" role="dialog" tabindex="-1" class="ui-dialog ui-widget ui-widget-content ui-corner-all  ui-draggable" style="display: none; z-index: 1000; outline: 0px none;"><div style="-moz-user-select: none;" unselectable="on" class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix"><span style="-moz-user-select: none;" unselectable="on" id="ui-dialog-title-detalhes_processo" class="ui-dialog-title">Detalhes do Projeto</span><a style="-moz-user-select: none;" unselectable="on" role="button" class="ui-dialog-titlebar-close ui-corner-all" href="#"><span style="-moz-user-select: none;" unselectable="on" class="ui-icon ui-icon-closethick">close</span></a></div><div class="ui-dialog-content ui-widget-content" id="detalhes_processo"></div></div></body></html>
