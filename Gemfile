@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+ruby '2.0.0'
+
 gem 'sinatra'
 gem 'mongo'
 gem 'mongo_mapper'
@@ -8,6 +10,8 @@ gem 'json'
 gem 'formatador'
 gem 'nokogiri'
 gem 'rufus-scheduler'
+gem 'cucumber'
+gem 'rake'
 
 group :test, :development do
   gem 'cucumber'

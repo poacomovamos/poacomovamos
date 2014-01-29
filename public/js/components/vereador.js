@@ -1,5 +1,14 @@
 angular.module("poaComoVamos.vereador", []).
 
+  directive('logointerna', function() {
+    return {
+      restrict: 'E',
+      replace: true,
+      transclude: true,
+      templateUrl: 'views/vereador/partials/logo-interna.html'
+    };
+  }).
+
   directive('perfil', function() {
     return {
       restrict: 'E',
@@ -27,11 +36,11 @@ angular.module("poaComoVamos.vereador", []).
     };
   }).
 
-  directive('interna', function() {
+  directive('rodapeinterna', function() {
     return {
       restrict: 'E',
       replace: true,
       transclude: true,
-      templateUrl: 'views/vereador/partials/logo-interna.html'
+      templateUrl: 'views/vereador/partials/rodape-interna.html'
     };
   });

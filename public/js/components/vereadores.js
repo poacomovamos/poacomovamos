@@ -1,5 +1,14 @@
 angular.module("poaComoVamos.vereadores", []).
 
+  directive('logohome', function() {
+    return {
+      restrict: 'E',
+      replace: true,
+      transclude: true,
+      templateUrl: 'views/vereadores/partials/logo-home.html'
+    };
+  }).
+
   directive('slogan', function() {
     return {
       restrict: 'E',
@@ -27,20 +36,11 @@ angular.module("poaComoVamos.vereadores", []).
     };
   }).
 
-  directive('rodape', function() {
+  directive('rodapehome', function() {
     return {
       restrict: 'E',
       replace: true,
       transclude: true,
-      templateUrl: 'views/vereadores/partials/rodape.html'
-    };
-  }).
-
-  directive('home', function() {
-    return {
-      restrict: 'E',
-      replace: true,
-      transclude: true,
-      templateUrl: 'views/vereadores/partials/logo-home.html'
+      templateUrl: 'views/vereadores/partials/rodape-home.html'
     };
   });
