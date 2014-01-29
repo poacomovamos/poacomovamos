@@ -9,5 +9,3 @@ rvm:
 
 script: 
   - bundle exec rake test
-
-cache: bundler
