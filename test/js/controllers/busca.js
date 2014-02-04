@@ -34,15 +34,15 @@ describe('BuscaCtrl', function(){
   })
 */
   it('#extrairNomes: deve retornar array vazio se receber null', function(){
-    expect( scope.extrairNomes() ).toEqual( [] )
+    expect( scope.extrairNomes() ).toEqual( [] );
   })
 
   it('#extrairNomes: deve extrair os nomes dos vereadores', function(){      
-    expect( scope.extrairNomes(vereadores) ).toEqual( ['antonio', 'Cesar cezar', 'Any'] )
+    expect( scope.extrairNomes(vereadores) ).toEqual( ['antonio', 'Cesar cezar', 'Any'] );
   })
 
   it('#carregarVereadores: deve fazer um get em /api/vereador atraves do $http', function(){        
-    httpDouble.expectGET('/api/vereador')
+    httpDouble.expectGET('/api/vereador');
     scope.carregarVereadores();
     httpDouble.flush();
   })
