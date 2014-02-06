@@ -1,22 +1,31 @@
 angular.module('poaComoVamos').
     controller('BuscaCtrl', ['$scope', '$http' , function ($scope, $http) {
 
-    $http({method: 'GET', url: '/api/vereador'}).
-    success(function(data, status, headers, config) {
-        $scope.extrairNomes(data);
-    }).
-    error(function(data, status, headers, config) {
-        console.log(data + status);
-    });
+    $scope.carregarVereadores = function(){
+      $scope.chamaApiVereadores().success($scope.extraiNomesParaScopo);
+    }    
+
+    $scope.chamaApiVereadores = function(){
+      return $http({method: 'GET', url: '/api/vereador'});
+    }
+
+    $scope.extraiNomesParaScopo = function(vereadores){
+      $scope.nomes = $scope.extrairNomes(vereadores);
+    }
 
     $scope.extrairNomes = function(vereadores){
-      if(!vereadores) return [];
+      vereadores = vereadores || [];
 
-      $scope.names = [];
-      for (var i = 0; i < vereadores.length; i++) {
-        $scope.names.push(vereadores[i].nome);
-      };
+      var nomes = [];
+      for (idx in vereadores) {        
+        nomes.push(vereadores[idx].nome);
+      }      
+      
+      return nomes;
     }
+
+    $scope.carregarVereadores();
+
 }]).
 directive('autoComplete', function($timeout, $location) {
   return function(scope, iElement, iAttrs) {
