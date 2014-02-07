@@ -2,7 +2,9 @@ angular.module('poaComoVamos').
     controller('BuscaCtrl', ['$scope', '$http' , function ($scope, $http) {
 
     $scope.carregarVereadores = function(){
-      $scope.chamaApiVereadores().success($scope.extraiNomesParaScopo);
+      $scope.chamaApiVereadores().
+      success($scope.extraiNomesParaScopo).
+      error($scope.falhaAoCarregarVereadores);
     }    
 
     $scope.chamaApiVereadores = function(){
@@ -24,16 +26,21 @@ angular.module('poaComoVamos').
       return nomes;
     }
 
+    $scope.falhaAoCarregarVereadores = function(data, status, headers, config) {
+      console.log("Ocorreu algum erro na requisicao \n");
+      console.log(data + status);
+    }
+
     $scope.carregarVereadores();
 
 }]).
 directive('autoComplete', function($timeout, $location) {
   return function(scope, iElement, iAttrs) {
-    scope.$watch(iAttrs.uiItems, function(source){
+    scope.$watch(function(source){
       if(!source) return
 
       iElement.autocomplete({
-        source: source,
+        source: scope.nomes,
         select: function() {
           $timeout(function() {
             iElement.trigger('input');
