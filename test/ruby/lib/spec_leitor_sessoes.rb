@@ -8,14 +8,20 @@ describe LeitorDeSessao do
     @leitor_de_sessao = LeitorDeSessao.new(@link_da_sessao)
   end 
 
-  it 'é um projeto?' do
+  it 'deve verificar se é um projeto' do
     @leitor_de_sessao.e_projeto?('PLL 157/13 - PROC. 1587/13')
     .should be(true)
+
+    @leitor_de_sessao.e_projeto?('PLL 157/13 - Avocado. 1587/13')
+    .should be(false)
+
   end
 
   it 'deve retorar uma lista de projetos' do
-    @leitor_de_sessao.pega_lista_de_sessoes
-    .should eq(['projeto197/projeto197.html', 'projeto157/projeto157.html', 'http://votacoes.camarapoa.rs.gov.br/parlamentares?data=04%2F12%2F2013+00%3A00%3A00&sessao=119&tiposessao=O&tipovotacao=N&votacao=N204'])
+    @leitor_de_sessao.pega_lista_de_projetos
+    .should eq(['projeto197/projeto197.html', 
+      'projeto157/projeto157.html', 
+      'http://votacoes.camarapoa.rs.gov.br/parlamentares?data=04%2F12%2F2013+00%3A00%3A00&sessao=119&tiposessao=O&tipovotacao=N&votacao=N204'])
   end
 
 end

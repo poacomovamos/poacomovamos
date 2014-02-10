@@ -13,7 +13,7 @@ class LeitorDeSessao
     projeto.include?('PROC')
   end
 
-  def pega_lista_de_sessoes
+  def pega_lista_de_projetos
     @variavel = @html_da_sessao.css('table.list tbody  tr td:nth-child(2) span.detalhe a')
     indice = 0
     while @variavel[indice] != nil 

@@ -1,5 +1,5 @@
 require './environment'
-require_relative '../../../lib/leitor_de_projetos_camara'
+require_relative '../../../lib/leitor_de_projetos'
 
 describe LeitorDeProjetos do
 
