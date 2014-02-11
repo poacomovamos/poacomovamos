@@ -2,7 +2,7 @@ require 'rubygems'
 require 'nokogiri'
 require 'open-uri'
 
-class BuscadorDeSessoes
+class BuscadorDeSessao
 
   def initialize(pagina_principal, base_url)
     @base_url = base_url
@@ -27,6 +27,10 @@ class BuscadorDeSessoes
       @todas_sessoes << sessao.attr('href')
       puts @todas_sessoes
     end
+  end
+
+  def pega_todos_os_links
+
   end
 
 end

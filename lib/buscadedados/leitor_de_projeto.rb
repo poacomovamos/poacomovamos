@@ -4,7 +4,7 @@ require 'open-uri'
 require 'mongo_mapper'
 require 'ostruct'
 
-class LeitorDeProjetos
+class LeitorDeProjeto
 
   @nome_do_projeto
   @data_tramitacao

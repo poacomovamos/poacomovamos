@@ -1,14 +1,15 @@
 require './environment'
-require_relative '../../../lib/buscador_de_sessoes'
+require_relative '../../../../lib/buscadedados/buscador_de_sessao'
+require_relative 'buscadedados/fake_base_page'
 
-describe BuscadorDeSessoes do
+describe BuscadorDeSessao do
 
   before(:all) do
     @baseUrl = FakeBasePage.new
     @link = 'test/ruby/lib/mocks/leitor_presenca_sessao/lista_de_sessoes.html'
-    @buscador_de_sessoes = BuscadorDeSessoes.new(@link, @baseUrl)
+    @buscador_de_sessoes = BuscadorDeSessao.new(@link, @baseUrl)
 
-  end 
+  end
 
   it 'verifica se a sessão é do mandato corrente' do
     @buscador_de_sessoes.a_sessao_e_do_mandato_corrente?('3ª Sessão Ordinária - de 06 de fevereiro de 2014')
@@ -42,5 +43,3 @@ describe BuscadorDeSessoes do
       'sessoes/sessao01/index.html'])
   end
 =end
-
-end
