@@ -31,6 +31,7 @@ task :spec do
   puts "===== Testes de Unidade ====="
   sh 'bundle exec rspec test/ruby/lib/*_spec.rb'
   sh 'bundle exec rspec test/ruby/lib/spec_*'
+  sh 'bundle exec rspec test/ruby/lib/buscadedados/spec_*'
   #sh 'bundle exec rspec test/ruby/models/sperubyc_*.rb'
 end
 

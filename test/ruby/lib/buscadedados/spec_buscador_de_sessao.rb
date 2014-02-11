@@ -1,6 +1,6 @@
 require './environment'
 require_relative '../../../../lib/buscadedados/buscador_de_sessao'
-require_relative 'buscadedados/fake_base_page'
+require_relative 'fake_base_page'
 
 describe BuscadorDeSessao do
 
@@ -23,16 +23,15 @@ describe BuscadorDeSessao do
 
   it 'pega todos os links de sessao de uma url' do
     @buscador_de_sessoes.pega_todos_os_links_da_pagina
-    .should be(['sessoes/sessao119/index.html',
+    .should eq(['sessoes/sessao119/index.html',
       'sessoes/sessao14/index.html',
       'sessoes/sessao13/index.html',
       'sessoes/sessao12/index.html',
       'sessoes/sessao11/index.html'])
   end
-
 =begin
   it 'pega todos links de sessão percorrendo todas as urls' do
-    @buscador_de_sessoes.pega_todos_os_links_da_pagina
+    @buscador_de_sessoes.pega_todos_os_links
     .should eq(['sessoes/sessao119/index.html', 'sessoes/sessao14/index.html',
       'sessoes/sessao13/index.html', 'sessoes/sessao12/index.html',
       'sessoes/sessao11/index.html', 'sessoes/sessao10/index.html',
@@ -43,3 +42,5 @@ describe BuscadorDeSessao do
       'sessoes/sessao01/index.html'])
   end
 =end
+
+end

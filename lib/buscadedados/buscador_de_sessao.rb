@@ -25,12 +25,17 @@ class BuscadorDeSessao
   def pega_todos_os_links_da_pagina
     @html_base.css('div.box.no-box p a.sessoes').each do |sessao|
       @todas_sessoes << sessao.attr('href')
-      puts @todas_sessoes
     end
+    @todas_sessoes
   end
+=begin
 
   def pega_todos_os_links
-
+    if proxima_pagina != nil
+      pega_todos_os_links_da_pagina
+    end
+    @todas_sessoes
   end
+=end
 
 end
