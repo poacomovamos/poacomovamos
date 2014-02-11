@@ -15,19 +15,23 @@ describe BuscadorDeSessoes do
     .should be(true)
   end
 
-  it 'pega pagina corrente' do
-    @buscador_de_sessoes.pega_pagina_corrente
-    .should be()
+  it 'pega a proxima página' do
+    @buscador_de_sessoes.proxima_pagina
+    .should eq('test/ruby/lib/mocks/leitor_presenca_sessao/lista_de_sessoes2.html')
+  end
+
+  it 'pega todos os links de sessao de uma url' do
+    @buscador_de_sessoes.pega_todos_os_links_da_pagina
+    .should be(['sessoes/sessao119/index.html',
+      'sessoes/sessao14/index.html',
+      'sessoes/sessao13/index.html',
+      'sessoes/sessao12/index.html',
+      'sessoes/sessao11/index.html'])
   end
 
 =begin
-  it 'pega a proxima página' do
-    @buscador_de_sessoes.
-    .should be('test/ruby/lib/mocks/lista_de_sessoes2.html')
-  end
-
-  it 'pega todos links de sessão' do
-    @buscador_de_sessoes.pega_todos_os_links
+  it 'pega todos links de sessão percorrendo todas as urls' do
+    @buscador_de_sessoes.pega_todos_os_links_da_pagina
     .should eq(['sessoes/sessao119/index.html', 'sessoes/sessao14/index.html',
       'sessoes/sessao13/index.html', 'sessoes/sessao12/index.html',
       'sessoes/sessao11/index.html', 'sessoes/sessao10/index.html',
@@ -38,4 +42,5 @@ describe BuscadorDeSessoes do
       'sessoes/sessao01/index.html'])
   end
 =end
+
 end
