@@ -7,5 +7,5 @@ language: ruby
 rvm:
   - 2.0.0-p353
 
-script: 
+script:
   - bundle exec rake test

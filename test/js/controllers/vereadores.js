@@ -56,5 +56,5 @@ describe('Controller: vereadores', function() {
     expect($scope.vereadores[0].foto).toBe("airtoferronato2.jpg");
     expect($scope.vereadores[1].foto).toBe("airtoferronato2.jpg");
   });
-  
+
 });

@@ -7,8 +7,4 @@ describe BuscarDadosDoSiteDaCamara do
 
   end
 
-
-
-
-
 end
