@@ -14,16 +14,16 @@ describe('Filters: embaralhar', function() {
   describe("recebe um array de vereadores", function(){
 
     beforeEach(inject(function($filter) {
-      embaralhado = embaralhar( original );
-      segundoEmbaralhado = embaralhar( original );
+      embaralhado = embaralhar(original);
+      segundoEmbaralhado = embaralhar(original);
     }));
 
     it('deve retornar um array com o mesmo tamanho', function(){
-      expect( original.length ).toEqual( embaralhado.length );
+      expect(original.length).toEqual(embaralhado.length);
     });
 
     it('deve embaralhar o array', function() {
-      expect( original ).not.toEqual( embaralhado );
+      expect(original).not.toEqual(embaralhado);
     });
 
     it('apos primeiro embaralhar, proximos embaralhars devem retornar o mesmo array',function(){
@@ -38,7 +38,7 @@ describe('Filters: embaralhar', function() {
       $httpBackend = $injector.get('$httpBackend');
       $resource = $injector.get('$resource');
 
-      $httpBackend.expectGET('/foo_bar').respond( original );
+      $httpBackend.expectGET('/foo_bar').respond(original);
       resourceArray = $resource('/foo_bar').query();
     }));
 
@@ -50,12 +50,12 @@ describe('Filters: embaralhar', function() {
     describe('pendente',function(){
       beforeEach(function(){
         //tenta embaralhar o resource ainda nao resolvido
-        embaralhado = embaralhar( resourceArray );
+        embaralhado = embaralhar(resourceArray);
         $httpBackend.flush();
       });
 
       it('deve retornar um array vazio', function(){
-        expect( embaralhado.length ).toEqual( 0 );
+        expect(embaralhado.length).toEqual(0);
       });
     });
 
@@ -63,11 +63,11 @@ describe('Filters: embaralhar', function() {
       beforeEach(function(){
         //resolve o array e depois embaralha
         $httpBackend.flush();
-        embaralhado = embaralhar( resourceArray );
+        embaralhado = embaralhar(resourceArray);
       });
 
       it('deve retornar o array embaralhado', function(){
-        expect( original ).not.toEqual( embaralhado )
+        expect(original).not.toEqual(embaralhado)
       });
     });
 
