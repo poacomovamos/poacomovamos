@@ -15,11 +15,12 @@ class BuscadorDeSessao
     ano >= 2013 and ano <= 2016
   end
 
-  def proxima_pagina
-    @proxima_pagina = @html_base.css('div.box.no-box div.pagination a')[-1]
-    if @proxima_pagina != nil
-      @base_url.pega_base_page << @proxima_pagina.attr('href')
+  def link_proxima_pagina
+    @proximo_link_html = @html_base.css('div.box.no-box div.pagination a')[-1]
+    if @proximo_link_html != nil
+      @proximo_link_html = @base_url.pega_base_page << @proximo_link_html.attr('href')
     end
+    @proximo_link_html
   end
 
   def pega_todos_os_links_da_pagina
@@ -28,14 +29,12 @@ class BuscadorDeSessao
     end
     @todas_sessoes
   end
-=begin
 
   def pega_todos_os_links
-    if proxima_pagina != nil
+    if link_proxima_pagina != nil
       pega_todos_os_links_da_pagina
     end
     @todas_sessoes
   end
-=end
 
 end

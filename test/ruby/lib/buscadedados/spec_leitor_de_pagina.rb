@@ -17,8 +17,16 @@ describe BuscadorDeSessao do
   end
 
   it 'pega a proxima página' do
-    @buscador_de_sessoes.proxima_pagina
+    @buscador_de_sessoes.link_proxima_pagina
     .should eq('test/ruby/lib/mocks/leitor_presenca_sessao/lista_de_sessoes2.html')
+  end
+
+  it 'pega a proxima pagina, da proxima pagina' do
+    link_proxima_pagina = @buscador_de_sessoes.link_proxima_pagina
+    @buscador_de_sessoes = BuscadorDeSessao.new(link_proxima_pagina, @baseUrl)
+
+    @buscador_de_sessoes.link_proxima_pagina
+    .should eq('test/ruby/lib/mocks/leitor_presenca_sessao/lista_de_sessoes3.html')
   end
 
   it 'pega todos os links de sessao de uma url' do
@@ -29,6 +37,7 @@ describe BuscadorDeSessao do
       'sessoes/sessao12/index.html',
       'sessoes/sessao11/index.html'])
   end
+
 =begin
   it 'pega todos links de sessão percorrendo todas as urls' do
     @buscador_de_sessoes.pega_todos_os_links
@@ -42,5 +51,6 @@ describe BuscadorDeSessao do
       'sessoes/sessao01/index.html'])
   end
 =end
+
 
 end
