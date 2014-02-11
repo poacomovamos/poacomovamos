@@ -5,7 +5,7 @@ angular.module('poaComoVamos').
       $scope.chamaApiVereadores().
       success($scope.extraiNomesParaScopo).
       error($scope.falhaAoCarregarVereadores);
-    }    
+    }
 
     $scope.chamaApiVereadores = function(){
       return $http({method: 'GET', url: '/api/vereador'});
@@ -19,10 +19,10 @@ angular.module('poaComoVamos').
       vereadores = vereadores || [];
 
       var nomes = [];
-      for (idx in vereadores) {        
+      for (idx in vereadores) {
         nomes.push(vereadores[idx].nome);
-      }      
-      
+      }
+
       return nomes;
     }
 

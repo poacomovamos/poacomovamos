@@ -76,5 +76,4 @@ class Vereador
 		ausente
 	end
 
-
 end
