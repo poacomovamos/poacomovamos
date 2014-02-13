@@ -3,12 +3,22 @@ require_relative '../../../../lib/buscadedados/buscar_dados_do_site'
 
 describe BuscarDadosDoSiteDaCamara do
 
-  before(:all) do
+  it 'pega uma lista de paginas' do
+    @baseUrl = FakeBasePage.new
+    @url = 'lista_de_sessoes.html'
+    @busca_de_dados = BuscarDadosDoSiteDaCamara.new(@baseUrl, @url)
 
+    @busca_de_dados.lista_de_paginas
+    .should eq(['test/ruby/lib/mocks/leitor_presenca_sessao/lista_de_sessoes.html',
+      'test/ruby/lib/mocks/leitor_presenca_sessao/lista_de_sessoes2.html',
+      'test/ruby/lib/mocks/leitor_presenca_sessao/lista_de_sessoes3.html'])
   end
+
 =begin
   it 'pega todos links de sessão percorrendo todas as urls' do
-    @buscador_de_sessoes.pega_todos_os_links
+    @buscador_de_dados = BuscarDadosDoSiteDaCamara.new
+
+    @buscador_de_dados.pega_todos_os_links
     .should eq(['sessoes/sessao119/index.html', 'sessoes/sessao14/index.html',
       'sessoes/sessao13/index.html', 'sessoes/sessao12/index.html',
       'sessoes/sessao11/index.html', 'sessoes/sessao10/index.html',
@@ -19,4 +29,5 @@ describe BuscarDadosDoSiteDaCamara do
       'sessoes/sessao01/index.html'])
   end
 =end
+
 end

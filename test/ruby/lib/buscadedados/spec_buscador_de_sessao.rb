@@ -16,6 +16,11 @@ describe BuscadorDeSessao do
     .should be(true)
   end
 
+  it 'pega a pagina corrente' do
+    @buscador_de_sessoes.link_da_pagina
+    .should eq('test/ruby/lib/mocks/leitor_presenca_sessao/lista_de_sessoes.html')
+  end
+
   it 'pega a proxima página' do
     @buscador_de_sessoes.link_proxima_pagina
     .should eq('test/ruby/lib/mocks/leitor_presenca_sessao/lista_de_sessoes2.html')
