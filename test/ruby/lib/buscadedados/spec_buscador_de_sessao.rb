@@ -1,5 +1,5 @@
 require './environment'
-require_relative '../../../../lib/buscadedados/leitor_de_pagina'
+require_relative '../../../../lib/buscadedados/buscador_de_sessao'
 require_relative 'fake_base_page'
 
 describe BuscadorDeSessao do

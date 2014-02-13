@@ -14,11 +14,12 @@ describe BuscarDadosDoSiteDaCamara do
       'test/ruby/lib/mocks/leitor_presenca_sessao/lista_de_sessoes3.html'])
   end
 
-=begin
   it 'pega todos links de sessão percorrendo todas as urls' do
-    @buscador_de_dados = BuscarDadosDoSiteDaCamara.new
+    @baseUrl = FakeBasePage.new
+    @url = 'lista_de_sessoes.html'
+    @buscador_de_dados = BuscarDadosDoSiteDaCamara.new(@baseUrl, @url)
 
-    @buscador_de_dados.pega_todos_os_links
+    @buscador_de_dados.pega_todos_os_links_das_sessoes
     .should eq(['sessoes/sessao119/index.html', 'sessoes/sessao14/index.html',
       'sessoes/sessao13/index.html', 'sessoes/sessao12/index.html',
       'sessoes/sessao11/index.html', 'sessoes/sessao10/index.html',
@@ -28,6 +29,5 @@ describe BuscarDadosDoSiteDaCamara do
       'sessoes/sessao03/index.html', 'sessoes/sessao02/index.html',
       'sessoes/sessao01/index.html'])
   end
-=end
 
 end

@@ -15,12 +15,12 @@ class LeitorDeSessao
 
   def pega_lista_de_projetos
     @variavel = @html_da_sessao.css('table.list tbody  tr td:nth-child(2) span.detalhe a')
-    indice = 0
-    while @variavel[indice] != nil 
-      if e_projeto?(@variavel[indice].text)
-        @lista_de_sessoes << @variavel[indice].attr('href')
+    na_posicao = 0
+    while @variavel[na_posicao] != nil 
+      if e_projeto?(@variavel[na_posicao].text)
+        @lista_de_sessoes << @variavel[na_posicao].attr('href')
       end
-      indice += 1
+      na_posicao += 1
     end
     @lista_de_sessoes
   end

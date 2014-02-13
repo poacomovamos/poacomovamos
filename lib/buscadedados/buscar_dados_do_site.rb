@@ -22,4 +22,16 @@ class BuscarDadosDoSiteDaCamara
     @lista_de_paginas << @buscador.link_da_pagina
   end
 
+  def pega_todos_os_links_das_sessoes
+    
+    ['sessoes/sessao119/index.html', 'sessoes/sessao14/index.html',
+      'sessoes/sessao13/index.html', 'sessoes/sessao12/index.html',
+      'sessoes/sessao11/index.html', 'sessoes/sessao10/index.html',
+      'sessoes/sessao09/index.html', 'sessoes/sessao08/index.html',
+      'sessoes/sessao07/index.html', 'sessoes/sessao06/index.html',
+      'sessoes/sessao05/index.html', 'sessoes/sessao04/index.html',
+      'sessoes/sessao03/index.html', 'sessoes/sessao02/index.html',
+      'sessoes/sessao01/index.html']
+  end
+
 end
