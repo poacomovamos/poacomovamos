@@ -18,7 +18,7 @@ describe LeitorDeSessao do
   end
 
   it 'deve retorar uma lista de projetos' do
-    @leitor_de_sessao.pega_lista_de_projetos
+    @leitor_de_sessao.pega_lista_de_links_de_projetos
     .should eq(['projeto197/projeto197.html',
       'projeto157/projeto157.html',
       'http://votacoes.camarapoa.rs.gov.br/parlamentares?data=04%2F12%2F2013+00%3A00%3A00&sessao=119&tiposessao=O&tipovotacao=N&votacao=N204'])
